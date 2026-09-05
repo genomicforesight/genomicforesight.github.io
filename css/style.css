@@ -202,3 +202,124 @@ footer {
     padding: 1.5rem 1rem;
     font-size: 0.9rem;
 }
+/* ========== PAGE HEADER ========== */
+.page-header {
+    text-align: center;
+    padding: 3rem 1rem 1rem 1rem;
+}
+
+.page-header h2 {
+    font-size: 2.2rem;
+    color: #0f2027;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #555555;
+    font-size: 1.1rem;
+}
+
+/* ========== CONTENT SECTION ========== */
+.content-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    color: #0f2027;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.content-section p {
+    color: #333333;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+/* ========== APPROACH LIST ========== */
+.approach-list {
+    list-style: none;
+    padding: 0;
+}
+
+.approach-list li {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.approach-list strong {
+    color: #2c5364;
+}
+
+/* ========== FOUNDER BOX ========== */
+.founder-box {
+    background-color: #f0f0ec;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.founder-details h4 {
+    font-size: 1.4rem;
+    color: #0f2027;
+    margin-bottom: 0.3rem;
+}
+
+.founder-role {
+    color: #c9a227;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1rem;
+}
+
+/* ========== CONTACT GRID ========== */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+}
+
+.contact-card h3 {
+    font-size: 1.2rem;
+    color: #0f2027;
+    margin-bottom: 0.8rem;
+}
+
+.contact-card a {
+    color: #2c5364;
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+    color: #c9a227;
+}
