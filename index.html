@@ -3,74 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Genomic Foresight Institute | GFI</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #07111f;
             color: #eaf2f8;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
+        /* HEADER */
+
         header {
-            padding: 25px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            padding: 20px 8%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            background: rgba(7, 17, 31, 0.95);
             border-bottom: 1px solid #183047;
+
+            backdrop-filter: blur(10px);
         }
 
         .logo {
             font-size: 22px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            color: #ffffff;
         }
 
         nav a {
             color: #b8c7d9;
             text-decoration: none;
             margin-left: 25px;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #4de1c1;
         }
 
+        /* HERO */
+
         .hero {
-            min-height: 75vh;
+            min-height: 82vh;
+
             display: flex;
             align-items: center;
-            padding: 80px 8%;
-            background: linear-gradient(135deg, #07111f, #0b1d2e);
+
+            padding: 100px 8%;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(77,225,193,0.08),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #07111f,
+                    #0b1d2e
+                );
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
         }
 
         .tag {
             color: #4de1c1;
-            letter-spacing: 3px;
-            font-size: 14px;
-            margin-bottom: 20px;
+            letter-spacing: 4px;
+            font-size: 13px;
+            margin-bottom: 22px;
             text-transform: uppercase;
         }
 
         h1 {
-            font-size: clamp(42px, 7vw, 82px);
-            line-height: 1.05;
-            margin-bottom: 25px;
+            font-size: clamp(44px, 7vw, 82px);
+            line-height: 1.02;
+            margin-bottom: 28px;
+            letter-spacing: -2px;
         }
 
         .subtitle {
-            font-size: 24px;
+            font-size: 23px;
             color: #b8c7d9;
             margin-bottom: 25px;
         }
@@ -78,18 +113,23 @@
         .description {
             font-size: 18px;
             color: #91a4b8;
-            max-width: 700px;
+            max-width: 720px;
             margin-bottom: 35px;
         }
 
         .buttons a {
             display: inline-block;
+
             padding: 13px 24px;
             margin-right: 12px;
+            margin-bottom: 10px;
+
             border: 1px solid #4de1c1;
             border-radius: 6px;
+
             text-decoration: none;
             color: #4de1c1;
+
             transition: 0.3s;
         }
 
@@ -98,237 +138,575 @@
             color: #07111f;
         }
 
+        /* SECTIONS */
+
         section {
-            padding: 80px 8%;
+            padding: 90px 8%;
         }
 
         section h2 {
             font-size: 38px;
-            margin-bottom: 35px;
+            margin-bottom: 15px;
         }
 
-        .areas {
+        .section-intro {
+            color: #91a4b8;
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-size: 17px;
+        }
+
+        /* MISSION */
+
+        .mission {
+            border-left: 3px solid #4de1c1;
+            padding-left: 25px;
+            max-width: 850px;
+        }
+
+        .mission p {
+            color: #b8c7d9;
+            font-size: 20px;
+        }
+
+        /* RESEARCH AREAS */
+
+        .areas,
+        .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(250px, 1fr)
+            );
+
+            gap: 22px;
         }
 
         .card {
-            padding: 28px;
+            padding: 30px;
+
             background: #0c1b2b;
+
             border: 1px solid #183047;
-            border-radius: 10px;
+            border-radius: 12px;
+
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             border-color: #4de1c1;
         }
 
         .card h3 {
-            margin-bottom: 12px;
+            margin-bottom: 13px;
             color: #4de1c1;
+            font-size: 21px;
         }
 
         .card p {
             color: #91a4b8;
         }
 
-        footer {
-            padding: 30px 8%;
-            border-top: 1px solid #183047;
+        /* PROJECTS */
+
+        .project-type {
             color: #71859a;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .project-links {
+            margin-top: 22px;
+        }
+
+        .project-links a {
+            display: inline-block;
+
+            margin-right: 10px;
+            margin-bottom: 8px;
+
+            padding: 8px 13px;
+
+            border: 1px solid #31516b;
+            border-radius: 5px;
+
+            color: #b8c7d9;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .project-links a:hover {
+            color: #4de1c1;
+            border-color: #4de1c1;
+        }
+
+        /* ABOUT */
+
+        .about-text {
+            max-width: 850px;
+
+            color: #91a4b8;
+
+            font-size: 18px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            padding: 30px;
+
+            max-width: 700px;
+
+            background: #0c1b2b;
+
+            border: 1px solid #183047;
+            border-radius: 12px;
+        }
+
+        .contact-box p {
+            color: #91a4b8;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 35px 8%;
+
+            border-top: 1px solid #183047;
+
+            color: #71859a;
+
             text-align: center;
         }
 
+        /* MOBILE */
+
         @media (max-width: 700px) {
+
+            header {
+                padding: 18px 7%;
+            }
+
             nav {
                 display: none;
             }
 
             .hero {
-                min-height: 70vh;
-                padding-top: 60px;
+                min-height: 75vh;
+                padding: 70px 7%;
             }
 
             .subtitle {
-                font-size: 20px;
+                font-size: 19px;
             }
 
             section {
-                padding: 60px 7%;
+                padding: 65px 7%;
+            }
+
+            section h2 {
+                font-size: 32px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <div class="logo">GFI</div>
+
+    <div class="logo">
+        GFI
+    </div>
 
     <nav>
-        <a href="#research">Research</a>
-        <a href="#featured-research">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#research">
+            Research
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
     </nav>
+
 </header>
+
 
 <main>
 
-    <!-- HERO -->
 
-    <section class="hero">
-        <div class="hero-content">
+<!-- HERO -->
 
-            <div class="tag">Independent Research Institute</div>
+<section class="hero">
 
-            <h1>
-                Genomic<br>
-                Foresight<br>
-                Institute
-            </h1>
+    <div class="hero-content">
 
-            <div class="subtitle">
-                Computational Biology · AI/ML · Genomics · Neuroscience
-            </div>
-
-            <p class="description">
-                Building computational frameworks to understand complex
-                biological systems and disease mechanisms.
-            </p>
-
-            <div class="buttons">
-                <a href="#research">Explore Research</a>
-                <a href="#about">About GFI</a>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- RESEARCH AREAS -->
-
-    <section id="research">
-
-        <h2>Research Areas</h2>
-
-        <div class="areas">
-
-            <div class="card">
-                <h3>Computational Biology</h3>
-                <p>
-                    Computational approaches for modeling and understanding
-                    complex biological systems.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>AI & Machine Learning</h3>
-                <p>
-                    Machine learning and representation learning for
-                    biomedical and biological data.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Genomics & Systems Biology</h3>
-                <p>
-                    Integrative analysis of genomic variation, gene regulation,
-                    cellular states and disease mechanisms.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Neuroscience</h3>
-                <p>
-                    Computational approaches to neural systems,
-                    brain data and biological mechanisms.
-                </p>
-            </div>
-
+        <div class="tag">
+            Independent Research Institute
         </div>
 
-    </section>
+        <h1>
+            Genomic<br>
+            Foresight<br>
+            Institute
+        </h1>
 
-
-    <!-- FEATURED RESEARCH -->
-
-    <section id="featured-research">
-
-        <h2>Featured Research</h2>
-
-        <div class="areas">
-
-            <div class="card">
-                <h3>OmniLatent</h3>
-                <p>
-                    AI-driven representation learning for high-dimensional
-                    cancer transcriptomics and biological state discovery.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>CELLGRAPH</h3>
-                <p>
-                    Graph representation learning for interpretable and
-                    generalizable analysis of single-cell transcriptomic data.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Decoding EMT Heterogeneity</h3>
-                <p>
-                    An integrative computational framework combining ODE
-                    dynamics, RACIPE ensembles and transcriptomic validation
-                    to study epithelial–mesenchymal transition.
-                </p>
-            </div>
-
+        <div class="subtitle">
+            Computational Biology · AI/ML · Genomics · Neuroscience
         </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <h2>About GFI</h2>
 
         <p class="description">
-            Genomic Foresight Institute (GFI) is an independent research
-            institute focused on computational approaches to biological
-            discovery and disease understanding.
+
+            Building computational frameworks to understand
+            complex biological systems, genomic information,
+            and disease mechanisms.
+
         </p>
 
-    </section>
+        <div class="buttons">
+
+            <a href="#projects">
+                Explore Research
+            </a>
+
+            <a href="#about">
+                About GFI
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- CONTACT -->
+<!-- RESEARCH MISSION -->
 
-    <section id="contact">
+<section>
 
-        <h2>Contact</h2>
+    <h2>
+        Research Mission
+    </h2>
 
-        <p class="description">
-            Research collaborations, scientific discussions and inquiries:
+    <div class="mission">
+
+        <p>
+
+            GFI develops computational and artificial intelligence
+            approaches for discovering structure, mechanisms,
+            and predictive signals in complex biological and
+            biomedical data.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RESEARCH PROGRAMS -->
+
+<section id="research">
+
+    <h2>
+        Research Programs
+    </h2>
+
+    <p class="section-intro">
+
+        GFI operates at the intersection of computational biology,
+        artificial intelligence, and biomedical science.
+
+    </p>
+
+
+    <div class="areas">
+
+
+        <div class="card">
+
+            <h3>
+                Computational Biology
+            </h3>
+
+            <p>
+
+                Computational modeling and representation learning
+                for complex biological systems and disease mechanisms.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                AI & Machine Learning
+            </h3>
+
+            <p>
+
+                Machine learning, deep learning, and foundation-model
+                approaches for biological and biomedical discovery.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Genomics & Systems Biology
+            </h3>
+
+            <p>
+
+                Integrative analysis of genomic variation, gene regulation,
+                cellular states, and molecular disease mechanisms.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Neuroscience
+            </h3>
+
+            <p>
+
+                Computational approaches to neural systems,
+                brain data, and biological mechanisms.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED RESEARCH -->
+
+<section id="projects">
+
+    <h2>
+        Featured Research
+    </h2>
+
+    <p class="section-intro">
+
+        Selected computational research projects developed
+        within the Genomic Foresight Institute.
+
+    </p>
+
+
+    <div class="projects">
+
+
+        <!-- OMNILATENT -->
+
+        <div class="card">
+
+            <div class="project-type">
+                Biomedical AI · Cancer Transcriptomics
+            </div>
+
+            <h3>
+                OmniLatent
+            </h3>
+
+            <p>
+
+                A generalizable latent representation framework
+                for biomedical transcriptomic data, currently
+                evaluated on TCGA-BRCA RNA-seq data.
+
+            </p>
+
+            <div class="project-links">
+
+                <a
+                    href="https://github.com/AIResearcher20/OmniLatent"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://huggingface.co/Sepideh2027/OmniLatent-TCGA-BRCA-model"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Model
+                </a>
+
+                <a
+                    href="https://huggingface.co/datasets/Sepideh2027/biolatent-brca-tcga"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Dataset
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BIOGPT-CLINVAR -->
+
+        <div class="card">
+
+            <div class="project-type">
+                Genomics · Biomedical LLM
+            </div>
+
+            <h3>
+                BioGPT-ClinVar
+            </h3>
+
+            <p>
+
+                A biomedical language-model framework for genomic
+                variant interpretation using ClinVar-derived
+                training data and parameter-efficient fine-tuning.
+
+            </p>
+
+            <div class="project-links">
+
+                <a
+                    href="https://github.com/AIResearcher20/biogpt-clinvar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://huggingface.co/Sepideh2027/biogpt-clinvar-finetuned"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Hugging Face
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2>
+        About GFI
+    </h2>
+
+    <p class="about-text">
+
+        Genomic Foresight Institute (GFI) is an independent
+        research institute focused on computational approaches
+        to biological discovery and disease understanding.
+
+        <br><br>
+
+        GFI explores the intersection of artificial intelligence,
+        genomics, systems biology, neuroscience, and biomedical
+        data science.
+
+    </p>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2>
+        Contact
+    </h2>
+
+    <p class="section-intro">
+
+        Research collaborations, scientific discussions,
+        and independent research inquiries.
+
+    </p>
+
+
+    <div class="contact-box">
+
+        <p>
+            <strong>
+                Genomic Foresight Institute (GFI)
+            </strong>
         </p>
 
         <p>
-            <strong>Genomic Foresight Institute (GFI)</strong>
+            Independent Research Institute
         </p>
 
-    </section>
+    </div>
+
+</section>
+
 
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
+
     © 2026 Genomic Foresight Institute (GFI)
+
 </footer>
 
+
 </body>
+
 </html>
