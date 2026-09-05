@@ -118,6 +118,12 @@
             background: #0c1b2b;
             border: 1px solid #183047;
             border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #4de1c1;
         }
 
         .card h3 {
@@ -164,12 +170,15 @@
 
     <nav>
         <a href="#research">Research</a>
+        <a href="#featured-research">Projects</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <main>
+
+    <!-- HERO -->
 
     <section class="hero">
         <div class="hero-content">
@@ -199,6 +208,8 @@
         </div>
     </section>
 
+
+    <!-- RESEARCH AREAS -->
 
     <section id="research">
 
@@ -243,6 +254,46 @@
     </section>
 
 
+    <!-- FEATURED RESEARCH -->
+
+    <section id="featured-research">
+
+        <h2>Featured Research</h2>
+
+        <div class="areas">
+
+            <div class="card">
+                <h3>OmniLatent</h3>
+                <p>
+                    AI-driven representation learning for high-dimensional
+                    cancer transcriptomics and biological state discovery.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>CELLGRAPH</h3>
+                <p>
+                    Graph representation learning for interpretable and
+                    generalizable analysis of single-cell transcriptomic data.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Decoding EMT Heterogeneity</h3>
+                <p>
+                    An integrative computational framework combining ODE
+                    dynamics, RACIPE ensembles and transcriptomic validation
+                    to study epithelial–mesenchymal transition.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
     <section id="about">
 
         <h2>About GFI</h2>
@@ -255,6 +306,8 @@
 
     </section>
 
+
+    <!-- CONTACT -->
 
     <section id="contact">
 
