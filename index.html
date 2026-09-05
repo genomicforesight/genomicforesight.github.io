@@ -8,19 +8,16 @@
 <style>
 
 /* =====================================================
-   GFI — VISUAL SYSTEM v3.1 (Sky Blue Theme)
+   GFI — SKY BLUE THEME
 ===================================================== */
 
 :root {
     --navy: #0A1628;
-    --navy-light: #142A4A;
     --sky-blue: #4A9EFF;
     --sky-blue-dark: #2B7BE0;
     --sky-blue-light: #7BB8FF;
     --sky-blue-glow: rgba(74, 158, 255, 0.2);
     --cyan: #6BC3FF;
-    --cyan-glow: rgba(107, 195, 255, 0.25);
-    --gold: #F5C842;
     --ink: #0F1E2F;
     --text: #2A3B4E;
     --muted: #6A7F94;
@@ -28,9 +25,7 @@
     --white: #FFFFFF;
     --line: #DFE8F0;
     --radius: 20px;
-    --shadow-sm: 0 4px 16px rgba(10, 22, 40, 0.04);
-    --shadow-md: 0 16px 48px rgba(10, 22, 40, 0.08);
-    --shadow-lg: 0 32px 80px rgba(10, 22, 40, 0.12);
+    --shadow: 0 16px 48px rgba(10, 22, 40, 0.08);
     --transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -43,7 +38,6 @@ body {
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -62,8 +56,7 @@ header {
     margin: 0 20px;
     border-radius: 40px;
     background: rgba(255,255,255,0.78);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.6);
     box-shadow: 0 12px 40px rgba(10, 22, 40, 0.06);
     transition: var(--transition);
@@ -71,7 +64,6 @@ header {
 
 header.scrolled {
     background: rgba(255,255,255,0.92);
-    box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
 }
 
 .navbar {
@@ -83,7 +75,7 @@ header.scrolled {
 }
 
 /* =====================================================
-   BRAND WITH EXTERNAL LOGO
+   BRAND
 ===================================================== */
 
 .brand {
@@ -93,15 +85,14 @@ header.scrolled {
 }
 
 .brand-logo {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
     object-fit: contain;
     transition: var(--transition);
 }
 
 .brand-logo:hover {
-    transform: rotate(-6deg) scale(1.05);
+    transform: scale(1.05) rotate(-4deg);
 }
 
 .brand-text {
@@ -113,15 +104,11 @@ header.scrolled {
 .brand-name {
     font-size: 18px;
     font-weight: 800;
-    letter-spacing: -0.5px;
     color: var(--navy);
 }
 
 .brand-name span {
-    background: linear-gradient(135deg, var(--sky-blue), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--sky-blue);
 }
 
 .brand-sub {
@@ -146,21 +133,18 @@ header.scrolled {
     font-size: 13px;
     font-weight: 600;
     color: #5A6F84;
-    position: relative;
     transition: var(--transition);
-    letter-spacing: 0.2px;
 }
 
 .desktop-nav a::after {
     content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
+    display: block;
     width: 0;
     height: 2.5px;
-    background: linear-gradient(90deg, var(--sky-blue), var(--cyan));
+    background: var(--sky-blue);
     border-radius: 4px;
     transition: var(--transition);
+    margin-top: 4px;
 }
 
 .desktop-nav a:hover { color: var(--navy); }
@@ -179,10 +163,7 @@ header.scrolled {
     border-radius: 12px;
     background: rgba(10, 22, 40, 0.04);
     position: relative;
-    transition: var(--transition);
 }
-
-.menu-button:hover { background: rgba(10, 22, 40, 0.08); }
 
 .menu-button span {
     position: absolute;
@@ -207,7 +188,6 @@ header.scrolled {
     inset: 0;
     background: rgba(10, 22, 40, 0.5);
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
@@ -241,15 +221,10 @@ header.scrolled {
     border-bottom: 1px solid var(--line);
 }
 
-.mobile-menu-logo {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-}
+.mobile-menu-logo { height: 40px; width: auto; }
 
 .close-menu {
     font-size: 32px;
-    line-height: 1;
     color: var(--muted);
     transition: var(--transition);
     padding: 4px 8px;
@@ -295,14 +270,14 @@ header.scrolled {
 ===================================================== */
 
 .hero {
-    min-height: 740px;
+    min-height: 680px;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     background:
-        radial-gradient(circle at 80% 20%, rgba(74, 158, 255, 0.10), transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(107, 195, 255, 0.05), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(74, 158, 255, 0.08), transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(107, 195, 255, 0.04), transparent 40%),
         linear-gradient(145deg, #FFFFFF 0%, #F0F5FA 55%, #E8F0FA 100%);
     padding: 40px 0 60px;
 }
@@ -311,7 +286,7 @@ header.scrolled {
     content: "";
     position: absolute;
     inset: 0;
-    opacity: 0.15;
+    opacity: 0.1;
     background-image:
         linear-gradient(rgba(74, 158, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(74, 158, 255, 0.03) 1px, transparent 1px);
@@ -351,10 +326,7 @@ header.scrolled {
 }
 
 .hero h1 span {
-    background: linear-gradient(135deg, var(--sky-blue), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--sky-blue);
 }
 
 .hero-description {
@@ -405,11 +377,10 @@ header.scrolled {
     border-color: var(--sky-blue);
     color: var(--sky-blue);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-sm);
 }
 
 /* =====================================================
-   HERO VISUAL
+   HERO VISUAL - با لوگو به جای شش ضلعی
 ===================================================== */
 
 .hero-visual {
@@ -420,17 +391,25 @@ header.scrolled {
     position: relative;
 }
 
-.hero-visual svg {
+.hero-logo {
     width: 100%;
-    max-width: 420px;
+    max-width: 380px;
     height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 60px rgba(74, 158, 255, 0.15));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
 }
 
 /* =====================================================
    SECTION GLOBAL
 ===================================================== */
 
-section { padding: 110px 0; }
+section { padding: 100px 0; }
 
 .section-label {
     display: inline-block;
@@ -461,44 +440,42 @@ section { padding: 110px 0; }
 }
 
 /* =====================================================
-   RESEARCH CARDS WITH IMAGES
+   RESEARCH CARDS
 ===================================================== */
 
 .research-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--grid-gap, 20px);
+    gap: 20px;
 }
 
 .research-card {
     background: white;
     border-radius: var(--radius);
     padding: 32px 26px 30px;
-    position: relative;
-    overflow: hidden;
     border: 1px solid var(--line);
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
     text-align: center;
-}
-
-.research-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--sky-blue), var(--cyan));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: var(--transition);
 }
 
 .research-card:hover {
     transform: translateY(-8px);
     border-color: rgba(74, 158, 255, 0.2);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow);
+}
+
+.research-card::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sky-blue), var(--cyan));
+    border-radius: 4px 4px 0 0;
+    margin-top: -32px;
+    margin-bottom: 16px;
+    transform: scaleX(0);
+    transition: var(--transition);
 }
 
 .research-card:hover::before { transform: scaleX(1); }
@@ -541,24 +518,13 @@ section { padding: 110px 0; }
     overflow: hidden;
 }
 
-.programs::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    border: 1px solid rgba(107, 195, 255, 0.04);
-    right: -200px;
-    top: -150px;
-}
-
 .programs .section-title { color: white; }
 .programs .section-description { color: #AFC0CF; }
 
 .program-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--grid-gap, 20px);
+    gap: 20px;
 }
 
 .program-card {
@@ -567,7 +533,6 @@ section { padding: 110px 0; }
     border-radius: var(--radius);
     padding: 34px 30px;
     transition: var(--transition);
-    backdrop-filter: blur(2px);
     display: flex;
     align-items: flex-start;
     gap: 20px;
@@ -608,7 +573,7 @@ section { padding: 110px 0; }
 }
 
 /* =====================================================
-   PROJECTS - با تصاویر آزمایشگاهی
+   PROJECTS
 ===================================================== */
 
 .projects { background: white; }
@@ -625,12 +590,12 @@ section { padding: 110px 0; }
     background: white;
     border: 1px solid var(--line);
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
     border-color: rgba(74, 158, 255, 0.12);
 }
 
@@ -638,7 +603,6 @@ section { padding: 110px 0; }
     height: 180px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--navy), var(--navy-light));
 }
 
 .project-banner img {
@@ -651,7 +615,7 @@ section { padding: 110px 0; }
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(10,22,40,0.6), transparent);
+    background: linear-gradient(to top, rgba(10,22,40,0.5), transparent);
 }
 
 .project-label {
@@ -729,13 +693,12 @@ section { padding: 110px 0; }
     justify-content: space-between;
     gap: 20px;
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
 }
 
 .publication:hover {
     border-color: rgba(74, 158, 255, 0.2);
     transform: translateX(6px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow);
 }
 
 .publication h3 {
@@ -768,7 +731,7 @@ section { padding: 110px 0; }
 .infrastructure-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--grid-gap, 20px);
+    gap: 20px;
 }
 
 .infrastructure-card {
@@ -784,7 +747,7 @@ section { padding: 110px 0; }
     transform: translateY(-6px);
     border-color: var(--line);
     background: white;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow);
 }
 
 .infrastructure-symbol {
@@ -834,12 +797,9 @@ section { padding: 110px 0; }
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 38px 36px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow);
     position: relative;
-    transition: var(--transition);
 }
-
-.about-panel:hover { box-shadow: var(--shadow-lg); }
 
 .about-panel::before {
     content: "";
@@ -873,18 +833,6 @@ section { padding: 110px 0; }
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.contact::after {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: rgba(74, 158, 255, 0.02);
-    bottom: -250px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .contact .section-label {
@@ -927,7 +875,6 @@ footer {
     text-align: center;
     padding: 32px;
     font-size: 13px;
-    letter-spacing: 0.3px;
 }
 
 footer .footer-logo {
@@ -968,6 +915,7 @@ footer .footer-logo {
     .hero-description { margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; }
     .hero-visual { height: 280px; }
+    .hero-logo { max-width: 280px; }
     .research-grid { grid-template-columns: repeat(2, 1fr); }
     .infrastructure-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -980,16 +928,15 @@ footer .footer-logo {
     .brand-logo { width: 38px; height: 38px; }
     .brand-name { font-size: 14px; }
     .brand-sub { font-size: 7px; }
-    .hero { min-height: 560px; padding: 20px 0 40px; }
+    .hero { min-height: 520px; padding: 20px 0 40px; }
     .hero h1 { font-size: 38px; letter-spacing: -2px; }
     .hero-description { font-size: 15px; }
     .hero-visual { height: 200px; }
-    .hero-visual svg { max-width: 280px; }
+    .hero-logo { max-width: 200px; }
     section { padding: 60px 0; }
     .research-grid, .project-grid, .infrastructure-grid {
         grid-template-columns: 1fr;
     }
-    .project-grid { gap: 20px; }
     .publication { flex-direction: column; align-items: flex-start; }
     .mobile-menu { width: 290px; }
     .program-card { flex-direction: column; align-items: center; text-align: center; }
@@ -999,35 +946,18 @@ footer .footer-logo {
     .container { width: min(100% - 24px, 1200px); }
     .hero h1 { font-size: 32px; }
     .brand-logo { width: 32px; height: 32px; }
-    .brand-name { font-size: 12px; }
-}
-
-/* =====================================================
-   ACCESSIBILITY
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
 }
 </style>
 </head>
 <body>
 
 <!-- =====================================================
-     HEADER با لوگوی خارجی
+     HEADER
 ===================================================== -->
 <header>
     <div class="container">
         <nav class="navbar">
             <a href="#home" class="brand">
-                <!-- لوگو از فایل خارجی -->
                 <img src="gfi-logo.png" alt="GFI Logo" class="brand-logo">
                 <div class="brand-text">
                     <div class="brand-name">Genomic <span>Foresight</span></div>
@@ -1073,7 +1003,7 @@ footer .footer-logo {
 </aside>
 
 <!-- =====================================================
-     HERO
+     HERO - با لوگو به جای شش ضلعی
 ===================================================== -->
 <section class="hero" id="home">
     <div class="container">
@@ -1093,25 +1023,7 @@ footer .footer-logo {
             </div>
 
             <div class="hero-visual reveal">
-                <svg viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="200,20 360,95 360,245 200,320 40,245 40,95" stroke="#4A9EFF" stroke-width="1.5" fill="rgba(74,158,255,0.03)"/>
-                    <polygon points="200,50 330,110 330,230 200,290 70,230 70,110" stroke="#6BC3FF" stroke-width="1" fill="rgba(107,195,255,0.04)"/>
-                    <polygon points="200,80 290,125 290,215 200,260 110,215 110,125" fill="white" stroke="#4A9EFF" stroke-width="2" opacity="0.9"/>
-                    <path d="M140 140C160 130 180 150 200 140C220 130 240 150 260 140" stroke="#4A9EFF" stroke-width="2" opacity="0.5"/>
-                    <path d="M140 160C160 150 180 170 200 160C220 150 240 170 260 160" stroke="#4A9EFF" stroke-width="2" opacity="0.3"/>
-                    <path d="M140 180C160 170 180 190 200 180C220 170 240 190 260 180" stroke="#4A9EFF" stroke-width="2" opacity="0.2"/>
-                    <circle cx="200" cy="170" r="18" fill="#0A1628"/>
-                    <text x="200" y="175" text-anchor="middle" fill="white" font-size="18" font-weight="800">GFI</text>
-                    <circle cx="200" cy="95" r="4" fill="#6BC3FF"/>
-                    <circle cx="290" cy="170" r="4" fill="#4A9EFF"/>
-                    <circle cx="200" cy="245" r="4" fill="#6BC3FF"/>
-                    <circle cx="110" cy="170" r="4" fill="#4A9EFF"/>
-                    <line x1="200" y1="99" x2="200" y2="152" stroke="#6BC3FF" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    <line x1="286" y1="170" x2="218" y2="170" stroke="#4A9EFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    <line x1="200" y1="241" x2="200" y2="188" stroke="#6BC3FF" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    <line x1="114" y1="170" x2="182" y2="170" stroke="#4A9EFF" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    <text x="200" y="310" text-anchor="middle" fill="#6A7F94" font-size="10" font-weight="600" letter-spacing="3">SCIENCE · SYSTEMS · AI</text>
-                </svg>
+                <img src="gfi-logo.png" alt="Genomic Foresight Institute" class="hero-logo">
             </div>
         </div>
     </div>
@@ -1134,7 +1046,7 @@ footer .footer-logo {
         <div class="research-grid">
             <div class="research-card reveal">
                 <div class="research-number">01</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Cpath d='M30 12L42 22V38L30 48L18 38V22L30 12Z' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M25 28L30 24L35 28V36L30 40L25 36V28Z' fill='%234A9EFF' opacity='0.2'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='%234A9EFF' stroke-width='1.5'/%3E%3Cpath d='M22 22L27 27M38 22L33 27M22 38L27 33M38 38L33 33' stroke='%236BC3FF' stroke-width='1.5'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Cpath d='M30 12L42 22V38L30 48L18 38V22L30 12Z' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M25 28L30 24L35 28V36L30 40L25 36V28Z' fill='%234A9EFF' opacity='0.2'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='%234A9EFF' stroke-width='1.5'/%3E%3C/svg%3E" 
                      alt="Computational Biology" class="research-icon">
                 <h3>Computational Biology</h3>
                 <p>Mathematical and computational approaches for understanding biological systems.</p>
@@ -1142,7 +1054,7 @@ footer .footer-logo {
 
             <div class="research-card reveal">
                 <div class="research-number">02</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Ccircle cx='30' cy='24' r='8' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='20' cy='44' r='8' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='40' cy='44' r='8' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Cline x1='27' y1='28' x2='23' y2='38' stroke='%234A9EFF' stroke-width='1.5'/%3E%3Cline x1='33' y1='28' x2='37' y2='38' stroke='%234A9EFF' stroke-width='1.5'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Ccircle cx='30' cy='24' r='8' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='20' cy='44' r='8' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='40' cy='44' r='8' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="AI & Machine Learning" class="research-icon">
                 <h3>AI & Machine Learning</h3>
                 <p>Machine learning methods for biomedical discovery and biological representation learning.</p>
@@ -1150,7 +1062,7 @@ footer .footer-logo {
 
             <div class="research-card reveal">
                 <div class="research-number">03</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Cpath d='M30 12L42 22V38L30 48L18 38V22L30 12Z' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 30H38' stroke='%234A9EFF' stroke-width='1.5'/%3E%3Cpath d='M24 34H36' stroke='%236BC3FF' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='26' r='2' fill='%234A9EFF'/%3E%3Ccircle cx='26' cy='33' r='2' fill='%236BC3FF'/%3E%3Ccircle cx='34' cy='33' r='2' fill='%236BC3FF'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Cpath d='M30 12L42 22V38L30 48L18 38V22L30 12Z' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 30H38' stroke='%234A9EFF' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='26' r='2' fill='%234A9EFF'/%3E%3C/svg%3E" 
                      alt="Genomics & Systems Biology" class="research-icon">
                 <h3>Genomics & Systems Biology</h3>
                 <p>Integrative analysis of genomic information and complex biological networks.</p>
@@ -1158,7 +1070,7 @@ footer .footer-logo {
 
             <div class="research-card reveal">
                 <div class="research-number">04</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Ccircle cx='30' cy='30' r='18' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 22C26 18 34 18 38 22' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 38C26 42 34 42 38 38' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='30' cy='30' r='4' fill='%234A9EFF' opacity='0.2'/%3E%3Ccircle cx='30' cy='30' r='2' fill='%234A9EFF'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F0FA'/%3E%3Ccircle cx='30' cy='30' r='18' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 22C26 18 34 18 38 22' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Neuroscience" class="research-icon">
                 <h3>Neuroscience & Biomedical Data Science</h3>
                 <p>Computational approaches to brain data, disease mechanisms, and biomedical systems.</p>
@@ -1183,7 +1095,7 @@ footer .footer-logo {
 
         <div class="program-grid">
             <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Cpath d='M24 12L34 20V30L24 38L14 30V20L24 12Z' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='24' cy='25' r='5' fill='%236BC3FF' opacity='0.15'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Cpath d='M24 12L34 20V30L24 38L14 30V20L24 12Z' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Biological Representation Learning" class="program-icon">
                 <div>
                     <div class="program-number">PROGRAM 01</div>
@@ -1193,7 +1105,7 @@ footer .footer-logo {
             </div>
 
             <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Crect x='14' y='18' width='20' height='20' rx='4' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M24 14V22M24 34V38' stroke='%236BC3FF' stroke-width='1.5'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Crect x='14' y='18' width='20' height='20' rx='4' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Genomic AI" class="program-icon">
                 <div>
                     <div class="program-number">PROGRAM 02</div>
@@ -1203,7 +1115,7 @@ footer .footer-logo {
             </div>
 
             <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Ccircle cx='16' cy='24' r='6' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='32' cy='24' r='6' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Cline x1='22' y1='24' x2='26' y2='24' stroke='%236BC3FF' stroke-width='1.5'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Ccircle cx='16' cy='24' r='6' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='32' cy='24' r='6' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Systems Biology" class="program-icon">
                 <div>
                     <div class="program-number">PROGRAM 03</div>
@@ -1213,7 +1125,7 @@ footer .footer-logo {
             </div>
 
             <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Ccircle cx='24' cy='24' r='14' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M18 18C20 16 28 16 30 18' stroke='%236BC3FF' stroke-width='1.5'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(107,195,255,0.08)'/%3E%3Ccircle cx='24' cy='24' r='14' stroke='%236BC3FF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Computational Neuroscience" class="program-icon">
                 <div>
                     <div class="program-number">PROGRAM 04</div>
@@ -1226,7 +1138,7 @@ footer .footer-logo {
 </section>
 
 <!-- =====================================================
-     PROJECTS - با تصاویر آزمایشگاهی و کامپیوتری
+     PROJECTS - با تصاویر جدید
 ===================================================== -->
 <section class="projects" id="projects">
     <div class="container">
@@ -1241,7 +1153,7 @@ footer .footer-logo {
         <div class="project-grid">
             <article class="project-card reveal">
                 <div class="project-banner">
-                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center" alt="Computational Biology Lab">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center" alt="Computational Biology Lab - DNA Research">
                     <div class="project-label">Biomedical AI · Transcriptomics</div>
                 </div>
                 <div class="project-content">
@@ -1252,15 +1164,13 @@ footer .footer-logo {
                         high-dimensional biomedical transcriptomic data, with an initial evaluation on
                         TCGA-BRCA RNA-seq data.
                     </p>
-                    <a href="https://github.com/AIResearcher20/OmniLatent" target="_blank" rel="noopener noreferrer" class="project-link">
-                        View Research Repository →
-                    </a>
+                    <a href="#" class="project-link">View Research Repository →</a>
                 </div>
             </article>
 
             <article class="project-card reveal">
                 <div class="project-banner">
-                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&h=400&fit=crop&crop=center" alt="AI Research Lab">
+                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&h=400&fit=crop&crop=center" alt="AI Research Lab - Computing">
                     <div class="project-label">Genomic AI · Biomedical LLM</div>
                 </div>
                 <div class="project-content">
@@ -1270,9 +1180,7 @@ footer .footer-logo {
                         A reproducible framework exploring parameter-efficient adaptation of biomedical
                         language models for genomic variant interpretation using ClinVar data.
                     </p>
-                    <a href="https://github.com/AIResearcher20/biogpt-clinvar" target="_blank" rel="noopener noreferrer" class="project-link">
-                        View Research Repository →
-                    </a>
+                    <a href="#" class="project-link">View Research Repository →</a>
                 </div>
             </article>
         </div>
@@ -1334,25 +1242,25 @@ footer .footer-logo {
 
         <div class="infrastructure-grid">
             <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Cpath d='M22 12L32 17V27L22 32L12 27V17L22 12Z' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='22' cy='22' r='4' fill='%234A9EFF' opacity='0.15'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Cpath d='M22 12L32 17V27L22 32L12 27V17L22 12Z' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="GitHub" class="infrastructure-symbol">
                 <h3>GitHub</h3>
                 <p>Research code & repositories</p>
             </div>
             <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Crect x='14' y='14' width='16' height='16' rx='4' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 18V26M18 22H26' stroke='%236BC3FF' stroke-width='1.5'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Crect x='14' y='14' width='16' height='16' rx='4' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Hugging Face" class="infrastructure-symbol">
                 <h3>Hugging Face</h3>
                 <p>Models & datasets</p>
             </div>
             <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Ccircle cx='22' cy='22' r='10' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cpath d='M16 22H28M22 16V28' stroke='%236BC3FF' stroke-width='1.5'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Ccircle cx='22' cy='22' r='10' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Models" class="infrastructure-symbol">
                 <h3>Models</h3>
                 <p>Biomedical AI models</p>
             </div>
             <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Crect x='12' y='16' width='20' height='14' rx='2' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3Cline x1='12' y1='22' x2='32' y2='22' stroke='%236BC3FF' stroke-width='1'/%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F0FA'/%3E%3Crect x='12' y='16' width='20' height='14' rx='2' stroke='%234A9EFF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" 
                      alt="Datasets" class="infrastructure-symbol">
                 <h3>Datasets</h3>
                 <p>Open research datasets</p>
@@ -1461,7 +1369,7 @@ footer .footer-logo {
                 }
             });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -20px 0px" }
+        { threshold: 0.12 }
     );
     revealElements.forEach(el => observer.observe(el));
 
@@ -1475,7 +1383,7 @@ footer .footer-logo {
         }
     });
 
-    // Active nav link highlight
+    // Active nav link
     const navLinks = document.querySelectorAll('.desktop-nav a');
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
