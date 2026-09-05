@@ -1,15 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Genomic Foresight Institute</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genomic Foresight Institute | GFI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #eaf2f8;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #183047;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #b8c7d9;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #4de1c1;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background: linear-gradient(135deg, #07111f, #0b1d2e);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .tag {
+            color: #4de1c1;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 82px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #b8c7d9;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #91a4b8;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 13px 24px;
+            margin-right: 12px;
+            border: 1px solid #4de1c1;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #4de1c1;
+            transition: 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #4de1c1;
+            color: #07111f;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            font-size: 38px;
+            margin-bottom: 35px;
+        }
+
+        .areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 28px;
+            background: #0c1b2b;
+            border: 1px solid #183047;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #4de1c1;
+        }
+
+        .card p {
+            color: #91a4b8;
+        }
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #183047;
+            color: #71859a;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding-top: 60px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Genomic Foresight Institute (GFI)</h1>
+<header>
+    <div class="logo">GFI</div>
 
-<p>Independent Research Initiative</p>
+    <nav>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-<p>Computational Biology · AI/ML · Genomics · Neuroscience</p>
+<main>
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <div class="tag">Independent Research Institute</div>
+
+            <h1>
+                Genomic<br>
+                Foresight<br>
+                Institute
+            </h1>
+
+            <div class="subtitle">
+                Computational Biology · AI/ML · Genomics · Neuroscience
+            </div>
+
+            <p class="description">
+                Building computational frameworks to understand complex
+                biological systems and disease mechanisms.
+            </p>
+
+            <div class="buttons">
+                <a href="#research">Explore Research</a>
+                <a href="#about">About GFI</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="research">
+
+        <h2>Research Areas</h2>
+
+        <div class="areas">
+
+            <div class="card">
+                <h3>Computational Biology</h3>
+                <p>
+                    Computational approaches for modeling and understanding
+                    complex biological systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>AI & Machine Learning</h3>
+                <p>
+                    Machine learning and representation learning for
+                    biomedical and biological data.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Genomics & Systems Biology</h3>
+                <p>
+                    Integrative analysis of genomic variation, gene regulation,
+                    cellular states and disease mechanisms.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Neuroscience</h3>
+                <p>
+                    Computational approaches to neural systems,
+                    brain data and biological mechanisms.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="about">
+
+        <h2>About GFI</h2>
+
+        <p class="description">
+            Genomic Foresight Institute (GFI) is an independent research
+            institute focused on computational approaches to biological
+            discovery and disease understanding.
+        </p>
+
+    </section>
+
+
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <p class="description">
+            Research collaborations, scientific discussions and inquiries:
+        </p>
+
+        <p>
+            <strong>Genomic Foresight Institute (GFI)</strong>
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 Genomic Foresight Institute (GFI)
+</footer>
 
 </body>
 </html>
