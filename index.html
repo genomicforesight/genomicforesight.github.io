@@ -3,535 +3,606 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Genomic Foresight Institute | GFI</title>
-<meta name="description" content="Genomic Foresight Institute — Independent research in computational biology, AI, genomics, systems biology, neuroscience and biomedical data science.">
+
+<meta name="description"
+      content="Genomic Foresight Institute — Independent research in computational biology, artificial intelligence, genomics, systems biology, neuroscience, and biomedical data science.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 
-/* =====================================================
-   GFI — VISUAL SYSTEM v3.0 (پروفشنال با لوگوی جدید)
-===================================================== */
+/* =========================================================
+   GFI — PREMIUM SCIENTIFIC DESIGN SYSTEM
+   ========================================================= */
 
 :root {
-    --navy: #0A1628;
-    --navy-light: #142A4A;
-    --teal: #00B4A0;
-    --teal-dark: #008C7A;
-    --teal-glow: rgba(0, 180, 160, 0.25);
-    --cyan: #4DD4C8;
-    --cyan-glow: rgba(77, 212, 200, 0.3);
-    --gold: #F5C842;
-    --gold-light: #FFE28A;
-    --ink: #0F1E2F;
-    --text: #2A3B4E;
-    --muted: #6A7F94;
-    --bg: #F0F5FA;
-    --white: #FFFFFF;
-    --line: #DFE8F0;
-    --radius: 20px;
-    --shadow-sm: 0 4px 16px rgba(10, 22, 40, 0.04);
-    --shadow-md: 0 16px 48px rgba(10, 22, 40, 0.08);
-    --shadow-lg: 0 32px 80px rgba(10, 22, 40, 0.12);
-    --transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    --navy: #071827;
+    --navy-2: #0b2438;
+    --blue: #1769aa;
+    --teal: #00a6a6;
+    --cyan: #43d6cf;
+
+    --white: #ffffff;
+    --offwhite: #f7fafc;
+    --ice: #edf7fa;
+
+    --text: #172433;
+    --muted: #647586;
+    --line: #dce7ee;
+
+    --shadow-sm: 0 8px 25px rgba(7, 24, 39, .06);
+    --shadow-lg: 0 25px 70px rgba(7, 24, 39, .12);
+
+    --radius: 22px;
+    --max: 1240px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg);
+    font-family: "DM Sans", sans-serif;
     color: var(--text);
+    background: var(--white);
     line-height: 1.7;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
-a { text-decoration: none; color: inherit; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
+body.menu-open {
+    overflow: hidden;
+}
 
-.container { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-/* =====================================================
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.container {
+    width: min(var(--max), calc(100% - 48px));
+    margin: auto;
+}
+
+.section {
+    padding: 115px 0;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--teal);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.section-label::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--teal);
+}
+
+.section-title {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+    color: var(--navy);
+    max-width: 760px;
+}
+
+.section-intro {
+    color: var(--muted);
+    max-width: 690px;
+    margin-top: 22px;
+    font-size: 1.05rem;
+}
+
+/* =========================================================
    HEADER
-===================================================== */
+   ========================================================= */
 
-header {
-    position: sticky;
-    top: 12px;
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    margin: 0 20px;
-    border-radius: 40px;
-    background: rgba(255,255,255,0.78);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.6);
-    box-shadow: 0 12px 40px rgba(10, 22, 40, 0.06);
-    transition: var(--transition);
+    padding: 18px 0;
+    transition: .3s ease;
 }
 
-header.scrolled {
-    background: rgba(255,255,255,0.92);
-    box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+.site-header.scrolled {
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 8px 30px rgba(7,24,39,.06);
+    padding: 11px 0;
 }
 
 .navbar {
-    height: 74px;
+    width: min(1320px, calc(100% - 36px));
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 28px;
 }
-
-/* =====================================================
-   BRAND WITH SVG LOGO
-===================================================== */
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 13px;
 }
 
-.brand-logo {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-    transition: var(--transition);
-}
-
-.brand-logo:hover {
-    transform: rotate(-8deg) scale(1.05);
+.brand img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
 }
 
 .brand-name {
-    font-size: 18px;
+    font-family: "Manrope", sans-serif;
     font-weight: 800;
-    letter-spacing: -0.5px;
+    letter-spacing: -.025em;
+    font-size: 1rem;
     color: var(--navy);
 }
 
-.brand-name span {
-    background: linear-gradient(135deg, var(--teal), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
 .brand-sub {
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--teal);
+    font-size: .68rem;
+    color: var(--muted);
+    letter-spacing: .12em;
     text-transform: uppercase;
 }
 
-/* =====================================================
-   DESKTOP NAV
-===================================================== */
-
-.desktop-nav {
+.nav-links {
     display: flex;
     align-items: center;
     gap: 34px;
 }
 
-.desktop-nav a {
-    font-size: 13px;
+.nav-links a {
+    font-size: .88rem;
     font-weight: 600;
-    color: #5A6F84;
+    color: #405160;
     position: relative;
-    transition: var(--transition);
-    letter-spacing: 0.2px;
+    transition: .25s;
 }
 
-.desktop-nav a::after {
+.nav-links a:hover {
+    color: var(--teal);
+}
+
+.nav-links a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -7px;
     width: 0;
-    height: 2.5px;
-    background: linear-gradient(90deg, var(--teal), var(--cyan));
-    border-radius: 4px;
-    transition: var(--transition);
+    height: 2px;
+    background: var(--teal);
+    transition: .25s;
 }
 
-.desktop-nav a:hover { color: var(--navy); }
-.desktop-nav a:hover::after { width: 100%; }
-.desktop-nav a.active { color: var(--navy); }
-.desktop-nav a.active::after { width: 100%; }
-
-/* =====================================================
-   HAMBURGER
-===================================================== */
-
-.menu-button {
-    display: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: rgba(10, 22, 40, 0.04);
-    position: relative;
-    transition: var(--transition);
+.nav-links a:hover::after {
+    width: 100%;
 }
 
-.menu-button:hover { background: rgba(10, 22, 40, 0.08); }
-
-.menu-button span {
-    position: absolute;
-    left: 10px;
-    width: 24px;
-    height: 2.5px;
+.nav-cta {
+    padding: 11px 18px;
+    border-radius: 50px;
     background: var(--navy);
-    border-radius: 4px;
-    transition: var(--transition);
+    color: white !important;
 }
 
-.menu-button span:nth-child(1) { top: 14px; }
-.menu-button span:nth-child(2) { top: 20px; }
-.menu-button span:nth-child(3) { top: 26px; }
+.nav-cta:hover {
+    background: var(--teal);
+}
 
-/* =====================================================
+.nav-cta::after {
+    display: none;
+}
+
+/* =========================================================
    MOBILE MENU
-===================================================== */
+   ========================================================= */
 
-.menu-overlay {
+.menu-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.9);
+    border-radius: 13px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+}
+
+.overlay {
     position: fixed;
     inset: 0;
-    background: rgba(10, 22, 40, 0.5);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: rgba(4,15,25,.45);
+    backdrop-filter: blur(4px);
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
+    transition: .3s;
     z-index: 1100;
 }
 
-.menu-overlay.active { opacity: 1; visibility: visible; }
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
 
-.mobile-menu {
+.mobile-drawer {
     position: fixed;
     top: 0;
-    right: -400px;
-    width: 340px;
+    right: 0;
     height: 100vh;
+    width: min(360px, 88%);
     background: white;
     z-index: 1200;
-    padding: 32px 28px;
-    box-shadow: -20px 0 60px rgba(0,0,0,0.08);
-    transition: right 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    display: flex;
-    flex-direction: column;
+    padding: 28px;
+    transform: translateX(100%);
+    transition: .35s cubic-bezier(.77,0,.18,1);
+    box-shadow: -20px 0 60px rgba(0,0,0,.15);
 }
 
-.mobile-menu.active { right: 0; }
+.mobile-drawer.active {
+    transform: translateX(0);
+}
 
-.mobile-menu-header {
+.drawer-head {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: 24px;
+    justify-content: space-between;
+    padding-bottom: 28px;
     border-bottom: 1px solid var(--line);
 }
 
-.mobile-menu-logo { height: 40px; width: auto; }
-
-.close-menu {
-    font-size: 32px;
-    line-height: 1;
-    color: var(--muted);
-    transition: var(--transition);
-    padding: 4px 8px;
-    border-radius: 8px;
+.drawer-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
-.close-menu:hover {
+.drawer-close {
+    border: 0;
+    background: var(--offwhite);
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.5rem;
     color: var(--navy);
-    background: rgba(10, 22, 40, 0.05);
 }
 
-.mobile-links {
+.drawer-links {
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
-    margin-top: 16px;
-    flex: 1;
 }
 
-.mobile-links a {
-    padding: 18px 6px;
-    color: var(--navy);
-    font-size: 18px;
-    font-weight: 600;
+.drawer-links a {
+    padding: 18px 0;
     border-bottom: 1px solid var(--line);
-    transition: var(--transition);
+    font-weight: 700;
+    color: var(--navy);
 }
 
-.mobile-links a:hover {
-    color: var(--teal);
-    padding-left: 12px;
-}
-
-.mobile-footer {
-    margin-top: auto;
-    padding-top: 24px;
-    font-size: 13px;
-    color: var(--muted);
-    border-top: 1px solid var(--line);
-}
-
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+   ========================================================= */
 
 .hero {
-    min-height: 740px;
+    min-height: 100vh;
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
     overflow: hidden;
     background:
-        radial-gradient(circle at 80% 20%, rgba(0, 180, 160, 0.12), transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(77, 212, 200, 0.06), transparent 40%),
-        linear-gradient(145deg, #FFFFFF 0%, #F0F5FA 55%, #E8F3F5 100%);
-    padding: 40px 0 60px;
+        radial-gradient(circle at 82% 28%, rgba(0,166,166,.12), transparent 28%),
+        radial-gradient(circle at 70% 75%, rgba(23,105,170,.10), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f5fafc 100%);
 }
 
 .hero::before {
     content: "";
     position: absolute;
-    inset: 0;
-    opacity: 0.2;
-    background-image:
-        linear-gradient(rgba(0, 180, 160, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 180, 160, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at 60% 40%, black 30%, transparent 70%);
+    width: 720px;
+    height: 720px;
+    border: 1px solid rgba(0,166,166,.10);
+    border-radius: 50%;
+    right: -280px;
+    top: 120px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgba(23,105,170,.08);
+    border-radius: 50%;
+    right: -170px;
+    top: 220px;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 50px;
-    align-items: center;
+    padding-top: 100px;
 }
 
-.hero-eyebrow {
-    display: inline-block;
-    background: rgba(0, 180, 160, 0.08);
-    padding: 6px 18px;
-    border-radius: 40px;
-    color: var(--teal);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .78rem;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    letter-spacing: .18em;
+    color: var(--teal);
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.eyebrow span {
+    width: 34px;
+    height: 1px;
+    background: var(--teal);
 }
 
 .hero h1 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(3.2rem, 6.5vw, 6.1rem);
+    line-height: .98;
+    letter-spacing: -.065em;
     color: var(--navy);
-    font-size: clamp(48px, 6.4vw, 82px);
-    line-height: 1.02;
-    letter-spacing: -3.5px;
-    max-width: 700px;
-    margin-bottom: 24px;
+    max-width: 780px;
 }
 
-.hero h1 span {
-    background: linear-gradient(135deg, var(--teal), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.hero h1 em {
+    color: var(--teal);
+    font-style: normal;
 }
 
 .hero-description {
-    max-width: 620px;
-    color: #4A5F72;
-    font-size: 18px;
-    margin-bottom: 36px;
-    line-height: 1.6;
+    max-width: 690px;
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 1.08rem;
 }
 
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
+    margin-top: 38px;
 }
 
-.button {
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 28px;
-    border-radius: 60px;
-    font-size: 13px;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 50px;
     font-weight: 700;
-    transition: var(--transition);
-    gap: 8px;
+    font-size: .9rem;
+    transition: .3s;
 }
 
-.button-primary {
-    color: white;
+.btn-primary {
     background: var(--navy);
-    box-shadow: 0 8px 24px rgba(10, 22, 40, 0.15);
+    color: white;
 }
 
-.button-primary:hover {
+.btn-primary:hover {
     background: var(--teal);
-    transform: translateY(-3px);
-    box-shadow: 0 14px 36px rgba(0, 180, 160, 0.25);
+    transform: translateY(-2px);
 }
 
-.button-secondary {
-    background: white;
+.btn-secondary {
     border: 1px solid var(--line);
+    background: white;
     color: var(--navy);
 }
 
-.button-secondary:hover {
+.btn-secondary:hover {
     border-color: var(--teal);
     color: var(--teal);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-sm);
 }
 
-/* =====================================================
-   HERO VISUAL
-===================================================== */
-
 .hero-visual {
-    height: 400px;
+    position: relative;
+    min-height: 540px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.hero-logo {
+    width: min(420px, 75%);
     position: relative;
+    z-index: 3;
+    filter: drop-shadow(0 25px 45px rgba(0,80,100,.13));
 }
 
-.hero-visual svg {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(0,166,166,.20);
+    border-radius: 50%;
 }
 
-/* =====================================================
-   SECTION GLOBAL
-===================================================== */
-
-section { padding: 110px 0; }
-
-.section-label {
-    display: inline-block;
-    background: rgba(0, 180, 160, 0.07);
-    padding: 4px 18px;
-    border-radius: 40px;
-    color: var(--teal);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
+.orbit.one {
+    width: 470px;
+    height: 470px;
+    animation: rotate 25s linear infinite;
 }
 
-.section-title {
-    color: var(--navy);
-    font-size: clamp(32px, 4.2vw, 48px);
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    margin-bottom: 16px;
+.orbit.two {
+    width: 340px;
+    height: 340px;
+    border-color: rgba(23,105,170,.17);
+    animation: rotateReverse 19s linear infinite;
 }
 
-.section-description {
-    max-width: 700px;
-    color: var(--muted);
-    font-size: 16px;
-    margin-bottom: 50px;
+.orbit::before,
+.orbit::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--teal);
 }
 
-/* =====================================================
-   RESEARCH CARDS WITH IMAGES
-===================================================== */
+.orbit::before {
+    top: 18%;
+    left: -4px;
+}
+
+.orbit::after {
+    right: 10%;
+    bottom: -4px;
+    background: var(--blue);
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateReverse {
+    to { transform: rotate(-360deg); }
+}
+
+/* =========================================================
+   RESEARCH
+   ========================================================= */
+
+.research {
+    background: var(--white);
+}
 
 .research-grid {
+    margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--grid-gap, 20px);
+    gap: 18px;
 }
 
 .research-card {
-    background: white;
+    padding: 32px 27px;
+    border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 32px 26px 30px;
+    background: white;
+    min-height: 265px;
+    transition: .35s;
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--line);
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-    text-align: center;
 }
 
 .research-card::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--teal), var(--cyan));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: var(--transition);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--ice);
+    right: -35px;
+    top: -35px;
+    transition: .4s;
 }
 
 .research-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 180, 160, 0.2);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0,166,166,.35);
 }
 
-.research-card:hover::before { transform: scaleX(1); }
+.research-card:hover::before {
+    transform: scale(1.8);
+}
 
-.research-number {
-    color: #BAC8D6;
-    font-size: 11px;
+.card-number {
+    font-size: .72rem;
     font-weight: 800;
-    letter-spacing: 1.5px;
-    margin-bottom: 16px;
-}
-
-.research-icon {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 14px;
-    display: block;
-    object-fit: contain;
+    color: var(--teal);
+    letter-spacing: .12em;
 }
 
 .research-card h3 {
-    color: var(--navy);
-    font-size: 17px;
-    margin-bottom: 8px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin-top: 32px;
+    position: relative;
+    z-index: 2;
 }
 
 .research-card p {
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: .88rem;
+    margin-top: 14px;
+    position: relative;
+    z-index: 2;
 }
 
-/* =====================================================
+/* =========================================================
    PROGRAMS
-===================================================== */
+   ========================================================= */
 
 .programs {
     background: var(--navy);
+    color: white;
     position: relative;
     overflow: hidden;
 }
@@ -541,406 +612,365 @@ section { padding: 110px 0; }
     position: absolute;
     width: 600px;
     height: 600px;
+    border: 1px solid rgba(67,214,207,.08);
     border-radius: 50%;
-    border: 1px solid rgba(77, 212, 200, 0.04);
     right: -200px;
-    top: -150px;
+    top: -220px;
 }
 
-.programs .section-title { color: white; }
-.programs .section-description { color: #AFC0CF; }
+.programs .section-title {
+    color: white;
+}
+
+.programs .section-intro {
+    color: #a9bdcc;
+}
 
 .program-grid {
+    margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--grid-gap, 20px);
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,.12);
+    border-left: 1px solid rgba(255,255,255,.12);
 }
 
-.program-card {
-    border: 1px solid rgba(255,255,255,0.06);
-    background: rgba(255,255,255,0.02);
-    border-radius: var(--radius);
-    padding: 34px 30px;
-    transition: var(--transition);
-    backdrop-filter: blur(2px);
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+.program {
+    padding: 35px 28px;
+    min-height: 230px;
+    border-right: 1px solid rgba(255,255,255,.12);
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    transition: .3s;
 }
 
-.program-card:hover {
-    border-color: rgba(77, 212, 200, 0.25);
-    background: rgba(77, 212, 200, 0.05);
-    transform: translateY(-6px);
+.program:hover {
+    background: rgba(255,255,255,.035);
 }
 
-.program-icon {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-    object-fit: contain;
-}
-
-.program-number {
+.program-index {
     color: var(--cyan);
-    font-size: 10px;
+    font-size: .75rem;
     font-weight: 800;
-    letter-spacing: 2.5px;
-    margin-bottom: 8px;
-    opacity: 0.6;
 }
 
-.program-card h3 {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 8px;
+.program h3 {
+    margin-top: 40px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.15rem;
 }
 
-.program-card p {
-    color: #AFC0CF;
-    font-size: 14px;
-    line-height: 1.6;
+.program p {
+    color: #8fa7b7;
+    font-size: .86rem;
+    margin-top: 12px;
 }
 
-/* =====================================================
+/* =========================================================
    PROJECTS
-===================================================== */
+   ========================================================= */
 
-.projects { background: white; }
+.projects {
+    background: var(--offwhite);
+}
 
-.project-grid {
+.projects-grid {
+    margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 25px;
 }
 
 .project-card {
-    border-radius: var(--radius);
-    overflow: hidden;
     background: white;
     border: 1px solid var(--line);
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    border-radius: 28px;
+    padding: 35px;
+    transition: .35s;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(0, 180, 160, 0.12);
 }
 
-.project-banner {
-    height: 160px;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.project-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(10,22,40,0.5), transparent);
-}
-
-.project-label {
-    position: absolute;
-    left: 28px;
-    bottom: 22px;
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.9;
-    z-index: 2;
-}
-
-.project-content { padding: 30px 28px; }
 
 .project-type {
+    font-size: .7rem;
     color: var(--teal);
-    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 1.8px;
+    letter-spacing: .12em;
     text-transform: uppercase;
-    margin-bottom: 8px;
+}
+
+.project-status {
+    font-size: .7rem;
+    padding: 6px 10px;
+    border-radius: 30px;
+    background: var(--ice);
+    color: var(--blue);
+    font-weight: 700;
 }
 
 .project-card h3 {
-    color: var(--navy);
-    font-size: 26px;
-    margin-bottom: 10px;
-    letter-spacing: -0.5px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.75rem;
+    margin-top: 30px;
+    letter-spacing: -.03em;
 }
 
 .project-card p {
     color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 22px;
-    line-height: 1.6;
+    margin-top: 14px;
 }
 
 .project-link {
-    color: var(--navy);
-    font-size: 13px;
-    font-weight: 700;
-    transition: var(--transition);
     display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    margin-top: 25px;
+    font-size: .85rem;
+    font-weight: 800;
+    color: var(--navy);
 }
 
 .project-link:hover {
     color: var(--teal);
-    gap: 10px;
 }
 
-/* =====================================================
+/* =========================================================
    PUBLICATIONS
-===================================================== */
+   ========================================================= */
 
-.publications { background: var(--bg); }
+.publications {
+    background: white;
+}
 
 .publication-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    margin-top: 55px;
+    border-top: 1px solid var(--line);
 }
 
 .publication {
-    background: white;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 22px 28px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 25px;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
 }
 
-.publication:hover {
-    border-color: rgba(0, 180, 160, 0.2);
-    transform: translateX(6px);
-    box-shadow: var(--shadow-md);
+.pub-year {
+    color: var(--teal);
+    font-weight: 800;
+    font-size: .8rem;
 }
 
 .publication h3 {
-    color: var(--navy);
-    font-size: 16px;
-    margin-bottom: 3px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.05rem;
 }
 
 .publication p {
     color: var(--muted);
-    font-size: 12px;
+    font-size: .83rem;
+    margin-top: 5px;
 }
 
-.publication a {
-    color: var(--teal);
-    font-size: 12px;
-    font-weight: 700;
-    white-space: nowrap;
-    transition: var(--transition);
+.pub-arrow {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
 }
 
-.publication a:hover { color: var(--navy); }
-
-/* =====================================================
+/* =========================================================
    INFRASTRUCTURE
-===================================================== */
+   ========================================================= */
 
-.infrastructure { background: white; }
+.infrastructure {
+    background: var(--ice);
+}
 
 .infrastructure-grid {
+    margin-top: 55px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--grid-gap, 20px);
+    gap: 16px;
 }
 
 .infrastructure-card {
-    background: var(--bg);
-    border-radius: 16px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: var(--transition);
-    border: 1px solid transparent;
+    padding: 27px;
+    background: rgba(255,255,255,.7);
+    border: 1px solid rgba(23,105,170,.10);
+    border-radius: 20px;
+    transition: .3s;
 }
 
 .infrastructure-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--line);
     background: white;
-    box-shadow: var(--shadow-md);
-}
-
-.infrastructure-symbol {
-    width: 44px;
-    height: 44px;
-    margin: 0 auto 12px;
-    display: block;
-    object-fit: contain;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-sm);
 }
 
 .infrastructure-card h3 {
-    color: var(--navy);
-    font-size: 16px;
-    margin-bottom: 4px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
 }
 
 .infrastructure-card p {
     color: var(--muted);
-    font-size: 12px;
+    font-size: .82rem;
+    margin-top: 8px;
 }
 
-/* =====================================================
+/* =========================================================
    ABOUT
-===================================================== */
+   ========================================================= */
 
 .about {
-    background: linear-gradient(135deg, #F0F5FA, #E8F3F5);
+    background: white;
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
-    gap: 70px;
-    align-items: center;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 90px;
+    align-items: start;
 }
 
-.about-text p {
-    color: var(--muted);
-    font-size: 15px;
-    margin-bottom: 18px;
-    max-width: 600px;
-    line-height: 1.7;
-}
-
-.about-panel {
-    background: white;
+.about-mark {
+    width: 170px;
+    height: 170px;
     border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 38px 36px;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    transition: var(--transition);
+    border-radius: 35px;
+    display: grid;
+    place-items: center;
+    background: var(--offwhite);
 }
 
-.about-panel:hover { box-shadow: var(--shadow-lg); }
-
-.about-panel::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 30px;
-    width: 4px;
-    height: 60px;
-    background: linear-gradient(var(--teal), var(--cyan));
-    border-radius: 0 4px 4px 0;
+.about-mark img {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
 }
 
-.about-panel h3 {
-    color: var(--navy);
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.about-panel p {
+.about-copy p {
     color: var(--muted);
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 18px;
 }
 
-/* =====================================================
+.about-copy strong {
+    color: var(--navy);
+}
+
+/* =========================================================
    CONTACT
-===================================================== */
+   ========================================================= */
 
 .contact {
     background: var(--navy);
-    text-align: center;
+    color: white;
     position: relative;
     overflow: hidden;
 }
 
-.contact::after {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: rgba(0, 180, 160, 0.02);
-    bottom: -250px;
-    left: 50%;
-    transform: translateX(-50%);
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr .75fr;
+    gap: 90px;
+    align-items: end;
 }
 
-.contact .section-label {
-    background: rgba(77, 212, 200, 0.1);
-    color: var(--cyan);
-}
-
-.contact .section-title { color: white; }
-.contact .section-description {
-    color: #B3C3D1;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-button {
-    display: inline-flex;
-    padding: 16px 34px;
-    border-radius: 60px;
-    background: linear-gradient(135deg, var(--teal), var(--cyan));
+.contact .section-title {
     color: white;
-    font-size: 14px;
-    font-weight: 700;
-    transition: var(--transition);
-    box-shadow: 0 8px 24px rgba(0, 180, 160, 0.25);
 }
 
-.contact-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 180, 160, 0.35);
-    color: var(--navy);
+.contact .section-intro {
+    color: #a9bdcc;
 }
 
-/* =====================================================
+.contact-card {
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 22px;
+    background: rgba(255,255,255,.035);
+}
+
+.contact-item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.contact-item:last-child {
+    border-bottom: 0;
+}
+
+.contact-item span {
+    display: block;
+    font-size: .7rem;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 800;
+}
+
+.contact-item a {
+    display: inline-block;
+    margin-top: 6px;
+    color: white;
+}
+
+/* =========================================================
    FOOTER
-===================================================== */
+   ========================================================= */
 
 footer {
-    background: #060F1A;
-    color: #6A7F94;
-    text-align: center;
-    padding: 32px;
-    font-size: 13px;
-    letter-spacing: 0.3px;
+    background: #04121e;
+    color: #8ca1b0;
+    padding: 28px 0;
 }
 
-footer .footer-logo {
-    height: 32px;
-    width: auto;
-    opacity: 0.3;
-    margin-bottom: 12px;
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-/* =====================================================
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.footer-brand strong {
+    color: white;
+    font-size: .85rem;
+}
+
+.footer-copy {
+    font-size: .75rem;
+}
+
+/* =========================================================
    REVEAL
-===================================================== */
+   ========================================================= */
 
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(25px);
+    transition: .8s ease;
 }
 
 .reveal.visible {
@@ -948,573 +978,941 @@ footer .footer-logo {
     transform: translateY(0);
 }
 
-/* =====================================================
+/* =========================================================
    RESPONSIVE
-===================================================== */
+   ========================================================= */
 
-@media (max-width: 1024px) {
-    .desktop-nav { display: none; }
-    .menu-button { display: block; }
+@media (max-width: 1050px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-visual {
+        min-height: 400px;
+    }
+
+    .research-grid,
+    .program-grid,
+    .infrastructure-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        width: min(100% - 30px, var(--max));
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .brand-sub {
+        display: none;
+    }
+
+    .brand img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-bottom: 70px;
+    }
+
     .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+        padding-top: 150px;
     }
-    .hero-description { margin-left: auto; margin-right: auto; }
-    .hero-actions { justify-content: center; }
-    .hero-visual { height: 280px; }
-    .research-grid { grid-template-columns: repeat(2, 1fr); }
-    .infrastructure-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .program-grid { grid-template-columns: 1fr; }
-}
 
-@media (max-width: 768px) {
-    header { margin: 0 12px; border-radius: 28px; top: 8px; }
-    .navbar { padding: 0 16px; height: 64px; }
-    .brand-logo { width: 38px; height: 38px; }
-    .brand-name { font-size: 14px; }
-    .brand-sub { font-size: 7px; }
-    .hero { min-height: 560px; padding: 20px 0 40px; }
-    .hero h1 { font-size: 38px; letter-spacing: -2px; }
-    .hero-description { font-size: 15px; }
-    .hero-visual { height: 200px; }
-    .hero-visual svg { max-width: 280px; }
-    section { padding: 60px 0; }
-    .research-grid, .project-grid, .infrastructure-grid {
+    .hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4.2rem);
+    }
+
+    .hero-description {
+        font-size: .98rem;
+    }
+
+    .hero-visual {
+        min-height: 330px;
+    }
+
+    .hero-logo {
+        width: 230px;
+    }
+
+    .orbit.one {
+        width: 320px;
+        height: 320px;
+    }
+
+    .orbit.two {
+        width: 235px;
+        height: 235px;
+    }
+
+    .research-grid,
+    .program-grid,
+    .projects-grid,
+    .infrastructure-grid {
         grid-template-columns: 1fr;
     }
-    .project-grid { gap: 20px; }
-    .publication { flex-direction: column; align-items: flex-start; }
-    .mobile-menu { width: 290px; }
-    .program-card { flex-direction: column; align-items: center; text-align: center; }
-}
 
-@media (max-width: 480px) {
-    .container { width: min(100% - 24px, 1200px); }
-    .hero h1 { font-size: 32px; }
-    .brand-logo { width: 32px; height: 32px; }
-    .brand-name { font-size: 12px; }
-}
+    .publication {
+        grid-template-columns: 65px 1fr auto;
+        gap: 14px;
+    }
 
-/* =====================================================
-   ACCESSIBILITY
-===================================================== */
+    .publication h3 {
+        font-size: .95rem;
+    }
+
+    .pub-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
 
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+
+    html {
+        scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
     }
 }
+
 </style>
 </head>
+
 <body>
 
-<!-- =====================================================
-     HEADER با لوگوی SVG
-===================================================== -->
-<header>
-    <div class="container">
-        <nav class="navbar">
-            <a href="#home" class="brand">
-                <!-- لوگوی SVG حرفه‌ای -->
-                <svg class="brand-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="10" width="80" height="80" rx="20" fill="#0A1628"/>
-                    <path d="M28 40L50 22L72 40V68L50 86L28 68V40Z" stroke="white" stroke-width="2.5" fill="none"/>
-                    <path d="M40 48L50 40L60 48V62L50 70L40 62V48Z" fill="#00B4A0" opacity="0.8"/>
-                    <text x="50" y="66" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Arial">G</text>
-                    <text x="50" y="82" text-anchor="middle" fill="#4DD4C8" font-size="7" font-weight="600" letter-spacing="1.5">GFI</text>
-                </svg>
-                <div class="brand-text">
-                    <div class="brand-name">Genomic <span>Foresight</span></div>
-                    <div class="brand-sub">Institute</div>
-                </div>
-            </a>
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
 
-            <div class="desktop-nav">
-                <a href="#home" class="active">Home</a>
-                <a href="#research">Research</a>
-                <a href="#projects">Projects</a>
-                <a href="#publications">Publications</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+<header class="site-header" id="siteHeader">
+
+    <nav class="navbar">
+
+        <a href="#home" class="brand">
+            <img src="gfi-logo.png" alt="Genomic Foresight Institute logo">
+
+            <div class="brand-text">
+                <span class="brand-name">Genomic Foresight Institute</span>
+                <span class="brand-sub">Independent Research Initiative</span>
             </div>
+        </a>
 
-            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-    </div>
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Publications</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-cta">Contact</a>
+        </div>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+
 </header>
 
-<!-- =====================================================
-     MOBILE MENU
-===================================================== -->
-<div class="menu-overlay" id="menuOverlay"></div>
 
-<aside class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-        <svg viewBox="0 0 100 100" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="10" width="80" height="80" rx="20" fill="#0A1628"/>
-            <path d="M28 40L50 22L72 40V68L50 86L28 68V40Z" stroke="white" stroke-width="2.5" fill="none"/>
-            <path d="M40 48L50 40L60 48V62L50 70L40 62V48Z" fill="#00B4A0" opacity="0.8"/>
-            <text x="50" y="66" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Arial">G</text>
-        </svg>
-        <button class="close-menu" id="closeMenu" aria-label="Close menu">×</button>
+<!-- ======================================================
+     MOBILE DRAWER
+     ====================================================== -->
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="mobile-drawer" id="mobileDrawer">
+
+    <div class="drawer-head">
+
+        <img
+            src="gfi-logo.png"
+            class="drawer-logo"
+            alt="GFI logo">
+
+        <button
+            class="drawer-close"
+            id="drawerClose"
+            aria-label="Close navigation">
+            ×
+        </button>
+
     </div>
-    <nav class="mobile-links">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+    <nav class="drawer-links">
+        <a href="#home">خانه</a>
+        <a href="#research">پژوهش</a>
+        <a href="#projects">پروژه‌ها</a>
+        <a href="#publications">مقالات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">ارتباط با ما</a>
     </nav>
-    <div class="mobile-footer">© 2026 Genomic Foresight Institute</div>
+
 </aside>
 
-<!-- =====================================================
+
+<!-- ======================================================
      HERO
-===================================================== -->
-<section class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
-            <div class="reveal">
-                <div class="hero-eyebrow">Genomic Foresight Institute</div>
-                <h1>Computational <span>foresight</span> for biology.</h1>
-                <p class="hero-description">
-                    An independent research institute exploring computational biology,
-                    artificial intelligence, genomics, systems biology, neuroscience,
-                    and biomedical data science.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="button button-primary">Explore Research</a>
-                    <a href="#about" class="button button-secondary">About GFI</a>
+     ====================================================== -->
+
+<main id="home">
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-grid">
+
+            <div class="hero-copy reveal">
+
+                <div class="eyebrow">
+                    <span></span>
+                    Independent Research Institute
                 </div>
+
+                <h1>
+                    Computational intelligence
+                    <em>for complex biology.</em>
+                </h1>
+
+                <p class="hero-description">
+                    Genomic Foresight Institute develops computational
+                    approaches for understanding biological systems,
+                    integrating artificial intelligence, genomics,
+                    systems biology, neuroscience, and biomedical data.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#research" class="btn btn-primary">
+                        Explore Research →
+                    </a>
+
+                    <a href="#projects" class="btn btn-secondary">
+                        View Projects
+                    </a>
+
+                </div>
+
             </div>
+
 
             <div class="hero-visual reveal">
-                <svg viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Hexagon background -->
-                    <polygon points="200,20 360,95 360,245 200,320 40,245 40,95" stroke="#00B4A0" stroke-width="1.5" fill="rgba(0,180,160,0.03)"/>
-                    <polygon points="200,50 330,110 330,230 200,290 70,230 70,110" stroke="#4DD4C8" stroke-width="1" fill="rgba(77,212,200,0.04)"/>
-                    
-                    <!-- Inner hex -->
-                    <polygon points="200,80 290,125 290,215 200,260 110,215 110,125" fill="white" stroke="#00B4A0" stroke-width="2" opacity="0.9"/>
-                    
-                    <!-- DNA helix lines -->
-                    <path d="M140 140C160 130 180 150 200 140C220 130 240 150 260 140" stroke="#00B4A0" stroke-width="2" opacity="0.6"/>
-                    <path d="M140 160C160 150 180 170 200 160C220 150 240 170 260 160" stroke="#00B4A0" stroke-width="2" opacity="0.4"/>
-                    <path d="M140 180C160 170 180 190 200 180C220 170 240 190 260 180" stroke="#00B4A0" stroke-width="2" opacity="0.3"/>
-                    
-                    <!-- Nodes -->
-                    <circle cx="200" cy="170" r="18" fill="#0A1628"/>
-                    <text x="200" y="175" text-anchor="middle" fill="white" font-size="18" font-weight="800">GFI</text>
-                    
-                    <!-- Orbiting dots -->
-                    <circle cx="200" cy="95" r="4" fill="#4DD4C8"/>
-                    <circle cx="290" cy="170" r="4" fill="#00B4A0"/>
-                    <circle cx="200" cy="245" r="4" fill="#4DD4C8"/>
-                    <circle cx="110" cy="170" r="4" fill="#00B4A0"/>
-                    
-                    <!-- Connecting lines -->
-                    <line x1="200" y1="99" x2="200" y2="152" stroke="#4DD4C8" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    <line x1="286" y1="170" x2="218" y2="170" stroke="#00B4A0" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    <line x1="200" y1="241" x2="200" y2="188" stroke="#4DD4C8" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    <line x1="114" y1="170" x2="182" y2="170" stroke="#00B4A0" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-                    
-                    <text x="200" y="310" text-anchor="middle" fill="#6A7F94" font-size="10" font-weight="600" letter-spacing="3">SCIENCE · SYSTEMS · AI</text>
-                </svg>
+
+                <div class="orbit one"></div>
+                <div class="orbit two"></div>
+
+                <img
+                    src="gfi-logo.png"
+                    alt="Genomic Foresight Institute"
+                    class="hero-logo">
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
-     RESEARCH با تصاویر جایگزین ایموجی
-===================================================== -->
-<section id="research">
+
+<!-- ======================================================
+     RESEARCH
+     ====================================================== -->
+
+<section class="section research" id="research">
+
     <div class="container">
+
         <div class="reveal">
-            <div class="section-label">Research</div>
-            <h2 class="section-title">Understanding biology through computation.</h2>
-            <p class="section-description">
-                GFI develops computational approaches for studying complex biological systems,
-                high-dimensional biomedical data, and disease mechanisms.
+
+            <div class="section-label">
+                Research
+            </div>
+
+            <h2 class="section-title">
+                Computational approaches to biological discovery.
+            </h2>
+
+            <p class="section-intro">
+                GFI works at the intersection of computation,
+                artificial intelligence, and complex biological systems.
             </p>
+
         </div>
+
 
         <div class="research-grid">
-            <div class="research-card reveal">
-                <div class="research-number">01</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F3F5'/%3E%3Cpath d='M30 12L42 22V38L30 48L18 38V22L30 12Z' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Cpath d='M25 28L30 24L35 28V36L30 40L25 36V28Z' fill='%2300B4A0' opacity='0.3'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='%2300B4A0' stroke-width='1.5'/%3E%3Cpath d='M22 22L27 27M38 22L33 27M22 38L27 33M38 38L33 33' stroke='%234DD4C8' stroke-width='1.5'/%3E%3C/svg%3E" 
-                     alt="Computational Biology" class="research-icon">
+
+            <article class="research-card reveal">
+                <div class="card-number">01</div>
                 <h3>Computational Biology</h3>
-                <p>Mathematical and computational approaches for understanding biological systems.</p>
-            </div>
+                <p>
+                    Mathematical and computational models for
+                    understanding biological mechanisms and emergent
+                    system behavior.
+                </p>
+            </article>
 
-            <div class="research-card reveal">
-                <div class="research-number">02</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F3F5'/%3E%3Ccircle cx='30' cy='24' r='8' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='20' cy='44' r='8' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='40' cy='44' r='8' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Cline x1='27' y1='28' x2='23' y2='38' stroke='%2300B4A0' stroke-width='1.5'/%3E%3Cline x1='33' y1='28' x2='37' y2='38' stroke='%2300B4A0' stroke-width='1.5'/%3E%3C/svg%3E" 
-                     alt="AI & Machine Learning" class="research-icon">
+            <article class="research-card reveal">
+                <div class="card-number">02</div>
                 <h3>AI & Machine Learning</h3>
-                <p>Machine learning methods for biomedical discovery and biological representation learning.</p>
-            </div>
+                <p>
+                    Representation learning, foundation models,
+                    graph learning, and AI methods for biomedical data.
+                </p>
+            </article>
 
-            <div class="research-card reveal">
-                <div class="research-number">03</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F3F5'/%3E%3Cpath d='M30 12L42 22V38L30 48L18 38V22L30 12Z' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 30H38' stroke='%2300B4A0' stroke-width='1.5'/%3E%3Cpath d='M24 34H36' stroke='%234DD4C8' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='26' r='2' fill='%2300B4A0'/%3E%3Ccircle cx='26' cy='33' r='2' fill='%234DD4C8'/%3E%3Ccircle cx='34' cy='33' r='2' fill='%234DD4C8'/%3E%3C/svg%3E" 
-                     alt="Genomics & Systems Biology" class="research-icon">
+            <article class="research-card reveal">
+                <div class="card-number">03</div>
                 <h3>Genomics & Systems Biology</h3>
-                <p>Integrative analysis of genomic information and complex biological networks.</p>
-            </div>
+                <p>
+                    Integrative analysis of genomic information,
+                    regulatory networks, and molecular systems.
+                </p>
+            </article>
 
-            <div class="research-card reveal">
-                <div class="research-number">04</div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='12' fill='%23E8F3F5'/%3E%3Ccircle cx='30' cy='30' r='18' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 22C26 18 34 18 38 22' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 38C26 42 34 42 38 38' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='30' cy='30' r='4' fill='%2300B4A0' opacity='0.3'/%3E%3Ccircle cx='30' cy='30' r='2' fill='%2300B4A0'/%3E%3C/svg%3E" 
-                     alt="Neuroscience" class="research-icon">
-                <h3>Neuroscience & Biomedical Data Science</h3>
-                <p>Computational approaches to brain data, disease mechanisms, and biomedical systems.</p>
-            </div>
+            <article class="research-card reveal">
+                <div class="card-number">04</div>
+                <h3>Neuroscience & Biomedical Data</h3>
+                <p>
+                    Computational approaches for complex brain and
+                    biomedical datasets across multiple scales.
+                </p>
+            </article>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
+
+<!-- ======================================================
      PROGRAMS
-===================================================== -->
-<section class="programs">
+     ====================================================== -->
+
+<section class="section programs">
+
     <div class="container">
+
         <div class="reveal">
-            <div class="section-label">Research Programs</div>
-            <h2 class="section-title">Interdisciplinary directions.</h2>
-            <p class="section-description">
-                GFI connects computational methods, artificial intelligence, mathematics,
-                and biological science across emerging research programs.
+
+            <div class="section-label">
+                Research Programs
+            </div>
+
+            <h2 class="section-title">
+                Four directions. One computational vision.
+            </h2>
+
+            <p class="section-intro">
+                Research programs connect methodological development
+                with biological questions across scales.
             </p>
+
         </div>
+
 
         <div class="program-grid">
-            <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(77,212,200,0.08)'/%3E%3Cpath d='M24 12L34 20V30L24 38L14 30V20L24 12Z' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='24' cy='25' r='5' fill='%234DD4C8' opacity='0.2'/%3E%3C/svg%3E" 
-                     alt="Biological Representation Learning" class="program-icon">
-                <div>
-                    <div class="program-number">PROGRAM 01</div>
-                    <h3>Biological Representation Learning</h3>
-                    <p>Learning compact, transferable representations from complex biological and biomedical datasets.</p>
-                </div>
-            </div>
 
-            <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(77,212,200,0.08)'/%3E%3Crect x='14' y='18' width='20' height='20' rx='4' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Cpath d='M24 14V22M24 34V38' stroke='%234DD4C8' stroke-width='1.5'/%3E%3C/svg%3E" 
-                     alt="Genomic AI" class="program-icon">
-                <div>
-                    <div class="program-number">PROGRAM 02</div>
-                    <h3>Genomic AI</h3>
-                    <p>Foundation models, language models, and machine learning for genomic interpretation.</p>
-                </div>
-            </div>
+            <article class="program reveal">
+                <div class="program-index">01</div>
+                <h3>Biological Representation Learning</h3>
+                <p>
+                    Learning compact and meaningful representations
+                    from high-dimensional biological data.
+                </p>
+            </article>
 
-            <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(77,212,200,0.08)'/%3E%3Ccircle cx='16' cy='24' r='6' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='32' cy='24' r='6' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Cline x1='22' y1='24' x2='26' y2='24' stroke='%234DD4C8' stroke-width='1.5'/%3E%3C/svg%3E" 
-                     alt="Systems Biology" class="program-icon">
-                <div>
-                    <div class="program-number">PROGRAM 03</div>
-                    <h3>Systems Biology</h3>
-                    <p>Mathematical and computational modeling of regulatory networks and emergent behavior.</p>
-                </div>
-            </div>
+            <article class="program reveal">
+                <div class="program-index">02</div>
+                <h3>Genomic AI</h3>
+                <p>
+                    AI systems for genomic interpretation,
+                    variant reasoning, and biological language models.
+                </p>
+            </article>
 
-            <div class="program-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='rgba(77,212,200,0.08)'/%3E%3Ccircle cx='24' cy='24' r='14' stroke='%234DD4C8' stroke-width='1.5' fill='none'/%3E%3Cpath d='M18 18C20 16 28 16 30 18' stroke='%234DD4C8' stroke-width='1.5'/%3E%3C/svg%3E" 
-                     alt="Computational Neuroscience" class="program-icon">
-                <div>
-                    <div class="program-number">PROGRAM 04</div>
-                    <h3>Computational Neuroscience</h3>
-                    <p>Data-driven and mechanistic approaches for understanding complex neural systems.</p>
-                </div>
-            </div>
+            <article class="program reveal">
+                <div class="program-index">03</div>
+                <h3>Systems Biology</h3>
+                <p>
+                    Modeling interactions, dynamics, networks,
+                    and emergent biological states.
+                </p>
+            </article>
+
+            <article class="program reveal">
+                <div class="program-index">04</div>
+                <h3>Computational Neuroscience</h3>
+                <p>
+                    Computational models and machine learning
+                    approaches for understanding brain data.
+                </p>
+            </article>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
+
+<!-- ======================================================
      PROJECTS
-===================================================== -->
-<section class="projects" id="projects">
+     ====================================================== -->
+
+<section class="section projects" id="projects">
+
     <div class="container">
+
         <div class="reveal">
-            <div class="section-label">Featured Research</div>
-            <h2 class="section-title">Selected computational projects.</h2>
-            <p class="section-description">
-                Research prototypes and computational frameworks developed within the GFI research portfolio.
-            </p>
+
+            <div class="section-label">
+                Featured Projects
+            </div>
+
+            <h2 class="section-title">
+                Research prototypes and computational frameworks.
+            </h2>
+
         </div>
 
-        <div class="project-grid">
-            <article class="project-card reveal">
-                <div class="project-banner">
-                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center" alt="DNA research">
-                    <div class="project-label">Biomedical AI · Transcriptomics</div>
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Research Prototype</div>
-                    <h3>OmniLatent</h3>
-                    <p>
-                        An ongoing research prototype exploring latent representation learning for
-                        high-dimensional biomedical transcriptomic data, with an initial evaluation on
-                        TCGA-BRCA RNA-seq data.
-                    </p>
-                    <a href="https://github.com/AIResearcher20/OmniLatent" target="_blank" rel="noopener noreferrer" class="project-link">
-                        View Research Repository →
-                    </a>
-                </div>
-            </article>
+
+        <div class="projects-grid">
 
             <article class="project-card reveal">
-                <div class="project-banner">
-                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&h=400&fit=crop&crop=center" alt="AI research">
-                    <div class="project-label">Genomic AI · Biomedical LLM</div>
+
+                <div class="project-meta">
+
+                    <span class="project-type">
+                        Biomedical AI · Cancer Transcriptomics
+                    </span>
+
+                    <span class="project-status">
+                        Research Prototype
+                    </span>
+
                 </div>
-                <div class="project-content">
-                    <div class="project-type">Reproducible Research Framework</div>
-                    <h3>BioGPT-ClinVar</h3>
-                    <p>
-                        A reproducible framework exploring parameter-efficient adaptation of biomedical
-                        language models for genomic variant interpretation using ClinVar data.
-                    </p>
-                    <a href="https://github.com/AIResearcher20/biogpt-clinvar" target="_blank" rel="noopener noreferrer" class="project-link">
-                        View Research Repository →
-                    </a>
-                </div>
+
+                <h3>OmniLatent</h3>
+
+                <p>
+                    An ongoing research prototype exploring latent
+                    representation learning for high-dimensional
+                    biomedical transcriptomic data, with an initial
+                    evaluation on TCGA-BRCA RNA-seq data.
+                </p>
+
+                <a
+                    class="project-link"
+                    href="https://github.com/AIResearcher20/OmniLatent"
+                    target="_blank"
+                    rel="noopener">
+                    Explore project →
+                </a>
+
             </article>
+
+
+            <article class="project-card reveal">
+
+                <div class="project-meta">
+
+                    <span class="project-type">
+                        Genomic AI · Biomedical LLM
+                    </span>
+
+                    <span class="project-status">
+                        Research Framework
+                    </span>
+
+                </div>
+
+                <h3>BioGPT-ClinVar</h3>
+
+                <p>
+                    A reproducible framework exploring parameter-efficient
+                    adaptation of biomedical language models for genomic
+                    variant interpretation using ClinVar data.
+                </p>
+
+                <a
+                    class="project-link"
+                    href="https://github.com/AIResearcher20/biogpt-clinvar"
+                    target="_blank"
+                    rel="noopener">
+                    Explore project →
+                </a>
+
+            </article>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
+
+<!-- ======================================================
      PUBLICATIONS
-===================================================== -->
-<section class="publications" id="publications">
+     ====================================================== -->
+
+<section class="section publications" id="publications">
+
     <div class="container">
+
         <div class="reveal">
-            <div class="section-label">Publications</div>
-            <h2 class="section-title">Research & scientific literature.</h2>
-            <p class="section-description">
-                A growing collection of GFI research, preprints, and selected scientific literature.
+
+            <div class="section-label">
+                Publications
+            </div>
+
+            <h2 class="section-title">
+                Research, preprints, and scientific work.
+            </h2>
+
+            <p class="section-intro">
+                Selected research outputs and manuscripts emerging
+                from the GFI research program.
             </p>
+
         </div>
+
 
         <div class="publication-list">
-            <div class="publication reveal">
-                <div>
-                    <h3>GFI Research</h3>
-                    <p>Research produced within the GFI portfolio.</p>
+
+            <article class="publication reveal">
+
+                <div class="pub-year">
+                    2026
                 </div>
-                <a href="#">Coming soon →</a>
-            </div>
-            <div class="publication reveal">
+
                 <div>
-                    <h3>Preprints</h3>
-                    <p>Manuscripts and research currently under preparation.</p>
+                    <h3>
+                        Decoding EMT Heterogeneity
+                    </h3>
+
+                    <p>
+                        An integrative framework combining ODE dynamics,
+                        RACIPE ensembles, and transcriptomic validation.
+                    </p>
                 </div>
-                <a href="#">Coming soon →</a>
-            </div>
-            <div class="publication reveal">
+
+                <div class="pub-arrow">
+                    →
+                </div>
+
+            </article>
+
+
+            <article class="publication reveal">
+
+                <div class="pub-year">
+                    ——
+                </div>
+
                 <div>
-                    <h3>Selected Literature</h3>
-                    <p>Scientific papers relevant to GFI research directions.</p>
+                    <h3>
+                        GFI Research & Preprints
+                    </h3>
+
+                    <p>
+                        Research outputs will be added as manuscripts
+                        and preprints become publicly available.
+                    </p>
                 </div>
-                <a href="#">Coming soon →</a>
-            </div>
+
+                <div class="pub-arrow">
+                    →
+                </div>
+
+            </article>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
+
+<!-- ======================================================
      INFRASTRUCTURE
-===================================================== -->
-<section class="infrastructure">
+     ====================================================== -->
+
+<section class="section infrastructure">
+
     <div class="container">
+
         <div class="reveal">
-            <div class="section-label">Research Infrastructure</div>
-            <h2 class="section-title">Open computational research.</h2>
-            <p class="section-description">
-                Research code, models, datasets, and computational resources will be
-                progressively released through open scientific platforms.
-            </p>
+
+            <div class="section-label">
+                Research Infrastructure
+            </div>
+
+            <h2 class="section-title">
+                Open computational infrastructure.
+            </h2>
+
         </div>
+
 
         <div class="infrastructure-grid">
-            <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F3F5'/%3E%3Cpath d='M22 12L32 17V27L22 32L12 27V17L22 12Z' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='22' cy='22' r='4' fill='%2300B4A0' opacity='0.2'/%3E%3C/svg%3E" 
-                     alt="GitHub" class="infrastructure-symbol">
+
+            <article class="infrastructure-card reveal">
                 <h3>GitHub</h3>
-                <p>Research code & repositories</p>
-            </div>
-            <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F3F5'/%3E%3Crect x='14' y='14' width='16' height='16' rx='4' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Cpath d='M22 18V26M18 22H26' stroke='%234DD4C8' stroke-width='1.5'/%3E%3C/svg%3E" 
-                     alt="Hugging Face" class="infrastructure-symbol">
+                <p>
+                    Open research repositories and reproducible code.
+                </p>
+            </article>
+
+            <article class="infrastructure-card reveal">
                 <h3>Hugging Face</h3>
-                <p>Models & datasets</p>
-            </div>
-            <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F3F5'/%3E%3Ccircle cx='22' cy='22' r='10' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Cpath d='M16 22H28M22 16V28' stroke='%234DD4C8' stroke-width='1.5'/%3E%3C/svg%3E" 
-                     alt="Models" class="infrastructure-symbol">
+                <p>
+                    Models and datasets for biomedical AI research.
+                </p>
+            </article>
+
+            <article class="infrastructure-card reveal">
                 <h3>Models</h3>
-                <p>Biomedical AI models</p>
-            </div>
-            <div class="infrastructure-card reveal">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23E8F3F5'/%3E%3Crect x='12' y='16' width='20' height='14' rx='2' stroke='%2300B4A0' stroke-width='1.5' fill='none'/%3E%3Cline x1='12' y1='22' x2='32' y2='22' stroke='%234DD4C8' stroke-width='1'/%3E%3C/svg%3E" 
-                     alt="Datasets" class="infrastructure-symbol">
+                <p>
+                    Experimental machine learning and foundation-model
+                    components.
+                </p>
+            </article>
+
+            <article class="infrastructure-card reveal">
                 <h3>Datasets</h3>
-                <p>Open research datasets</p>
-            </div>
+                <p>
+                    Curated biological datasets supporting
+                    reproducible research.
+                </p>
+            </article>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
+
+<!-- ======================================================
      ABOUT
-===================================================== -->
-<section class="about" id="about">
+     ====================================================== -->
+
+<section class="section about" id="about">
+
     <div class="container">
+
         <div class="about-grid">
-            <div class="about-text reveal">
-                <div class="section-label">About GFI</div>
-                <h2 class="section-title">Building computational perspectives on biology.</h2>
-                <p>
-                    Genomic Foresight Institute is an independent research institute focused
-                    on computational approaches to biological and biomedical problems.
-                </p>
-                <p>
-                    GFI brings together ideas from computational biology, artificial intelligence,
-                    genomics, systems biology, neuroscience, and biomedical data science.
-                </p>
+
+            <div class="about-mark reveal">
+
+                <img
+                    src="gfi-logo.png"
+                    alt="GFI logo">
+
             </div>
-            <div class="about-panel reveal">
-                <h3>Research Philosophy</h3>
+
+
+            <div class="about-copy reveal">
+
+                <div class="section-label">
+                    About GFI
+                </div>
+
+                <h2 class="section-title">
+                    Building computational perspectives
+                    on complex biology.
+                </h2>
+
                 <p>
-                    Develop computational methods that are reproducible, interpretable, and useful
-                    for understanding complex biological systems.
+                    <strong>Genomic Foresight Institute (GFI)</strong>
+                    is an independent research initiative focused on
+                    computational and AI-driven approaches to biological
+                    discovery.
                 </p>
+
+                <p>
+                    The institute brings together ideas from computational
+                    biology, machine learning, genomics, systems biology,
+                    neuroscience, and biomedical data science.
+                </p>
+
+                <p>
+                    Our goal is to develop computational frameworks that
+                    help transform complex biological data into interpretable
+                    representations, models, and scientific hypotheses.
+                </p>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
+
+<!-- ======================================================
      CONTACT
-===================================================== -->
-<section class="contact" id="contact">
+     ====================================================== -->
+
+<section class="section contact" id="contact">
+
     <div class="container">
-        <div class="reveal">
-            <div class="section-label">Contact</div>
-            <h2 class="section-title">Connect with GFI.</h2>
-            <p class="section-description">
-                For research collaboration, scientific discussion, or inquiries about GFI research.
-            </p>
-            <a href="mailto:contact@genomicforesight.ir" class="contact-button">Contact GFI</a>
+
+        <div class="contact-grid">
+
+            <div class="reveal">
+
+                <div class="section-label">
+                    Contact
+                </div>
+
+                <h2 class="section-title">
+                    Collaborate on computational biology.
+                </h2>
+
+                <p class="section-intro">
+                    GFI welcomes scientific collaboration, research
+                    discussion, and opportunities to develop
+                    computational approaches to complex biological questions.
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-item">
+
+                    <span>Research</span>
+
+                    <a href="#projects">
+                        View current projects →
+                    </a>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <span>Code</span>
+
+                    <a
+                        href="https://github.com/genomicforesight"
+                        target="_blank"
+                        rel="noopener">
+                        github.com/genomicforesight
+                    </a>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <span>Institute</span>
+
+                    <a href="#about">
+                        About Genomic Foresight Institute →
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- =====================================================
+</main>
+
+
+<!-- ======================================================
      FOOTER
-===================================================== -->
+     ====================================================== -->
+
 <footer>
-    <div class="container">
-        <svg viewBox="0 0 100 100" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 12px;opacity:0.3;">
-            <rect x="10" y="10" width="80" height="80" rx="20" fill="#0A1628"/>
-            <path d="M28 40L50 22L72 40V68L50 86L28 68V40Z" stroke="white" stroke-width="2.5" fill="none"/>
-            <path d="M40 48L50 40L60 48V62L50 70L40 62V48Z" fill="#00B4A0" opacity="0.8"/>
-            <text x="50" y="66" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Arial">G</text>
-        </svg>
-        <div>© 2026 Genomic Foresight Institute (GFI). All rights reserved.</div>
+
+    <div class="container footer-inner">
+
+        <div class="footer-brand">
+
+            <img
+                src="gfi-logo.png"
+                alt="GFI">
+
+            <strong>
+                Genomic Foresight Institute
+            </strong>
+
+        </div>
+
+        <div class="footer-copy">
+            © 2026 GFI · Independent Research Initiative
+        </div>
+
     </div>
+
 </footer>
 
-<!-- =====================================================
+
+<!-- ======================================================
      JAVASCRIPT
-===================================================== -->
+     ====================================================== -->
+
 <script>
-    // Mobile Menu
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const closeMenu = document.getElementById("closeMenu");
 
-    function openMenu() {
-        mobileMenu.classList.add("active");
-        menuOverlay.classList.add("active");
-        document.body.style.overflow = "hidden";
-        menuButton.setAttribute("aria-expanded", "true");
+const header = document.getElementById("siteHeader");
+
+const menuToggle = document.getElementById("menuToggle");
+const drawer = document.getElementById("mobileDrawer");
+const overlay = document.getElementById("overlay");
+const drawerClose = document.getElementById("drawerClose");
+
+const drawerLinks = document.querySelectorAll(".drawer-links a");
+
+
+/* Header */
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
     }
 
-    function closeMobileMenu() {
-        mobileMenu.classList.remove("active");
-        menuOverlay.classList.remove("active");
-        document.body.style.overflow = "";
-        menuButton.setAttribute("aria-expanded", "false");
+});
+
+
+/* Mobile menu */
+
+function openMenu() {
+
+    drawer.classList.add("active");
+    overlay.classList.add("active");
+
+    document.body.classList.add("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", "true");
+
+}
+
+function closeMenu() {
+
+    drawer.classList.remove("active");
+    overlay.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+
+}
+
+
+menuToggle.addEventListener("click", openMenu);
+
+drawerClose.addEventListener("click", closeMenu);
+
+overlay.addEventListener("click", closeMenu);
+
+drawerLinks.forEach(link => {
+
+    link.addEventListener("click", closeMenu);
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+        closeMenu();
     }
 
-    menuButton.addEventListener("click", openMenu);
-    closeMenu.addEventListener("click", closeMobileMenu);
-    menuOverlay.addEventListener("click", closeMobileMenu);
-    document.querySelectorAll(".mobile-links a").forEach(link => {
-        link.addEventListener("click", closeMobileMenu);
-    });
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape") closeMobileMenu();
-    });
+});
 
-    // Scroll Reveal
-    const revealElements = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver(
+
+/* Reveal animation */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const revealObserver =
+    new IntersectionObserver(
         entries => {
+
             entries.forEach(entry => {
+
                 if (entry.isIntersecting) {
+
                     entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
+
+                    revealObserver.unobserve(entry.target);
+
                 }
+
             });
+
         },
-        { threshold: 0.12, rootMargin: "0px 0px -20px 0px" }
-    );
-    revealElements.forEach(el => observer.observe(el));
-
-    // Header scroll effect
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 30) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        {
+            threshold: .12
         }
-    });
+    );
 
-    // Active nav link highlight
-    const navLinks = document.querySelectorAll('.desktop-nav a');
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
 </script>
 
 </body>
