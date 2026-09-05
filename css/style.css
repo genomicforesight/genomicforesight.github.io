@@ -323,3 +323,189 @@ footer {
     text-decoration: underline;
     color: #c9a227;
 }
+
+/* ========== RESEARCH GRID ========== */
+.research-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.research-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 1.8rem;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.research-card:hover {
+    transform: translateY(-6px);
+}
+
+.research-card h3 {
+    font-size: 1.3rem;
+    color: #0f2027;
+    margin-bottom: 0.8rem;
+}
+
+.research-card p {
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* ========== FLAGSHIP PROJECT ========== */
+.flagship {
+    background-color: #f0f0ec;
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+}
+
+.flagship-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.flagship-header h2 {
+    font-size: 2rem;
+    color: #0f2027;
+}
+
+.status-badge {
+    background-color: #c9a227;
+    color: #ffffff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+}
+
+.flagship-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.flagship-content h3 {
+    font-size: 1.6rem;
+    color: #0f2027;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.flagship-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #2c5364;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.flagship-description p {
+    color: #333333;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+.component-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.component-list li {
+    background-color: #ffffff;
+    border-left: 4px solid #c9a227;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.component-list strong {
+    color: #0f2027;
+}
+
+/* ========== WORKFLOW ========== */
+.workflow {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.workflow h4 {
+    font-size: 1.2rem;
+    color: #0f2027;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.step {
+    background-color: #f0f0ec;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: 150px;
+}
+
+.step-number {
+    display: inline-block;
+    background-color: #0f2027;
+    color: #ffd700;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.step p {
+    font-size: 0.85rem;
+    color: #444444;
+    margin: 0;
+}
+
+.step-arrow {
+    font-size: 1.5rem;
+    color: #c9a227;
+    font-weight: 700;
+}
+
+/* ========== CONFERENCE NOTE ========== */
+.conference-note {
+    background-color: #fff8e1;
+    border: 1px solid #c9a227;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.conference-note p {
+    margin: 0;
+    color: #333333;
+}
+
+.conference-note strong {
+    color: #0f2027;
+}
