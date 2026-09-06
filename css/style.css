@@ -993,3 +993,17 @@ footer {
 .logo:hover .logo-dna {
     transform: scale(1.08);
 }
+
+/* ========== CUSTOM GFI LOGO ========== */
+.logo-dna {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: inline-block;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.4));
+    transition: transform 0.4s ease;
+}
+
+.logo:hover .logo-dna {
+    transform: scale(1.08);
+}
