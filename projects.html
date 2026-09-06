@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پروژه‌ها — The Genomic Foresight Institute (GFI)</title>
+    <title>Projects — The Genomic Foresight Institute (GFI)</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
-
         * {
-            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            direction: rtl;
-            text-align: right;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f8fafc;
         }
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-        nav ul li {
-            list-style: none;
-        }
-
-        /* ===== بخش پروژه‌ها ===== */
+        /* ===== Projects Section ===== */
         .projects-section {
             max-width: 1200px;
             margin: 40px auto;
@@ -43,38 +32,34 @@
             border-bottom: 2px solid #e8edf4;
             padding-bottom: 16px;
         }
+
         .section-header h2 {
             font-size: 28px;
             font-weight: 900;
             color: #0a1a2a;
             position: relative;
-            padding-right: 18px;
+            padding-left: 18px;
         }
+
         .section-header h2::before {
             content: '';
             position: absolute;
-            right: 0;
+            left: 0;
             top: 4px;
             bottom: 4px;
             width: 6px;
             background: #1a6bc4;
             border-radius: 4px;
         }
-        .section-header .view-all {
-            color: #1a6bc4;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-        }
 
-        /* ===== گرید کارت‌ها ===== */
+        /* ===== Grid ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 24px;
         }
 
-        /* ===== کارت پروژه ===== */
+        /* ===== Card ===== */
         .project-card {
             background: #ffffff;
             border-radius: 18px;
@@ -87,13 +72,14 @@
             border: 1px solid #eef2f8;
             display: block;
         }
+
         .project-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 40px rgba(0, 20, 50, 0.14);
             border-color: #c0d6ee;
         }
 
-        /* ===== تصویر پروژه ===== */
+        /* ===== Image ===== */
         .project-image {
             height: 180px;
             background: linear-gradient(145deg, #dce8f5, #c2d4e8);
@@ -103,19 +89,20 @@
             position: relative;
             overflow: hidden;
         }
+
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        /* اوورلی نیمه‌شفاف برای بهتر دیدن وضعیت */
+
         .project-image .overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 60%);
         }
 
-        /* ===== وضعیت پروژه (روی تصویر) ===== */
+        /* ===== Status ===== */
         .project-status {
             position: absolute;
             top: 12px;
@@ -129,23 +116,20 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
-        .status-active {
-            background: rgba(230, 247, 237, 0.92);
-            color: #0f6b3a;
-            border: 1px solid rgba(184, 224, 205, 0.6);
-        }
+
         .status-completed {
             background: rgba(230, 236, 245, 0.92);
             color: #2a4a6a;
             border: 1px solid rgba(180, 200, 220, 0.6);
         }
+
         .status-ongoing {
             background: rgba(255, 241, 220, 0.92);
             color: #b86a0a;
             border: 1px solid rgba(230, 200, 150, 0.6);
         }
 
-        /* ===== محتوای کارت ===== */
+        /* ===== Body ===== */
         .project-body {
             padding: 16px 20px 18px;
         }
@@ -169,13 +153,14 @@
             overflow: hidden;
         }
 
-        /* ===== برچسب‌های دسته‌بندی ===== */
+        /* ===== Tags ===== */
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             margin-bottom: 12px;
         }
+
         .project-tag {
             font-size: 10px;
             font-weight: 700;
@@ -185,28 +170,32 @@
             color: #3a5a7a;
             border: 1px solid #dce4ee;
         }
+
         .project-tag.ai {
             background: #e8edff;
             color: #1a4f9e;
             border-color: #c8d6ff;
         }
+
         .project-tag.gnn {
             background: #e6f0f0;
             color: #0a6a6a;
             border-color: #b8d8d8;
         }
+
         .project-tag.bio {
             background: #f0f0e8;
             color: #6a6a1a;
             border-color: #d8d8b8;
         }
+
         .project-tag.medical {
             background: #fde8e8;
             color: #8a2a2a;
             border-color: #f0c8c8;
         }
 
-        /* ===== فوتر کارت ===== */
+        /* ===== Footer ===== */
         .project-footer {
             display: flex;
             justify-content: space-between;
@@ -215,15 +204,10 @@
             padding-top: 12px;
         }
 
-        .project-lead {
-            font-size: 13px;
+        .project-category {
+            font-size: 12px;
             font-weight: 600;
-            color: #0a1a2a;
-        }
-        .project-lead .role {
-            font-weight: 400;
-            color: #6a7a8a;
-            font-size: 11px;
+            color: #4a6a8a;
         }
 
         .project-year {
@@ -232,22 +216,10 @@
             color: #4a6a8a;
         }
 
-        /* ===== ریسپانسیو ===== */
+        /* ===== Responsive ===== */
         @media (max-width: 768px) {
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
             .projects-grid {
                 grid-template-columns: 1fr;
-            }
-            nav ul {
-                gap: 4px;
-            }
-            nav ul li a {
-                font-size: 13px;
-                padding: 6px 12px;
             }
         }
     </style>
@@ -269,190 +241,266 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">خانه</a></li>
-            <li><a href="about.html">درباره ما</a></li>
-            <li><a href="research.html">پژوهش</a></li>
-            <li><a href="publications.html">انتشارات</a></li>
-            <li><a href="projects.html" class="active">پروژه‌ها</a></li>
-            <li><a href="releases.html">نسخه‌ها</a></li>
-            <li><a href="contact.html">تماس</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="releases.html">Releases</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <!-- ===== هدر صفحه ===== -->
         <section class="page-header">
-            <h2>پروژه‌های پژوهشی</h2>
-            <p>پروژه‌های محاسباتی در حوزه ژنومیک و بیوانفورماتیک</p>
+            <h2>Research Projects</h2>
+            <p>Computational research in genomics and bioinformatics</p>
         </section>
 
-        <!-- ===== بخش پروژه‌ها ===== -->
         <section class="projects-section">
             <div class="section-header">
-                <h2>جدیدترین پروژه‌ها</h2>
-                <a href="#" class="view-all">مشاهده همه ←</a>
+                <h2>All Projects</h2>
             </div>
 
             <div class="projects-grid">
 
-                <!-- ===== پروژه ۱: HyperChem ===== -->
-                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه HyperChem')">
-
+                <!-- 1: GenomeReasoner -->
+                <a href="project-genomereasoner.html" class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&h=400&fit=crop&crop=center" alt="محقق در حال کار با نرم‌افزار شیمی محاسباتی">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop&crop=center" alt="Genomic data analysis">
                         <div class="overlay"></div>
-                        <span class="project-status status-active">فعال</span>
+                        <span class="project-status status-ongoing">Ongoing</span>
                     </div>
-
-                    <div class="project-body">
-                        <div class="project-title">HyperChem در طراحی دارو</div>
-                        <div class="project-description">
-                            شبیه‌سازی داکینگ مولکولی و بهینه‌سازی لیگاند با نرم‌افزار هایپرکم
-                        </div>
-                        <div class="project-tags">
-                            <span class="project-tag ai">طراحی دارو</span>
-                            <span class="project-tag bio">شیمی محاسباتی</span>
-                            <span class="project-tag medical">داکینگ</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-lead">ریحانه علی‌باری <span class="role">مجری</span></div>
-                            <div class="project-year">۱۴۰۵</div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ===== پروژه ۲: GenomeReasoner ===== -->
-                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه GenomeReasoner')">
-
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop&crop=center" alt="محقق زن با لپ‌تاپ در حال تحلیل داده‌های ژنومی">
-                        <div class="overlay"></div>
-                        <span class="project-status status-ongoing">در حال اجرا</span>
-                    </div>
-
                     <div class="project-body">
                         <div class="project-title">GenomeReasoner</div>
-                        <div class="project-description">
-                            مدل زبانی بزرگ برای استدلال ژنومی و پیش‌بینی واریانت‌های بیماری‌زا
-                        </div>
+                        <div class="project-description">Evidence-aware foundation model framework for genomic variant interpretation</div>
                         <div class="project-tags">
                             <span class="project-tag ai">Genomic AI</span>
                             <span class="project-tag gnn">Foundation Model</span>
                         </div>
                         <div class="project-footer">
-                            <div class="project-lead">دکتر احمد کریمی <span class="role">محقق ارشد</span></div>
-                            <div class="project-year">۱۴۰۵-۱۴۰۶</div>
+                            <div class="project-category">Genomic AI & Foundation Models</div>
+                            <div class="project-year">2026</div>
                         </div>
                     </div>
                 </a>
 
-                <!-- ===== پروژه ۳: NephroBench-GNN ===== -->
-                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه NephroBench-GNN')">
-
+                <!-- 2: BioGPT-ClinVar -->
+                <a href="project-biogpt-clinvar.html" class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&crop=center" alt="تصویر میکروسکوپی و شبکه عصبی گراف">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&crop=center" alt="Biomedical language model">
                         <div class="overlay"></div>
-                        <span class="project-status status-completed">تکمیل شده</span>
+                        <span class="project-status status-completed">Completed</span>
                     </div>
-
                     <div class="project-body">
-                        <div class="project-title">NephroBench-GNN</div>
-                        <div class="project-description">
-                            بنچمارک شبکه‌های عصبی گراف برای پیش‌بینی بیماری‌های کلیوی
-                        </div>
+                        <div class="project-title">BioGPT-ClinVar</div>
+                        <div class="project-description">Parameter-efficient fine-tuning of a biomedical LLM for genomic variant interpretation</div>
                         <div class="project-tags">
-                            <span class="project-tag gnn">GNN</span>
-                            <span class="project-tag medical">پزشکی محاسباتی</span>
+                            <span class="project-tag ai">LLM</span>
+                            <span class="project-tag medical">Genomic Interpretation</span>
                         </div>
                         <div class="project-footer">
-                            <div class="project-lead">مهسا رضایی <span class="role">محقق</span></div>
-                            <div class="project-year">۱۴۰۴</div>
+                            <div class="project-category">Genomic AI & Foundation Models</div>
+                            <div class="project-year">2026</div>
                         </div>
                     </div>
                 </a>
 
-                <!-- ===== پروژه ۴: SelfAwareLLM-Med ===== -->
-                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه SelfAwareLLM-Med')">
-
+                <!-- 3: OmniCell -->
+                <a href="project-omnicell.html" class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&crop=center" alt="هوش مصنوعی و پزشکی دقیق">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&crop=center" alt="Single-cell analysis">
                         <div class="overlay"></div>
-                        <span class="project-status status-completed">تکمیل شده</span>
+                        <span class="project-status status-ongoing">Ongoing</span>
                     </div>
+                    <div class="project-body">
+                        <div class="project-title">OmniCell</div>
+                        <div class="project-description">A unified framework for variant-to-therapy prediction in human disease</div>
+                        <div class="project-tags">
+                            <span class="project-tag ai">Precision Medicine</span>
+                            <span class="project-tag bio">Single-Cell AI</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Genomic AI & Foundation Models</div>
+                            <div class="project-year">2027</div>
+                        </div>
+                    </div>
+                </a>
 
+                <!-- 4: RGF -->
+                <a href="project-rgf.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&crop=center" alt="Graph neural networks">
+                        <div class="overlay"></div>
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">Residual Graph Fusion</div>
+                        <div class="project-description">A lightweight residual-gated GNN for noisy and heterophilic graph learning</div>
+                        <div class="project-tags">
+                            <span class="project-tag gnn">GNN</span>
+                            <span class="project-tag ai">Graph Learning</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Graph Neural Networks</div>
+                            <div class="project-year">2026</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 5: NephroBench-GNN -->
+                <a href="project-nephrobench.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop&crop=center" alt="Drug toxicity prediction">
+                        <div class="overlay"></div>
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">NephroBench-GNN</div>
+                        <div class="project-description">A comprehensive benchmark of GNNs for drug-induced nephrotoxicity prediction</div>
+                        <div class="project-tags">
+                            <span class="project-tag gnn">GNN</span>
+                            <span class="project-tag medical">Drug Toxicity</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Graph Neural Networks</div>
+                            <div class="project-year">2026</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 6: CELLGRAPH -->
+                <a href="project-cellgraph.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&h=400&fit=crop&crop=center" alt="Single-cell graph">
+                        <div class="overlay"></div>
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">CELLGRAPH</div>
+                        <div class="project-description">GNN-based framework for single-cell transcriptomic analysis</div>
+                        <div class="project-tags">
+                            <span class="project-tag gnn">GNN</span>
+                            <span class="project-tag bio">Single-Cell</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Graph Neural Networks</div>
+                            <div class="project-year">2026</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7: EMT Modeling -->
+                <a href="project-emt.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop&crop=center" alt="Systems biology">
+                        <div class="overlay"></div>
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">EMT Modeling</div>
+                        <div class="project-description">ODE-based modeling, RACIPE simulations, and transcriptomic validation</div>
+                        <div class="project-tags">
+                            <span class="project-tag bio">Systems Biology</span>
+                            <span class="project-tag medical">Cancer</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Systems Biology & Transcriptomics</div>
+                            <div class="project-year">2026</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 8: OmniLatent -->
+                <a href="project-omnilatent.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&crop=center" alt="Deep representation learning">
+                        <div class="overlay"></div>
+                        <span class="project-status status-ongoing">Ongoing</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">OmniLatent</div>
+                        <div class="project-description">Deep representation learning for high-dimensional transcriptomic data</div>
+                        <div class="project-tags">
+                            <span class="project-tag ai">Deep Learning</span>
+                            <span class="project-tag bio">Transcriptomics</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Systems Biology & Transcriptomics</div>
+                            <div class="project-year">2026</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 9: MODS-Chromatin -->
+                <a href="project-mods-chromatin.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=400&fit=crop&crop=center" alt="Chromatin structure">
+                        <div class="overlay"></div>
+                        <span class="project-status status-ongoing">Ongoing</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">MODS-Chromatin</div>
+                        <div class="project-description">Multi-omics differentiable simulation for chromatin structure inference</div>
+                        <div class="project-tags">
+                            <span class="project-tag gnn">GNN</span>
+                            <span class="project-tag bio">Computational Genomics</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Systems Biology & Transcriptomics</div>
+                            <div class="project-year">2026</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 10: HIV p24 -->
+                <a href="project-hiv.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=600&h=400&fit=crop&crop=center" alt="Vaccine research">
+                        <div class="overlay"></div>
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">HIV-1 p24 Peptides</div>
+                        <div class="project-description">Computational identification and prioritization of conserved peptide candidates</div>
+                        <div class="project-tags">
+                            <span class="project-tag bio">Immunoinformatics</span>
+                            <span class="project-tag medical">Vaccine</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-category">Immunoinformatics & Medical AI</div>
+                            <div class="project-year">2026</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 11: SelfAwareLLM-Med -->
+                <a href="project-selfaware.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop&crop=center" alt="AI in medicine">
+                        <div class="overlay"></div>
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
                     <div class="project-body">
                         <div class="project-title">SelfAwareLLM-Med</div>
-                        <div class="project-description">
-                            مدل زبانی با آگاهی از عدم‌قطعیت برای کاربردهای پزشکی
-                        </div>
+                        <div class="project-description">Self-consistency as a reliability signal for medical LLMs</div>
                         <div class="project-tags">
                             <span class="project-tag ai">Medical AI</span>
                             <span class="project-tag medical">LLM</span>
                         </div>
                         <div class="project-footer">
-                            <div class="project-lead">دکتر سارا محمدی <span class="role">محقق ارشد</span></div>
-                            <div class="project-year">۱۴۰۴</div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ===== پروژه ۵: OmniCell ===== -->
-                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه OmniCell')">
-
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop&crop=center&sat=-100&hue=30" alt="تحلیل داده‌های سلولی">
-                        <div class="overlay"></div>
-                        <span class="project-status status-ongoing">در حال اجرا</span>
-                    </div>
-
-                    <div class="project-body">
-                        <div class="project-title">OmniCell</div>
-                        <div class="project-description">
-                            پلتفرم یکپارچه برای تحلیل داده‌های تک‌سلولی و پزشکی دقیق
-                        </div>
-                        <div class="project-tags">
-                            <span class="project-tag bio">Single-Cell AI</span>
-                            <span class="project-tag medical">پزشکی دقیق</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-lead">دکتر علی نوری <span class="role">محقق ارشد</span></div>
-                            <div class="project-year">۱۴۰۵-۱۴۰۶</div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ===== پروژه ۶: HIV Peptides ===== -->
-                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه HIV')">
-
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop&crop=center" alt="پپتید و ایمونولوژی">
-                        <div class="overlay"></div>
-                        <span class="project-status status-completed">تکمیل شده</span>
-                    </div>
-
-                    <div class="project-body">
-                        <div class="project-title">HIV-1 p24 Peptides</div>
-                        <div class="project-description">
-                            طراحی پپتیدهای ایمونوژنیک علیه ویروس HIV با روش‌های ایمونواینفورماتیک
-                        </div>
-                        <div class="project-tags">
-                            <span class="project-tag bio">ایمونواینفورماتیک</span>
-                            <span class="project-tag medical">طراحی واکسن</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-lead">ریحانه علی‌باری <span class="role">محقق</span></div>
-                            <div class="project-year">۱۴۰۴</div>
+                            <div class="project-category">Immunoinformatics & Medical AI</div>
+                            <div class="project-year">2026</div>
                         </div>
                     </div>
                 </a>
 
             </div>
         </section>
-
     </main>
 
     <footer>
-        <p>© ۲۰۲۶ The Genomic Foresight Institute (GFI) — ابتکاری مستقل در پژوهش‌های ژنومیک</p>
+        <p>© 2026 The Genomic Foresight Institute (GFI) — Independent Research Initiative</p>
     </footer>
 
 </body>
