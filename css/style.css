@@ -941,3 +941,24 @@ footer {
     border-color: #ffd700;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
+
+/* ========== LOGO ENHANCED WITH DNA IMAGE ========== */
+.logo-dna {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="%23ffd700" stroke-width="4" stroke-linecap="round"><path d="M20,10 Q40,25 20,40 Q0,55 20,70 Q40,85 20,100"/><path d="M40,10 Q20,25 40,40 Q60,55 40,70 Q20,85 40,100"/></g><g stroke="%23c9a227" stroke-width="2"><line x1="22" y1="20" x2="38" y2="20"/><line x1="18" y1="35" x2="42" y2="35"/><line x1="22" y1="50" x2="38" y2="50"/><line x1="18" y1="65" x2="42" y2="65"/><line x1="22" y1="80" x2="38" y2="80"/><line x1="18" y1="95" x2="42" y2="95"/></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0; /* ایموجی مخفی شود */
+    border-radius: 50%;
+    padding: 0;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.logo:hover .logo-dna {
+    transform: rotate(20deg) scale(1.1);
+    filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.9));
+}
