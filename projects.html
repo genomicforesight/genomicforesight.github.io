@@ -1,10 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects — The Genomic Foresight Institute (GFI)</title>
+    <title>پروژه‌ها — The Genomic Foresight Institute (GFI)</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+
+        * {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            direction: rtl;
+            text-align: right;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        nav ul li {
+            list-style: none;
+        }
+
+        /* ===== بخش پروژه‌ها ===== */
+        .projects-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            border-bottom: 2px solid #e8edf4;
+            padding-bottom: 16px;
+        }
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #0a1a2a;
+            position: relative;
+            padding-right: 18px;
+        }
+        .section-header h2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 6px;
+            background: #1a6bc4;
+            border-radius: 4px;
+        }
+        .section-header .view-all {
+            color: #1a6bc4;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* ===== گرید کارت‌ها ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* ===== کارت پروژه ===== */
+        .project-card {
+            background: #ffffff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 20, 40, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #eef2f8;
+            display: block;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 20, 50, 0.14);
+            border-color: #c0d6ee;
+        }
+
+        /* ===== تصویر پروژه ===== */
+        .project-image {
+            height: 160px;
+            background: linear-gradient(145deg, #dce8f5, #c2d4e8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-image .icon-big {
+            font-size: 56px;
+            z-index: 2;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
+        }
+        /* اشکال تزیینی پس‌زمینه */
+        .project-image .bg-shape {
+            position: absolute;
+            opacity: 0.08;
+            font-size: 48px;
+        }
+        .project-image .bg-shape-1 { top: 8px; right: 8px; }
+        .project-image .bg-shape-2 { bottom: 8px; left: 8px; transform: rotate(-15deg); }
+        .project-image .bg-shape-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 72px; opacity: 0.05; }
+
+        /* ===== وضعیت پروژه (روی تصویر) ===== */
+        .project-status {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
+            z-index: 3;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .status-active {
+            background: rgba(230, 247, 237, 0.9);
+            color: #0f6b3a;
+            border: 1px solid rgba(184, 224, 205, 0.6);
+        }
+        .status-completed {
+            background: rgba(230, 236, 245, 0.9);
+            color: #2a4a6a;
+            border: 1px solid rgba(180, 200, 220, 0.6);
+        }
+        .status-ongoing {
+            background: rgba(255, 241, 220, 0.9);
+            color: #b86a0a;
+            border: 1px solid rgba(230, 200, 150, 0.6);
+        }
+
+        /* ===== محتوای کارت ===== */
+        .project-body {
+            padding: 16px 20px 18px;
+        }
+
+        .project-title {
+            font-size: 17px;
+            font-weight: 900;
+            color: #0a1a2a;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .project-description {
+            font-size: 13px;
+            color: #4a5a6a;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ===== برچسب‌های دسته‌بندی ===== */
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .project-tag {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 30px;
+            background: #eef2f8;
+            color: #3a5a7a;
+            border: 1px solid #dce4ee;
+        }
+        .project-tag.ai {
+            background: #e8edff;
+            color: #1a4f9e;
+            border-color: #c8d6ff;
+        }
+        .project-tag.gnn {
+            background: #e6f0f0;
+            color: #0a6a6a;
+            border-color: #b8d8d8;
+        }
+        .project-tag.bio {
+            background: #f0f0e8;
+            color: #6a6a1a;
+            border-color: #d8d8b8;
+        }
+        .project-tag.medical {
+            background: #fde8e8;
+            color: #8a2a2a;
+            border-color: #f0c8c8;
+        }
+
+        /* ===== فوتر کارت ===== */
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eef2f6;
+            padding-top: 12px;
+        }
+
+        .project-lead {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0a1a2a;
+        }
+        .project-lead .role {
+            font-weight: 400;
+            color: #6a7a8a;
+            font-size: 11px;
+        }
+
+        .project-year {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4a6a8a;
+        }
+
+        /* ===== ریسپانسیو ===== */
+        @media (max-width: 768px) {
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                gap: 4px;
+            }
+            nav ul li a {
+                font-size: 13px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -23,163 +272,250 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="releases.html">Releases</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="about.html">درباره ما</a></li>
+            <li><a href="research.html">پژوهش</a></li>
+            <li><a href="publications.html">انتشارات</a></li>
+            <li><a href="projects.html" class="active">پروژه‌ها</a></li>
+            <li><a href="releases.html">نسخه‌ها</a></li>
+            <li><a href="contact.html">تماس</a></li>
         </ul>
     </nav>
 
     <main>
+        <!-- ===== هدر صفحه ===== -->
         <section class="page-header">
-            <h2>Research Projects</h2>
-            <p>Explore our computational research portfolio</p>
+            <h2>پروژه‌های پژوهشی</h2>
+            <p>پروژه‌های محاسباتی در حوزه ژنومیک و بیوانفورماتیک</p>
         </section>
 
-        <!-- ===== CATEGORY 1 ===== -->
-        <section class="category-section">
-            <h3 class="category-title">🧬 Genomic AI & Foundation Models</h3>
-            <div class="dash-grid">
-                <a href="project-genomereasoner.html" class="dash-card">
-                    <div class="dash-visual">🧬</div>
-                    <div class="dash-info">
-                        <h4>GenomeReasoner</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Genomic AI</span>
-                            <span class="badge-ongoing">Ongoing</span>
+        <!-- ===== بخش پروژه‌ها ===== -->
+        <section class="projects-section">
+            <div class="section-header">
+                <h2>جدیدترین پروژه‌ها</h2>
+                <a href="#" class="view-all">مشاهده همه ←</a>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- ===== پروژه ۱: هایپرکم ===== -->
+                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه هایپرکم')">
+
+                    <div class="project-image" style="background: linear-gradient(145deg, #dce8f5, #b8cce0);">
+                        <span class="icon-big">🧬</span>
+                        <span class="bg-shape bg-shape-1">⚛️</span>
+                        <span class="bg-shape bg-shape-2">🧪</span>
+                        <span class="bg-shape bg-shape-3">🔬</span>
+                        <span class="project-status status-active">فعال</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-title">
+                            HyperChem در طراحی دارو
+                        </div>
+
+                        <div class="project-description">
+                            شبیه‌سازی داکینگ مولکولی و بهینه‌سازی لیگاند با نرم‌افزار هایپرکم
+                        </div>
+
+                        <div class="project-tags">
+                            <span class="project-tag ai">طراحی دارو</span>
+                            <span class="project-tag bio">شیمی محاسباتی</span>
+                            <span class="project-tag medical">داکینگ</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-lead">
+                                ریحانه علی‌باری
+                                <span class="role">مجری</span>
+                            </div>
+                            <div class="project-year">۱۴۰۵</div>
                         </div>
                     </div>
                 </a>
-                <a href="project-biogpt-clinvar.html" class="dash-card">
-                    <div class="dash-visual">💉</div>
-                    <div class="dash-info">
-                        <h4>BioGPT-ClinVar</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Foundation Model</span>
-                            <span class="badge-completed">Completed</span>
+
+                <!-- ===== پروژه ۲: GenomeReasoner ===== -->
+                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه GenomeReasoner')">
+
+                    <div class="project-image" style="background: linear-gradient(145deg, #d4e8e0, #b4d0c4);">
+                        <span class="icon-big">🧠</span>
+                        <span class="bg-shape bg-shape-1">🧬</span>
+                        <span class="bg-shape bg-shape-2">📊</span>
+                        <span class="bg-shape bg-shape-3">🕸️</span>
+                        <span class="project-status status-ongoing">در حال اجرا</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-title">
+                            GenomeReasoner
+                        </div>
+
+                        <div class="project-description">
+                            مدل زبانی بزرگ برای استدلال ژنومی و پیش‌بینی واریانت‌های بیماری‌زا
+                        </div>
+
+                        <div class="project-tags">
+                            <span class="project-tag ai">Genomic AI</span>
+                            <span class="project-tag gnn">Foundation Model</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-lead">
+                                دکتر احمد کریمی
+                                <span class="role">محقق ارشد</span>
+                            </div>
+                            <div class="project-year">۱۴۰۵-۱۴۰۶</div>
                         </div>
                     </div>
                 </a>
-                <a href="project-omnicell.html" class="dash-card">
-                    <div class="dash-visual">🎯</div>
-                    <div class="dash-info">
-                        <h4>OmniCell</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Precision Medicine</span>
-                            <span class="badge-ongoing">Ongoing</span>
+
+                <!-- ===== پروژه ۳: NephroBench-GNN ===== -->
+                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه NephroBench-GNN')">
+
+                    <div class="project-image" style="background: linear-gradient(145deg, #e0dce8, #c4c0d4);">
+                        <span class="icon-big">🕸️</span>
+                        <span class="bg-shape bg-shape-1">🧫</span>
+                        <span class="bg-shape bg-shape-2">📈</span>
+                        <span class="bg-shape bg-shape-3">⚗️</span>
+                        <span class="project-status status-completed">تکمیل شده</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-title">
+                            NephroBench-GNN
+                        </div>
+
+                        <div class="project-description">
+                            بنچمارک شبکه‌های عصبی گراف برای پیش‌بینی بیماری‌های کلیوی
+                        </div>
+
+                        <div class="project-tags">
+                            <span class="project-tag gnn">GNN</span>
+                            <span class="project-tag medical">پزشکی محاسباتی</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-lead">
+                                مهسا رضایی
+                                <span class="role">محقق</span>
+                            </div>
+                            <div class="project-year">۱۴۰۴</div>
                         </div>
                     </div>
                 </a>
+
+                <!-- ===== پروژه ۴: SelfAwareLLM-Med ===== -->
+                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه SelfAwareLLM-Med')">
+
+                    <div class="project-image" style="background: linear-gradient(145deg, #f0e8e0, #dcd0c4);">
+                        <span class="icon-big">🤖</span>
+                        <span class="bg-shape bg-shape-1">💊</span>
+                        <span class="bg-shape bg-shape-2">🛡️</span>
+                        <span class="bg-shape bg-shape-3">⚡</span>
+                        <span class="project-status status-completed">تکمیل شده</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-title">
+                            SelfAwareLLM-Med
+                        </div>
+
+                        <div class="project-description">
+                            مدل زبانی با آگاهی از عدم‌قطعیت برای کاربردهای پزشکی
+                        </div>
+
+                        <div class="project-tags">
+                            <span class="project-tag ai">Medical AI</span>
+                            <span class="project-tag medical">LLM</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-lead">
+                                دکتر سارا محمدی
+                                <span class="role">محقق ارشد</span>
+                            </div>
+                            <div class="project-year">۱۴۰۴</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ===== پروژه ۵: OmniCell ===== -->
+                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه OmniCell')">
+
+                    <div class="project-image" style="background: linear-gradient(145deg, #dce8f0, #bcccd8);">
+                        <span class="icon-big">🎯</span>
+                        <span class="bg-shape bg-shape-1">🧬</span>
+                        <span class="bg-shape bg-shape-2">🔬</span>
+                        <span class="bg-shape bg-shape-3">🧫</span>
+                        <span class="project-status status-ongoing">در حال اجرا</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-title">
+                            OmniCell
+                        </div>
+
+                        <div class="project-description">
+                            پلتفرم یکپارچه برای تحلیل داده‌های تک‌سلولی و پزشکی دقیق
+                        </div>
+
+                        <div class="project-tags">
+                            <span class="project-tag bio">Single-Cell AI</span>
+                            <span class="project-tag medical">پزشکی دقیق</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-lead">
+                                دکتر علی نوری
+                                <span class="role">محقق ارشد</span>
+                            </div>
+                            <div class="project-year">۱۴۰۵-۱۴۰۶</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ===== پروژه ۶: HIV-1 p24 Peptides ===== -->
+                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه HIV')">
+
+                    <div class="project-image" style="background: linear-gradient(145deg, #f0e4e4, #dcc8c8);">
+                        <span class="icon-big">🛡️</span>
+                        <span class="bg-shape bg-shape-1">🧪</span>
+                        <span class="bg-shape bg-shape-2">💉</span>
+                        <span class="bg-shape bg-shape-3">🦠</span>
+                        <span class="project-status status-completed">تکمیل شده</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-title">
+                            HIV-1 p24 Peptides
+                        </div>
+
+                        <div class="project-description">
+                            طراحی پپتیدهای ایمونوژنیک علیه ویروس HIV با روش‌های ایمونواینفورماتیک
+                        </div>
+
+                        <div class="project-tags">
+                            <span class="project-tag bio">ایمونواینفورماتیک</span>
+                            <span class="project-tag medical">طراحی واکسن</span>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-lead">
+                                ریحانه علی‌باری
+                                <span class="role">محقق</span>
+                            </div>
+                            <div class="project-year">۱۴۰۴</div>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </section>
 
-        <!-- ===== CATEGORY 2 ===== -->
-        <section class="category-section">
-            <h3 class="category-title">🕸️ Graph Neural Networks</h3>
-            <div class="dash-grid">
-                <a href="project-rgf.html" class="dash-card">
-                    <div class="dash-visual">🕸️</div>
-                    <div class="dash-info">
-                        <h4>Residual Graph Fusion</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">GNN</span>
-                            <span class="badge-completed">Completed</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-nephrobench.html" class="dash-card">
-                    <div class="dash-visual">⚗️</div>
-                    <div class="dash-info">
-                        <h4>NephroBench-GNN</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">GNN</span>
-                            <span class="badge-completed">Completed</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-cellgraph.html" class="dash-card">
-                    <div class="dash-visual">🔬</div>
-                    <div class="dash-info">
-                        <h4>CELLGRAPH</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Single-Cell AI</span>
-                            <span class="badge-completed">Completed</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- ===== CATEGORY 3 ===== -->
-        <section class="category-section">
-            <h3 class="category-title">🧫 Systems Biology & Transcriptomics</h3>
-            <div class="dash-grid">
-                <a href="project-emt.html" class="dash-card">
-                    <div class="dash-visual">🦠</div>
-                    <div class="dash-info">
-                        <h4>EMT Modeling</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Systems Biology</span>
-                            <span class="badge-completed">Completed</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-omnilatent.html" class="dash-card">
-                    <div class="dash-visual">📊</div>
-                    <div class="dash-info">
-                        <h4>OmniLatent</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Transcriptomics & AI</span>
-                            <span class="badge-ongoing">Ongoing</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-mods-chromatin.html" class="dash-card">
-                    <div class="dash-visual">🧩</div>
-                    <div class="dash-info">
-                        <h4>MODS-Chromatin</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Computational Genomics</span>
-                            <span class="badge-ongoing">Ongoing</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- ===== CATEGORY 4 ===== -->
-        <section class="category-section">
-            <h3 class="category-title">💊 Immunoinformatics & Medical AI</h3>
-            <div class="dash-grid">
-                <a href="project-hiv.html" class="dash-card">
-                    <div class="dash-visual">🛡️</div>
-                    <div class="dash-info">
-                        <h4>HIV-1 p24 Peptides</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Immunoinformatics</span>
-                            <span class="badge-completed">Completed</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="project-selfaware.html" class="dash-card">
-                    <div class="dash-visual">🤖</div>
-                    <div class="dash-info">
-                        <h4>SelfAwareLLM-Med</h4>
-                        <div class="dash-meta">
-                            <span class="dash-cat">Medical AI</span>
-                            <span class="badge-completed">Completed</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
     </main>
 
     <footer>
-        <p>© 2026 The Genomic Foresight Institute (GFI) — Independent Research Initiative</p>
+        <p>© ۲۰۲۶ The Genomic Foresight Institute (GFI) — ابتکاری مستقل در پژوهش‌های ژنومیک</p>
     </footer>
 
 </body>
