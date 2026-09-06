@@ -998,7 +998,7 @@ footer {
 .logo-dna {
     width: 100px;
     height: 100px;
-    object-fit: contain;
+ی    object-fit: contain;
     display: inline-block;
     filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.4));
     transition: transform 0.4s ease;
@@ -1006,4 +1006,17 @@ footer {
 
 .logo:hover .logo-dna {
     transform: scale(1.08);
+}
+
+/* ========== LOGO EMOJI ========== */
+.logo-dna {
+    font-size: 4rem;
+    display: inline-block;
+    line-height: 1;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-dna {
+    transform: scale(1.1);
 }
