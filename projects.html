@@ -95,7 +95,7 @@
 
         /* ===== تصویر پروژه ===== */
         .project-image {
-            height: 160px;
+            height: 180px;
             background: linear-gradient(145deg, #dce8f5, #c2d4e8);
             display: flex;
             justify-content: center;
@@ -103,20 +103,17 @@
             position: relative;
             overflow: hidden;
         }
-        .project-image .icon-big {
-            font-size: 56px;
-            z-index: 2;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        /* اشکال تزیینی پس‌زمینه */
-        .project-image .bg-shape {
+        /* اوورلی نیمه‌شفاف برای بهتر دیدن وضعیت */
+        .project-image .overlay {
             position: absolute;
-            opacity: 0.08;
-            font-size: 48px;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 60%);
         }
-        .project-image .bg-shape-1 { top: 8px; right: 8px; }
-        .project-image .bg-shape-2 { bottom: 8px; left: 8px; transform: rotate(-15deg); }
-        .project-image .bg-shape-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 72px; opacity: 0.05; }
 
         /* ===== وضعیت پروژه (روی تصویر) ===== */
         .project-status {
@@ -133,17 +130,17 @@
             letter-spacing: 0.3px;
         }
         .status-active {
-            background: rgba(230, 247, 237, 0.9);
+            background: rgba(230, 247, 237, 0.92);
             color: #0f6b3a;
             border: 1px solid rgba(184, 224, 205, 0.6);
         }
         .status-completed {
-            background: rgba(230, 236, 245, 0.9);
+            background: rgba(230, 236, 245, 0.92);
             color: #2a4a6a;
             border: 1px solid rgba(180, 200, 220, 0.6);
         }
         .status-ongoing {
-            background: rgba(255, 241, 220, 0.9);
+            background: rgba(255, 241, 220, 0.92);
             color: #b86a0a;
             border: 1px solid rgba(230, 200, 150, 0.6);
         }
@@ -298,37 +295,27 @@
 
             <div class="projects-grid">
 
-                <!-- ===== پروژه ۱: هایپرکم ===== -->
-                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه هایپرکم')">
+                <!-- ===== پروژه ۱: HyperChem ===== -->
+                <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه HyperChem')">
 
-                    <div class="project-image" style="background: linear-gradient(145deg, #dce8f5, #b8cce0);">
-                        <span class="icon-big">🧬</span>
-                        <span class="bg-shape bg-shape-1">⚛️</span>
-                        <span class="bg-shape bg-shape-2">🧪</span>
-                        <span class="bg-shape bg-shape-3">🔬</span>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&h=400&fit=crop&crop=center" alt="محقق در حال کار با نرم‌افزار شیمی محاسباتی">
+                        <div class="overlay"></div>
                         <span class="project-status status-active">فعال</span>
                     </div>
 
                     <div class="project-body">
-                        <div class="project-title">
-                            HyperChem در طراحی دارو
-                        </div>
-
+                        <div class="project-title">HyperChem در طراحی دارو</div>
                         <div class="project-description">
                             شبیه‌سازی داکینگ مولکولی و بهینه‌سازی لیگاند با نرم‌افزار هایپرکم
                         </div>
-
                         <div class="project-tags">
                             <span class="project-tag ai">طراحی دارو</span>
                             <span class="project-tag bio">شیمی محاسباتی</span>
                             <span class="project-tag medical">داکینگ</span>
                         </div>
-
                         <div class="project-footer">
-                            <div class="project-lead">
-                                ریحانه علی‌باری
-                                <span class="role">مجری</span>
-                            </div>
+                            <div class="project-lead">ریحانه علی‌باری <span class="role">مجری</span></div>
                             <div class="project-year">۱۴۰۵</div>
                         </div>
                     </div>
@@ -337,33 +324,23 @@
                 <!-- ===== پروژه ۲: GenomeReasoner ===== -->
                 <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه GenomeReasoner')">
 
-                    <div class="project-image" style="background: linear-gradient(145deg, #d4e8e0, #b4d0c4);">
-                        <span class="icon-big">🧠</span>
-                        <span class="bg-shape bg-shape-1">🧬</span>
-                        <span class="bg-shape bg-shape-2">📊</span>
-                        <span class="bg-shape bg-shape-3">🕸️</span>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop&crop=center" alt="محقق زن با لپ‌تاپ در حال تحلیل داده‌های ژنومی">
+                        <div class="overlay"></div>
                         <span class="project-status status-ongoing">در حال اجرا</span>
                     </div>
 
                     <div class="project-body">
-                        <div class="project-title">
-                            GenomeReasoner
-                        </div>
-
+                        <div class="project-title">GenomeReasoner</div>
                         <div class="project-description">
                             مدل زبانی بزرگ برای استدلال ژنومی و پیش‌بینی واریانت‌های بیماری‌زا
                         </div>
-
                         <div class="project-tags">
                             <span class="project-tag ai">Genomic AI</span>
                             <span class="project-tag gnn">Foundation Model</span>
                         </div>
-
                         <div class="project-footer">
-                            <div class="project-lead">
-                                دکتر احمد کریمی
-                                <span class="role">محقق ارشد</span>
-                            </div>
+                            <div class="project-lead">دکتر احمد کریمی <span class="role">محقق ارشد</span></div>
                             <div class="project-year">۱۴۰۵-۱۴۰۶</div>
                         </div>
                     </div>
@@ -372,33 +349,23 @@
                 <!-- ===== پروژه ۳: NephroBench-GNN ===== -->
                 <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه NephroBench-GNN')">
 
-                    <div class="project-image" style="background: linear-gradient(145deg, #e0dce8, #c4c0d4);">
-                        <span class="icon-big">🕸️</span>
-                        <span class="bg-shape bg-shape-1">🧫</span>
-                        <span class="bg-shape bg-shape-2">📈</span>
-                        <span class="bg-shape bg-shape-3">⚗️</span>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&crop=center" alt="تصویر میکروسکوپی و شبکه عصبی گراف">
+                        <div class="overlay"></div>
                         <span class="project-status status-completed">تکمیل شده</span>
                     </div>
 
                     <div class="project-body">
-                        <div class="project-title">
-                            NephroBench-GNN
-                        </div>
-
+                        <div class="project-title">NephroBench-GNN</div>
                         <div class="project-description">
                             بنچمارک شبکه‌های عصبی گراف برای پیش‌بینی بیماری‌های کلیوی
                         </div>
-
                         <div class="project-tags">
                             <span class="project-tag gnn">GNN</span>
                             <span class="project-tag medical">پزشکی محاسباتی</span>
                         </div>
-
                         <div class="project-footer">
-                            <div class="project-lead">
-                                مهسا رضایی
-                                <span class="role">محقق</span>
-                            </div>
+                            <div class="project-lead">مهسا رضایی <span class="role">محقق</span></div>
                             <div class="project-year">۱۴۰۴</div>
                         </div>
                     </div>
@@ -407,33 +374,23 @@
                 <!-- ===== پروژه ۴: SelfAwareLLM-Med ===== -->
                 <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه SelfAwareLLM-Med')">
 
-                    <div class="project-image" style="background: linear-gradient(145deg, #f0e8e0, #dcd0c4);">
-                        <span class="icon-big">🤖</span>
-                        <span class="bg-shape bg-shape-1">💊</span>
-                        <span class="bg-shape bg-shape-2">🛡️</span>
-                        <span class="bg-shape bg-shape-3">⚡</span>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&crop=center" alt="هوش مصنوعی و پزشکی دقیق">
+                        <div class="overlay"></div>
                         <span class="project-status status-completed">تکمیل شده</span>
                     </div>
 
                     <div class="project-body">
-                        <div class="project-title">
-                            SelfAwareLLM-Med
-                        </div>
-
+                        <div class="project-title">SelfAwareLLM-Med</div>
                         <div class="project-description">
                             مدل زبانی با آگاهی از عدم‌قطعیت برای کاربردهای پزشکی
                         </div>
-
                         <div class="project-tags">
                             <span class="project-tag ai">Medical AI</span>
                             <span class="project-tag medical">LLM</span>
                         </div>
-
                         <div class="project-footer">
-                            <div class="project-lead">
-                                دکتر سارا محمدی
-                                <span class="role">محقق ارشد</span>
-                            </div>
+                            <div class="project-lead">دکتر سارا محمدی <span class="role">محقق ارشد</span></div>
                             <div class="project-year">۱۴۰۴</div>
                         </div>
                     </div>
@@ -442,68 +399,48 @@
                 <!-- ===== پروژه ۵: OmniCell ===== -->
                 <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه OmniCell')">
 
-                    <div class="project-image" style="background: linear-gradient(145deg, #dce8f0, #bcccd8);">
-                        <span class="icon-big">🎯</span>
-                        <span class="bg-shape bg-shape-1">🧬</span>
-                        <span class="bg-shape bg-shape-2">🔬</span>
-                        <span class="bg-shape bg-shape-3">🧫</span>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop&crop=center&sat=-100&hue=30" alt="تحلیل داده‌های سلولی">
+                        <div class="overlay"></div>
                         <span class="project-status status-ongoing">در حال اجرا</span>
                     </div>
 
                     <div class="project-body">
-                        <div class="project-title">
-                            OmniCell
-                        </div>
-
+                        <div class="project-title">OmniCell</div>
                         <div class="project-description">
                             پلتفرم یکپارچه برای تحلیل داده‌های تک‌سلولی و پزشکی دقیق
                         </div>
-
                         <div class="project-tags">
                             <span class="project-tag bio">Single-Cell AI</span>
                             <span class="project-tag medical">پزشکی دقیق</span>
                         </div>
-
                         <div class="project-footer">
-                            <div class="project-lead">
-                                دکتر علی نوری
-                                <span class="role">محقق ارشد</span>
-                            </div>
+                            <div class="project-lead">دکتر علی نوری <span class="role">محقق ارشد</span></div>
                             <div class="project-year">۱۴۰۵-۱۴۰۶</div>
                         </div>
                     </div>
                 </a>
 
-                <!-- ===== پروژه ۶: HIV-1 p24 Peptides ===== -->
+                <!-- ===== پروژه ۶: HIV Peptides ===== -->
                 <a href="#" class="project-card" onclick="alert('رفتن به صفحه‌ی پروژه HIV')">
 
-                    <div class="project-image" style="background: linear-gradient(145deg, #f0e4e4, #dcc8c8);">
-                        <span class="icon-big">🛡️</span>
-                        <span class="bg-shape bg-shape-1">🧪</span>
-                        <span class="bg-shape bg-shape-2">💉</span>
-                        <span class="bg-shape bg-shape-3">🦠</span>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop&crop=center" alt="پپتید و ایمونولوژی">
+                        <div class="overlay"></div>
                         <span class="project-status status-completed">تکمیل شده</span>
                     </div>
 
                     <div class="project-body">
-                        <div class="project-title">
-                            HIV-1 p24 Peptides
-                        </div>
-
+                        <div class="project-title">HIV-1 p24 Peptides</div>
                         <div class="project-description">
                             طراحی پپتیدهای ایمونوژنیک علیه ویروس HIV با روش‌های ایمونواینفورماتیک
                         </div>
-
                         <div class="project-tags">
                             <span class="project-tag bio">ایمونواینفورماتیک</span>
                             <span class="project-tag medical">طراحی واکسن</span>
                         </div>
-
                         <div class="project-footer">
-                            <div class="project-lead">
-                                ریحانه علی‌باری
-                                <span class="role">محقق</span>
-                            </div>
+                            <div class="project-lead">ریحانه علی‌باری <span class="role">محقق</span></div>
                             <div class="project-year">۱۴۰۴</div>
                         </div>
                     </div>
