@@ -1,0 +1,63 @@
+{
+  "top.quickaccess": "دسترسی سریع",
+  "nav.home": "خانه",
+  "nav.research": "پژوهش",
+  "nav.people": "اعضا",
+  "nav.projects": "پروژه‌ها",
+  "nav.about": "درباره",
+  "nav.contact": "ارتباط",
+
+  "hero.title1": "زیست‌شناسی پیچیده است.",
+  "hero.title2": "هوش",
+  "hero.title3": " به ما کمک می‌کند آن را متفاوت ببینیم.",
+  "hero.text": "یک موسسه پژوهشی مستقل در تلاقی هوش مصنوعی، ژنومیک و زیست‌شناسی سیستم‌ها.",
+  "hero.cta1": "کاوش پژوهش",
+  "hero.cta2": "درباره GFI",
+
+  "stats.programs": "برنامه‌های پژوهشی",
+  "stats.leaders": "رهبران پژوهشی",
+  "stats.projects": "پروژه‌های شاخص",
+  "stats.established": "سال تاسیس",
+
+  "quick.research": "برنامه‌های پژوهشی",
+  "quick.researchDesc": "شش برنامه محاسباتی",
+  "quick.people": "اعضا",
+  "quick.peopleDesc": "رهبران و همکاران پژوهشی",
+  "quick.projects": "پروژه‌ها",
+  "quick.projectsDesc": "۱۲ پروژه شاخص",
+  "quick.openScience": "علم باز",
+  "quick.openScienceDesc": "کد · داده · مدل",
+
+  "research.label": "پژوهش",
+  "research.title": "شش برنامه پژوهشی.",
+  "research.desc": "GFI حول شش برنامه محاسباتی به هم پیوسته سازمان یافته است.",
+
+  "news.label": "اتاق خبر",
+  "news.title": "آخرین اخبار GFI.",
+
+  "os.label": "علم باز",
+  "os.title": "باز به صورت پیش‌فرض.",
+  "os.desc": "کد، مدل‌ها و داده‌های پژوهشی به صورت آزاد منتشر می‌شوند.",
+  "os.code": "کد",
+  "os.codeDesc": "نرم‌افزارهای پژوهشی متن‌باز",
+  "os.data": "داده",
+  "os.dataDesc": "داده‌ها و بنچمارک‌های قابل استفاده مجدد",
+  "os.models": "مدل‌ها",
+  "os.modelsDesc": "مدل‌های هوش مصنوعی شفاف",
+
+  "footer.desc": "یک موسسه پژوهشی مستقل در تلاقی هوش مصنوعی، ژنومیک و زیست‌شناسی سیستم‌ها.",
+  "footer.research": "پژوهش",
+  "footer.institute": "موسسه",
+  "footer.open": "علم باز",
+  "footer.github": "گیت‌هاب",
+  "footer.huggingface": "هاگینگ فیس",
+  "footer.datasets": "داده‌ها",
+  "footer.models": "مدل‌ها",
+
+  "programs.genomics": "ژنومیک محاسباتی",
+  "programs.singleCell": "تک‌سلولی و زیست‌شناسی سیستم‌ها",
+  "programs.biologicalAI": "هوش مصنوعی زیستی",
+  "programs.neuroai": "نورو‌هوش و علوم مغز",
+  "programs.medicine": "پزشکی محاسباتی",
+  "programs.software": "نرم‌افزار پژوهشی"
+}
