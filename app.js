@@ -1,5 +1,5 @@
 /* =========================================================
-   GFI — Unified JavaScript
+   GFI — Unified JavaScript (v2.0)
 ========================================================= */
 
 // ===== HEADER SCROLL =====
@@ -68,70 +68,138 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ===== LANGUAGE SWITCHER =====
+// ===== LANGUAGE SWITCHER (فقط EN + FA) =====
 const translations = {
     en: {
-        'nav.home': 'Home', 'nav.research': 'Research', 'nav.people': 'People',
-        'nav.projects': 'Projects', 'nav.about': 'About', 'nav.contact': 'Connect',
-        'hero.title1': 'Biology is complex.', 'hero.title2': 'Intelligence',
+        'top.quickaccess': 'Quick Access',
+        'nav.home': 'Home',
+        'nav.research': 'Research',
+        'nav.people': 'People',
+        'nav.projects': 'Projects',
+        'nav.about': 'About',
+        'nav.contact': 'Connect',
+        'hero.title1': 'Biology is complex.',
+        'hero.title2': 'Intelligence',
         'hero.title3': ' helps us see it differently.',
         'hero.text': 'An independent research institute at the intersection of AI, genomics and systems biology.',
-        'hero.cta1': 'Explore Research', 'hero.cta2': 'About GFI',
-        'stats.programs': 'Research Programs', 'stats.leaders': 'Research Leaders',
-        'stats.projects': 'Flagship Projects', 'stats.established': 'Established',
+        'hero.cta1': 'Explore Research',
+        'hero.cta2': 'About GFI',
+        'stats.programs': 'Research Programs',
+        'stats.leaders': 'Research Leaders',
+        'stats.projects': 'Flagship Projects',
+        'stats.established': 'Established',
+        'quick.research': 'Research Programs',
+        'quick.researchDesc': 'Six computational programs',
+        'quick.people': 'People',
+        'quick.peopleDesc': 'Research leaders & fellows',
+        'quick.projects': 'Projects',
+        'quick.projectsDesc': '12 flagship projects',
+        'quick.openScience': 'Open Science',
+        'quick.openScienceDesc': 'Code · Data · Models',
+        'research.label': 'Research',
+        'research.title': 'Six research programs.',
+        'research.desc': 'GFI is organized around six interconnected computational programs.',
+        'news.label': 'Newsroom',
+        'news.title': 'Latest from GFI.',
+        'os.label': 'Open Science',
+        'os.title': 'Open by default.',
+        'os.desc': 'Research code, models, and datasets published openly.',
+        'os.code': 'Code',
+        'os.codeDesc': 'Open-source research software',
+        'os.data': 'Data',
+        'os.dataDesc': 'Reusable datasets & benchmarks',
+        'os.models': 'Models',
+        'os.modelsDesc': 'Transparent AI models',
+        'footer.desc': 'An independent research institute at the intersection of AI, genomics, and systems biology.',
+        'footer.research': 'Research',
+        'footer.institute': 'Institute',
+        'footer.open': 'Open Science',
+        'footer.github': 'GitHub',
+        'footer.huggingface': 'Hugging Face',
+        'footer.datasets': 'Datasets',
+        'footer.models': 'Models',
     },
     fa: {
-        'nav.home': 'خانه', 'nav.research': 'پژوهش', 'nav.people': 'اعضا',
-        'nav.projects': 'پروژه‌ها', 'nav.about': 'درباره', 'nav.contact': 'ارتباط',
-        'hero.title1': 'زیست‌شناسی پیچیده است.', 'hero.title2': 'هوش',
+        'top.quickaccess': 'دسترسی سریع',
+        'nav.home': 'خانه',
+        'nav.research': 'پژوهش',
+        'nav.people': 'اعضا',
+        'nav.projects': 'پروژه‌ها',
+        'nav.about': 'درباره',
+        'nav.contact': 'ارتباط',
+        'hero.title1': 'زیست‌شناسی پیچیده است.',
+        'hero.title2': 'هوش',
         'hero.title3': ' به ما کمک می‌کند آن را متفاوت ببینیم.',
         'hero.text': 'یک موسسه پژوهشی مستقل در تلاقی هوش مصنوعی، ژنومیک و زیست‌شناسی سیستم‌ها.',
-        'hero.cta1': 'کاوش پژوهش', 'hero.cta2': 'درباره GFI',
-        'stats.programs': 'برنامه‌های پژوهشی', 'stats.leaders': 'رهبران پژوهشی',
-        'stats.projects': 'پروژه‌های شاخص', 'stats.established': 'سال تاسیس',
-    },
-    ar: {
-        'nav.home': 'الرئيسية', 'nav.research': 'البحث', 'nav.people': 'الأعضاء',
-        'nav.projects': 'المشاريع', 'nav.about': 'حول', 'nav.contact': 'تواصل',
-        'hero.title1': 'علم الأحياء معقد.', 'hero.title2': 'الذكاء',
-        'hero.title3': ' يساعدنا على رؤيته بشكل مختلف.',
-        'hero.text': 'معهد بحثي مستقل عند تقاطع الذكاء الاصطناعي وعلم الجينوم وعلم أحياء النظم.',
-        'hero.cta1': 'استكشف الأبحاث', 'hero.cta2': 'حول GFI',
-        'stats.programs': 'برامج البحث', 'stats.leaders': 'قادة البحث',
-        'stats.projects': 'المشاريع الرائدة', 'stats.established': 'سنة التأسيس',
-    },
-    de: {
-        'nav.home': 'Startseite', 'nav.research': 'Forschung', 'nav.people': 'Personen',
-        'nav.projects': 'Projekte', 'nav.about': 'Über uns', 'nav.contact': 'Kontakt',
-        'hero.title1': 'Biologie ist komplex.', 'hero.title2': 'Intelligenz',
-        'hero.title3': ' hilft uns, sie anders zu sehen.',
-        'hero.text': 'Ein unabhängiges Forschungsinstitut an der Schnittstelle von KI, Genomik und Systembiologie.',
-        'hero.cta1': 'Forschung entdecken', 'hero.cta2': 'Über GFI',
-        'stats.programs': 'Forschungsprogramme', 'stats.leaders': 'Forschungsleiter',
-        'stats.projects': 'Flaggschiff-Projekte', 'stats.established': 'Gegründet',
+        'hero.cta1': 'کاوش پژوهش',
+        'hero.cta2': 'درباره GFI',
+        'stats.programs': 'برنامه‌های پژوهشی',
+        'stats.leaders': 'رهبران پژوهشی',
+        'stats.projects': 'پروژه‌های شاخص',
+        'stats.established': 'سال تاسیس',
+        'quick.research': 'برنامه‌های پژوهشی',
+        'quick.researchDesc': 'شش برنامه محاسباتی',
+        'quick.people': 'اعضا',
+        'quick.peopleDesc': 'رهبران و همکاران پژوهشی',
+        'quick.projects': 'پروژه‌ها',
+        'quick.projectsDesc': '۱۲ پروژه شاخص',
+        'quick.openScience': 'علم باز',
+        'quick.openScienceDesc': 'کد · داده · مدل',
+        'research.label': 'پژوهش',
+        'research.title': 'شش برنامه پژوهشی.',
+        'research.desc': 'GFI حول شش برنامه محاسباتی به هم پیوسته سازمان یافته است.',
+        'news.label': 'اتاق خبر',
+        'news.title': 'آخرین اخبار GFI.',
+        'os.label': 'علم باز',
+        'os.title': 'باز به صورت پیش‌فرض.',
+        'os.desc': 'کد، مدل‌ها و داده‌های پژوهشی به صورت آزاد منتشر می‌شوند.',
+        'os.code': 'کد',
+        'os.codeDesc': 'نرم‌افزارهای پژوهشی متن‌باز',
+        'os.data': 'داده',
+        'os.dataDesc': 'داده‌ها و بنچمارک‌های قابل استفاده مجدد',
+        'os.models': 'مدل‌ها',
+        'os.modelsDesc': 'مدل‌های هوش مصنوعی شفاف',
+        'footer.desc': 'یک موسسه پژوهشی مستقل در تلاقی هوش مصنوعی، ژنومیک و زیست‌شناسی سیستم‌ها.',
+        'footer.research': 'پژوهش',
+        'footer.institute': 'موسسه',
+        'footer.open': 'علم باز',
+        'footer.github': 'گیت‌هاب',
+        'footer.huggingface': 'هاگینگ فیس',
+        'footer.datasets': 'داده‌ها',
+        'footer.models': 'مدل‌ها',
     }
 };
 
 function switchLanguage(lang) {
-    const dict = translations[lang] || translations.en;
+    if (!translations[lang]) return;
+    localStorage.setItem('gfi-lang', lang);
+
+    const dict = translations[lang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) el.textContent = dict[key];
     });
+
     document.documentElement.lang = lang;
-    document.documentElement.dir = (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr';
+    document.documentElement.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
-    localStorage.setItem('gfi-lang', lang);
 }
 
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => switchLanguage(btn.dataset.lang));
-});
+// ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('gfi-lang') || 'en';
-    if (saved !== 'en') switchLanguage(saved);
+    // زبان ذخیره‌شده
+    const savedLang = localStorage.getItem('gfi-lang') || 'en';
+    switchLanguage(savedLang);
+
+    // اتصال دکمه‌های زبان
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchLanguage(btn.dataset.lang);
+        });
+    });
 });
 
 // ===== REVEAL ON SCROLL =====
@@ -148,22 +216,61 @@ if (revealElements.length) {
     revealElements.forEach(el => observer.observe(el));
 }
 
-// ===== LOAD RESEARCH (Home + Research pages) =====
+// ===== LOAD PEOPLE =====
+fetch('data/people.json')
+    .then(r => r.json())
+    .then(data => {
+        const leadersGrid = document.getElementById('leadersGrid');
+        if (leadersGrid) {
+            leadersGrid.innerHTML = data.researchLeaders.map(l => `
+                <article class="person-card reveal">
+                    <div class="person-avatar">${l.avatar}</div>
+                    <h3>${l.name}</h3>
+                    <div class="person-role">${l.role}</div>
+                    <div class="person-program">${l.program}</div>
+                    <div class="person-field">${l.field}</div>
+                </article>
+            `).join('');
+        }
+        const fellowsGrid = document.getElementById('fellowsGrid');
+        if (fellowsGrid && data.fellows) {
+            fellowsGrid.innerHTML = data.fellows.map(f => `
+                <article class="person-card reveal">
+                    <div class="person-avatar">${f.avatar}</div>
+                    <h3>${f.name}</h3>
+                    <div class="person-role">${f.role}</div>
+                    <div class="person-program">${f.program}</div>
+                    <div class="person-field">${f.field}</div>
+                </article>
+            `).join('');
+        }
+    })
+    .catch(e => console.log('People load:', e.message));
+
+// ===== LOAD PROJECTS =====
+fetch('data/projects.json')
+    .then(r => r.json())
+    .then(data => {
+        const grid = document.getElementById('projectsGrid');
+        if (!grid) return;
+        grid.innerHTML = data.projects.map(p => `
+            <article class="project-card reveal" id="${p.id}">
+                <div class="project-tag">${p.program}</div>
+                <h3 class="project-name">${p.name}</h3>
+                <div class="project-tagline">${p.tagline}</div>
+                <p class="project-desc">${p.description}</p>
+                <div class="project-meta">
+                    <div class="project-pi"><strong>Lead:</strong> ${p.pi}</div>
+                </div>
+            </article>
+        `).join('');
+    })
+    .catch(e => console.log('Projects load:', e.message));
+
+// ===== LOAD RESEARCH =====
 fetch('data/research.json')
     .then(r => r.json())
     .then(data => {
-        // Home research grid
-        const grid = document.getElementById('researchGrid');
-        if (grid) {
-            grid.innerHTML = data.programs.map(p => `
-                <a href="research.html#${p.id}" class="research-card reveal">
-                    <div class="research-number">${p.number}</div>
-                    <h3>${p.title}</h3>
-                    <p>${p.description}</p>
-                </a>
-            `).join('');
-        }
-        // Research page programs list
         const list = document.getElementById('programsList');
         if (list) {
             list.innerHTML = data.programs.map(p => `
@@ -212,70 +319,3 @@ fetch('data/news.json')
         `).join('');
     })
     .catch(e => console.log('News load:', e.message));
-
-// ===== LOAD PEOPLE =====
-fetch('data/people.json')
-    .then(r => r.json())
-    .then(data => {
-        // Scientific Director
-        const dirCard = document.getElementById('directorCard');
-        if (dirCard && data.scientificDirector) {
-            const d = data.scientificDirector;
-            dirCard.innerHTML = `
-                <div class="director-avatar">${d.avatar}</div>
-                <div>
-                    <div class="director-badge">${d.role}</div>
-                    <h2 class="director-name">${d.name}</h2>
-                    <p class="director-field">${d.field}</p>
-                </div>
-            `;
-        }
-        // Research Leaders
-        const leadersGrid = document.getElementById('researchLeadersGrid');
-        if (leadersGrid) {
-            const leaders = data.researchLeaders.filter(l => l.id !== 'leila-farzan');
-            leadersGrid.innerHTML = leaders.map(l => `
-                <article class="person-card reveal">
-                    <div class="person-avatar">${l.avatar}</div>
-                    <h3>${l.name}</h3>
-                    <div class="person-role">${l.role}</div>
-                    <div class="person-program">${l.program}</div>
-                    <div class="person-field">${l.field}</div>
-                </article>
-            `).join('');
-        }
-        // Fellows
-        const fellowsGrid = document.getElementById('fellowsGrid');
-        if (fellowsGrid && data.fellows) {
-            fellowsGrid.innerHTML = data.fellows.map(f => `
-                <article class="person-card reveal">
-                    <div class="person-avatar">${f.avatar}</div>
-                    <h3>${f.name}</h3>
-                    <div class="person-role">${f.role}</div>
-                    <div class="person-program">${f.program}</div>
-                    <div class="person-field">${f.field}</div>
-                </article>
-            `).join('');
-        }
-    })
-    .catch(e => console.log('People load:', e.message));
-
-// ===== LOAD PROJECTS =====
-fetch('data/projects.json')
-    .then(r => r.json())
-    .then(data => {
-        const grid = document.getElementById('projectsGrid');
-        if (!grid) return;
-        grid.innerHTML = data.projects.map(p => `
-            <article class="project-card reveal" id="${p.id}">
-                <div class="project-tag">${p.program}</div>
-                <h3 class="project-name">${p.name}</h3>
-                <div class="project-tagline">${p.tagline}</div>
-                <p class="project-desc">${p.description}</p>
-                <div class="project-meta">
-                    <div class="project-pi"><strong>Lead:</strong> ${p.pi}</div>
-                </div>
-            </article>
-        `).join('');
-    })
-    .catch(e => console.log('Projects load:', e.message));
