@@ -5,13 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>People — Genomic Foresight Institute</title>
 <meta name="description" content="Meet the researchers and scientific leaders of Genomic Foresight Institute.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/header.css">
-<link rel="stylesheet" href="assets/css/accessibility.css">
-<link rel="stylesheet" href="assets/css/people.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -50,7 +44,7 @@
 <header class="site-header" id="siteHeader">
     <nav class="navbar">
         <a href="index.html" class="brand">
-            <img src="assets/images/gfi-logo.png" alt="GFI" class="brand-logo">
+            <img src="gfi-logo.png" alt="GFI" class="brand-logo">
             <div class="brand-text">
                 <span class="brand-name">GENOMIC FORESIGHT</span>
                 <span class="brand-sub">Institute</span>
@@ -66,13 +60,13 @@
                     <span class="dropdown-arrow">▾</span>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="research.html" data-i18n="research.all">All Programs</a>
-                    <a href="research.html#computational-genomics" data-i18n="programs.genomics">Computational Genomics</a>
-                    <a href="research.html#single-cell-systems" data-i18n="programs.singleCell">Single-Cell & Systems Biology</a>
-                    <a href="research.html#biological-ai" data-i18n="programs.biologicalAI">Biological AI</a>
-                    <a href="research.html#neuroai" data-i18n="programs.neuroai">NeuroAI & Brain Science</a>
-                    <a href="research.html#computational-medicine" data-i18n="programs.medicine">Computational Medicine</a>
-                    <a href="research.html#research-software" data-i18n="programs.software">Research Software</a>
+                    <a href="research.html">All Programs</a>
+                    <a href="research.html#computational-genomics">Computational Genomics</a>
+                    <a href="research.html#single-cell-systems">Single-Cell & Systems Biology</a>
+                    <a href="research.html#biological-ai">Biological AI</a>
+                    <a href="research.html#neuroai">NeuroAI & Brain Science</a>
+                    <a href="research.html#computational-medicine">Computational Medicine</a>
+                    <a href="research.html#research-software">Research Software</a>
                 </div>
             </div>
 
@@ -82,10 +76,10 @@
                     <span class="dropdown-arrow">▾</span>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="people.html" data-i18n="people.all">All People</a>
-                    <a href="people.html#scientificDirector" data-i18n="people.director">Scientific Director</a>
-                    <a href="people.html#researchLeaders" data-i18n="people.leaders">Research Leaders</a>
-                    <a href="people.html#fellows" data-i18n="people.fellows">Fellows</a>
+                    <a href="people.html">All People</a>
+                    <a href="people.html#scientificDirector">Scientific Director</a>
+                    <a href="people.html#researchLeaders">Research Leaders</a>
+                    <a href="people.html#fellows">Fellows</a>
                 </div>
             </div>
 
@@ -95,11 +89,7 @@
                     <span class="dropdown-arrow">▾</span>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="projects.html" data-i18n="projects.all">All Projects</a>
-                    <a href="projects.html#genomics" data-i18n="projects.genomics">Genomics Projects</a>
-                    <a href="projects.html#ai" data-i18n="projects.ai">AI Projects</a>
-                    <a href="projects.html#neuro" data-i18n="projects.neuro">Neuro Projects</a>
-                    <a href="projects.html#medicine" data-i18n="projects.medicine">Medical Projects</a>
+                    <a href="projects.html">All Projects</a>
                 </div>
             </div>
 
@@ -109,10 +99,10 @@
                     <span class="dropdown-arrow">▾</span>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="about.html" data-i18n="about.gfi">About GFI</a>
-                    <a href="about.html#mission" data-i18n="about.mission">Mission & Vision</a>
-                    <a href="about.html#open-science" data-i18n="about.openScience">Open Science</a>
-                    <a href="about.html#timeline" data-i18n="about.timeline">Timeline</a>
+                    <a href="about.html">About GFI</a>
+                    <a href="about.html#mission">Mission & Vision</a>
+                    <a href="about.html#open-science">Open Science</a>
+                    <a href="about.html#timeline">Timeline</a>
                 </div>
             </div>
 
@@ -131,7 +121,7 @@
 <div class="overlay" id="overlay"></div>
 <aside class="mobile-drawer" id="mobileDrawer">
     <div class="drawer-header">
-        <img src="assets/images/gfi-logo.png" alt="GFI" style="width:44px;">
+        <img src="gfi-logo.png" alt="GFI" style="width:44px;">
         <button class="drawer-close" id="drawerClose">×</button>
     </div>
     <nav class="drawer-links">
@@ -161,12 +151,15 @@
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-inner">
-                <div class="section-label" data-i18n="people.label">People</div>
+                <div class="section-label">People</div>
                 <h1 class="page-hero-title">
-                    <span data-i18n="people.heroTitle">The researchers behind GFI.</span>
+                    The researchers<br>
+                    behind GFI.
                 </h1>
-                <p class="page-hero-desc" data-i18n="people.heroDesc">
-                    12 research leaders across 6 programs, including the Scientific Director.
+                <p class="page-hero-desc">
+                    12 research leaders across 6 programs, including the Scientific Director — 
+                    spanning computational genomics, single-cell systems, biological AI, 
+                    brain science, computational medicine, and open research software.
                 </p>
             </div>
         </div>
@@ -175,11 +168,18 @@
     <!-- =========================================================
          SCIENTIFIC DIRECTOR
     ========================================================= -->
-    <section class="section director-section" id="scientificDirector">
+    <section class="section" id="scientificDirector" style="padding-top: 40px;">
         <div class="container">
-            <div class="section-label" data-i18n="people.directorLabel">Scientific Director</div>
-            <div class="director-card" id="directorCard">
-                <!-- Injected by JS -->
+            <div class="section-label">Scientific Director</div>
+            <div class="director-card reveal">
+                <div class="director-avatar">LF</div>
+                <div>
+                    <div class="director-badge">Scientific Director</div>
+                    <h2 class="director-name">Dr. Leila Farzan</h2>
+                    <p class="director-field">
+                        Research Strategy · Computational Biology · AI for Biological Discovery · Open Science
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -187,17 +187,16 @@
     <!-- =========================================================
          RESEARCH LEADERS
     ========================================================= -->
-    <section class="section leaders-section" id="researchLeaders">
+    <section class="section" id="researchLeaders" style="padding-top: 40px;">
         <div class="container">
-            <div class="section-label" data-i18n="people.leadersLabel">Research Leaders</div>
-            <h2 class="section-title" data-i18n="people.leadersTitle">
-                12 research leaders. 6 programs.
-            </h2>
-            <p class="section-description" data-i18n="people.leadersDesc">
-                Principal Investigators leading research directions across computational biology, AI, and biomedical science.
+            <div class="section-label">Research Leaders</div>
+            <h2 class="section-title">12 research leaders. 6 programs.</h2>
+            <p class="section-description">
+                Principal Investigators leading research directions across computational 
+                biology, AI, and biomedical science.
             </p>
 
-            <div class="people-grid" id="researchLeadersGrid">
+            <div class="people-grid" id="leadersGrid">
                 <!-- Injected by JS -->
             </div>
         </div>
@@ -206,17 +205,15 @@
     <!-- =========================================================
          FELLOWS
     ========================================================= -->
-    <section class="section fellows-section" id="fellows">
+    <section class="section" id="fellows" style="padding-top: 40px; background: var(--paper);">
         <div class="container">
-            <div class="section-label" data-i18n="people.fellowsLabel">GFI Fellows</div>
-            <h2 class="section-title" data-i18n="people.fellowsTitle">
-                Research Fellows at GFI.
-            </h2>
-            <p class="section-description" data-i18n="people.fellowsDesc">
+            <div class="section-label">GFI Fellows</div>
+            <h2 class="section-title">Research Fellows at GFI.</h2>
+            <p class="section-description">
                 Early-career researchers contributing to GFI research programs.
             </p>
 
-            <div class="people-grid fellows-grid" id="fellowsGrid">
+            <div class="people-grid" id="fellowsGrid">
                 <!-- Injected by JS -->
             </div>
         </div>
@@ -229,12 +226,12 @@
         <div class="container">
             <div class="cta-inner">
                 <div>
-                    <h2 data-i18n="cta.peopleTitle">Join GFI research.</h2>
-                    <p data-i18n="cta.peopleDesc">Explore opportunities for research collaboration or fellowship.</p>
+                    <h2>Join GFI research.</h2>
+                    <p>Explore opportunities for research collaboration or fellowship.</p>
                 </div>
                 <div class="cta-actions">
-                    <a href="contact.html" class="btn btn-primary" data-i18n="cta.contact">Contact GFI</a>
-                    <a href="research.html" class="btn btn-outline" data-i18n="cta.explore">Explore Research</a>
+                    <a href="contact.html" class="btn btn-primary">Contact GFI</a>
+                    <a href="research.html" class="btn btn-outline">Explore Research</a>
                 </div>
             </div>
         </div>
@@ -248,33 +245,33 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
-            <div class="footer-col footer-brand-col">
-                <img src="assets/images/gfi-logo.png" alt="GFI" class="footer-logo">
+            <div class="footer-col">
+                <img src="gfi-logo.png" alt="GFI" class="footer-logo">
                 <div class="footer-brand-name">GENOMIC FORESIGHT INSTITUTE</div>
-                <p class="footer-brand-desc" data-i18n="footer.desc">
+                <p class="footer-brand-desc">
                     An independent research institute at the intersection of AI, genomics, and systems biology.
                 </p>
             </div>
             <div class="footer-col">
-                <div class="footer-col-title" data-i18n="footer.research">Research</div>
-                <a href="research.html#computational-genomics" data-i18n="programs.genomics">Computational Genomics</a>
-                <a href="research.html#single-cell-systems" data-i18n="programs.singleCell">Single-Cell Systems</a>
-                <a href="research.html#biological-ai" data-i18n="programs.biologicalAI">Biological AI</a>
-                <a href="research.html#neuroai" data-i18n="programs.neuroai">NeuroAI</a>
+                <div class="footer-col-title">Research</div>
+                <a href="research.html#computational-genomics">Computational Genomics</a>
+                <a href="research.html#single-cell-systems">Single-Cell Systems</a>
+                <a href="research.html#biological-ai">Biological AI</a>
+                <a href="research.html#neuroai">NeuroAI</a>
             </div>
             <div class="footer-col">
-                <div class="footer-col-title" data-i18n="footer.institute">Institute</div>
-                <a href="about.html" data-i18n="about.gfi">About GFI</a>
-                <a href="people.html" data-i18n="nav.people">People</a>
-                <a href="projects.html" data-i18n="nav.projects">Projects</a>
-                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+                <div class="footer-col-title">Institute</div>
+                <a href="about.html">About GFI</a>
+                <a href="people.html">People</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
             </div>
             <div class="footer-col">
-                <div class="footer-col-title" data-i18n="footer.open">Open Science</div>
-                <a href="#" data-i18n="footer.github">GitHub</a>
-                <a href="#" data-i18n="footer.huggingface">Hugging Face</a>
-                <a href="#" data-i18n="footer.datasets">Datasets</a>
-                <a href="#" data-i18n="footer.models">Models</a>
+                <div class="footer-col-title">Open Science</div>
+                <a href="#">GitHub</a>
+                <a href="#">Hugging Face</a>
+                <a href="#">Datasets</a>
+                <a href="#">Models</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -289,10 +286,7 @@
     </div>
 </footer>
 
-<script src="assets/js/i18n.js"></script>
-<script src="assets/js/accessibility.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/people.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
