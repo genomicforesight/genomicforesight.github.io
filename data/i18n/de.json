@@ -1,0 +1,63 @@
+{
+  "top.quickaccess": "Schnellzugriff",
+  "nav.home": "Startseite",
+  "nav.research": "Forschung",
+  "nav.people": "Personen",
+  "nav.projects": "Projekte",
+  "nav.about": "Über uns",
+  "nav.contact": "Kontakt",
+
+  "hero.title1": "Biologie ist komplex.",
+  "hero.title2": "Intelligenz",
+  "hero.title3": " hilft uns, sie anders zu sehen.",
+  "hero.text": "Ein unabhängiges Forschungsinstitut an der Schnittstelle von KI, Genomik und Systembiologie.",
+  "hero.cta1": "Forschung entdecken",
+  "hero.cta2": "Über GFI",
+
+  "stats.programs": "Forschungsprogramme",
+  "stats.leaders": "Forschungsleiter",
+  "stats.projects": "Flaggschiff-Projekte",
+  "stats.established": "Gegründet",
+
+  "quick.research": "Forschungsprogramme",
+  "quick.researchDesc": "Sechs computergestützte Programme",
+  "quick.people": "Personen",
+  "quick.peopleDesc": "Forschungsleiter & Fellows",
+  "quick.projects": "Projekte",
+  "quick.projectsDesc": "12 Flaggschiff-Projekte",
+  "quick.openScience": "Open Science",
+  "quick.openScienceDesc": "Code · Daten · Modelle",
+
+  "research.label": "Forschung",
+  "research.title": "Sechs Forschungsprogramme.",
+  "research.desc": "GFI ist um sechs miteinander verbundene computergestützte Programme organisiert.",
+
+  "news.label": "Newsroom",
+  "news.title": "Neues von GFI.",
+
+  "os.label": "Open Science",
+  "os.title": "Standardmäßig offen.",
+  "os.desc": "Forschungscode, Modelle und Datensätze werden offen veröffentlicht.",
+  "os.code": "Code",
+  "os.codeDesc": "Open-Source-Forschungssoftware",
+  "os.data": "Daten",
+  "os.dataDesc": "Wiederverwendbare Datensätze & Benchmarks",
+  "os.models": "Modelle",
+  "os.modelsDesc": "Transparente KI-Modelle",
+
+  "footer.desc": "Ein unabhängiges Forschungsinstitut an der Schnittstelle von KI, Genomik und Systembiologie.",
+  "footer.research": "Forschung",
+  "footer.institute": "Institut",
+  "footer.open": "Open Science",
+  "footer.github": "GitHub",
+  "footer.huggingface": "Hugging Face",
+  "footer.datasets": "Datensätze",
+  "footer.models": "Modelle",
+
+  "programs.genomics": "Computergestützte Genomik",
+  "programs.singleCell": "Einzelzell- & Systembiologie",
+  "programs.biologicalAI": "Biologische KI",
+  "programs.neuroai": "NeuroAI & Hirnforschung",
+  "programs.medicine": "Computergestützte Medizin",
+  "programs.software": "Forschungssoftware"
+}
