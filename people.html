@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People — Genomic Foresight Institute</title>
+<meta name="description" content="Meet the researchers and scientific leaders of Genomic Foresight Institute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/css/accessibility.css">
+<link rel="stylesheet" href="assets/css/people.css">
+</head>
+<body>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+<div class="top-bar">
+    <div class="container top-bar-inner">
+        <div class="top-bar-left">
+            <span class="top-bar-label" data-i18n="top.quickaccess">Quick Access</span>
+            <a href="research.html" data-i18n="nav.research">Research</a>
+            <a href="people.html" data-i18n="nav.people">People</a>
+            <a href="projects.html" data-i18n="nav.projects">Projects</a>
+            <a href="about.html" data-i18n="nav.about">About</a>
+        </div>
+        <div class="top-bar-right">
+            <div class="a11y-controls">
+                <button class="a11y-btn" id="fontDecrease" title="Decrease font size">A−</button>
+                <button class="a11y-btn" id="fontReset" title="Reset font size">A</button>
+                <button class="a11y-btn" id="fontIncrease" title="Increase font size">A+</button>
+                <button class="a11y-btn" id="colorModeToggle" title="Color blind mode">◐</button>
+            </div>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fa">فا</button>
+                <button class="lang-btn" data-lang="ar">ع</button>
+                <button class="lang-btn" data-lang="de">DE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="site-header" id="siteHeader">
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <img src="assets/images/gfi-logo.png" alt="GFI" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-name">GENOMIC FORESIGHT</span>
+                <span class="brand-sub">Institute</span>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html" class="nav-item" data-i18n="nav.home">Home</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-toggle">
+                    <span data-i18n="nav.research">Research</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="research.html" data-i18n="research.all">All Programs</a>
+                    <a href="research.html#computational-genomics" data-i18n="programs.genomics">Computational Genomics</a>
+                    <a href="research.html#single-cell-systems" data-i18n="programs.singleCell">Single-Cell & Systems Biology</a>
+                    <a href="research.html#biological-ai" data-i18n="programs.biologicalAI">Biological AI</a>
+                    <a href="research.html#neuroai" data-i18n="programs.neuroai">NeuroAI & Brain Science</a>
+                    <a href="research.html#computational-medicine" data-i18n="programs.medicine">Computational Medicine</a>
+                    <a href="research.html#research-software" data-i18n="programs.software">Research Software</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-toggle active">
+                    <span data-i18n="nav.people">People</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="people.html" data-i18n="people.all">All People</a>
+                    <a href="people.html#scientificDirector" data-i18n="people.director">Scientific Director</a>
+                    <a href="people.html#researchLeaders" data-i18n="people.leaders">Research Leaders</a>
+                    <a href="people.html#fellows" data-i18n="people.fellows">Fellows</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-toggle">
+                    <span data-i18n="nav.projects">Projects</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="projects.html" data-i18n="projects.all">All Projects</a>
+                    <a href="projects.html#genomics" data-i18n="projects.genomics">Genomics Projects</a>
+                    <a href="projects.html#ai" data-i18n="projects.ai">AI Projects</a>
+                    <a href="projects.html#neuro" data-i18n="projects.neuro">Neuro Projects</a>
+                    <a href="projects.html#medicine" data-i18n="projects.medicine">Medical Projects</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-toggle">
+                    <span data-i18n="nav.about">About</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="about.html" data-i18n="about.gfi">About GFI</a>
+                    <a href="about.html#mission" data-i18n="about.mission">Mission & Vision</a>
+                    <a href="about.html#open-science" data-i18n="about.openScience">Open Science</a>
+                    <a href="about.html#timeline" data-i18n="about.timeline">Timeline</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="nav-button" data-i18n="nav.contact">Connect</a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- =========================================================
+     MOBILE DRAWER
+========================================================= -->
+<div class="overlay" id="overlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+        <img src="assets/images/gfi-logo.png" alt="GFI" style="width:44px;">
+        <button class="drawer-close" id="drawerClose">×</button>
+    </div>
+    <nav class="drawer-links">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="research.html" data-i18n="nav.research">Research</a>
+        <a href="people.html" data-i18n="nav.people">People</a>
+        <a href="projects.html" data-i18n="nav.projects">Projects</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="drawer-lang">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fa">فا</button>
+        <button class="lang-btn" data-lang="ar">ع</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+</aside>
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+<main>
+
+    <!-- =========================================================
+         PAGE HERO
+    ========================================================= -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-inner">
+                <div class="section-label" data-i18n="people.label">People</div>
+                <h1 class="page-hero-title">
+                    <span data-i18n="people.heroTitle">The researchers behind GFI.</span>
+                </h1>
+                <p class="page-hero-desc" data-i18n="people.heroDesc">
+                    12 research leaders across 6 programs, including the Scientific Director.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         SCIENTIFIC DIRECTOR
+    ========================================================= -->
+    <section class="section director-section" id="scientificDirector">
+        <div class="container">
+            <div class="section-label" data-i18n="people.directorLabel">Scientific Director</div>
+            <div class="director-card" id="directorCard">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         RESEARCH LEADERS
+    ========================================================= -->
+    <section class="section leaders-section" id="researchLeaders">
+        <div class="container">
+            <div class="section-label" data-i18n="people.leadersLabel">Research Leaders</div>
+            <h2 class="section-title" data-i18n="people.leadersTitle">
+                12 research leaders. 6 programs.
+            </h2>
+            <p class="section-description" data-i18n="people.leadersDesc">
+                Principal Investigators leading research directions across computational biology, AI, and biomedical science.
+            </p>
+
+            <div class="people-grid" id="researchLeadersGrid">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         FELLOWS
+    ========================================================= -->
+    <section class="section fellows-section" id="fellows">
+        <div class="container">
+            <div class="section-label" data-i18n="people.fellowsLabel">GFI Fellows</div>
+            <h2 class="section-title" data-i18n="people.fellowsTitle">
+                Research Fellows at GFI.
+            </h2>
+            <p class="section-description" data-i18n="people.fellowsDesc">
+                Early-career researchers contributing to GFI research programs.
+            </p>
+
+            <div class="people-grid fellows-grid" id="fellowsGrid">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         CTA
+    ========================================================= -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner">
+                <div>
+                    <h2 data-i18n="cta.peopleTitle">Join GFI research.</h2>
+                    <p data-i18n="cta.peopleDesc">Explore opportunities for research collaboration or fellowship.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary" data-i18n="cta.contact">Contact GFI</a>
+                    <a href="research.html" class="btn btn-outline" data-i18n="cta.explore">Explore Research</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand-col">
+                <img src="assets/images/gfi-logo.png" alt="GFI" class="footer-logo">
+                <div class="footer-brand-name">GENOMIC FORESIGHT INSTITUTE</div>
+                <p class="footer-brand-desc" data-i18n="footer.desc">
+                    An independent research institute at the intersection of AI, genomics, and systems biology.
+                </p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title" data-i18n="footer.research">Research</div>
+                <a href="research.html#computational-genomics" data-i18n="programs.genomics">Computational Genomics</a>
+                <a href="research.html#single-cell-systems" data-i18n="programs.singleCell">Single-Cell Systems</a>
+                <a href="research.html#biological-ai" data-i18n="programs.biologicalAI">Biological AI</a>
+                <a href="research.html#neuroai" data-i18n="programs.neuroai">NeuroAI</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title" data-i18n="footer.institute">Institute</div>
+                <a href="about.html" data-i18n="about.gfi">About GFI</a>
+                <a href="people.html" data-i18n="nav.people">People</a>
+                <a href="projects.html" data-i18n="nav.projects">Projects</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title" data-i18n="footer.open">Open Science</div>
+                <a href="#" data-i18n="footer.github">GitHub</a>
+                <a href="#" data-i18n="footer.huggingface">Hugging Face</a>
+                <a href="#" data-i18n="footer.datasets">Datasets</a>
+                <a href="#" data-i18n="footer.models">Models</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2026 · Est. 2022 · Independent Research Institute</div>
+            <div class="footer-langs">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fa">فا</button>
+                <button class="lang-btn" data-lang="ar">ع</button>
+                <button class="lang-btn" data-lang="de">DE</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/accessibility.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/people.js"></script>
+
+</body>
+</html>
