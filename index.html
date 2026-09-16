@@ -1,82 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Genomic Foresight Institute (GFI)</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genomic Foresight Institute | GFI</title>
+<meta name="description" content="Genomic Foresight Institute — An independent research institute at the intersection of AI, genomics and systems biology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy: #061B2D;
+    --navy-2: #082B45;
+    --blue: #178BC5;
+    --blue-dark: #0874AA;
+    --sky: #67C9E8;
+    --sky-light: #BCEBF7;
+    --white: #FFFFFF;
+    --paper: #F9FCFE;
+    --ice: #F0F8FC;
+    --text: #142B3B;
+    --muted: #667B8A;
+    --line: #DDEBF2;
+    --radius: 24px;
+    --shadow: 0 25px 70px rgba(6, 27, 45, .10);
+    --max: 1240px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.container {
+    width: min(var(--max), calc(100% - 48px));
+    margin: auto;
+}
+
+/* =========================================================
+   HEADER (Minimal)
+========================================================= */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 24px 0;
+    transition: background .3s, padding .3s, box-shadow .3s;
+}
+.site-header.scrolled {
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 35px rgba(6,27,45,.06);
+    padding: 14px 0;
+}
+
+.navbar {
+    width: min(1320px, calc(100% - 36px));
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-symbol {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size: .85rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name {
+    font-family: "Manrope", sans-serif;
+    font-size: .9rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: .02em;
+}
+.brand-sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: .58rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin-top: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+.nav-links a {
+    font-size: .82rem;
+    font-weight: 600;
+    color: #405766;
+    transition: .25s;
+    position: relative;
+}
+.nav-links a:hover { color: var(--blue); }
+.nav-links a:not(.nav-button)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: .25s;
+}
+.nav-links a:not(.nav-button):hover::after { width: 100%; }
+
+.nav-button {
+    background: var(--navy);
+    color: white !important;
+    padding: 9px 20px;
+    border-radius: 50px;
+    transition: .3s;
+    font-size: .78rem;
+}
+.nav-button:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   HERO (Minimal & Calm)
+========================================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(103,201,232,.12), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(23,139,197,.06), transparent 40%),
+        linear-gradient(180deg, #FFFFFF 0%, #F9FCFE 70%, #F0F8FC 100%);
+    padding: 140px 0 80px;
+}
+
+.hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    opacity: .4;
+    background-image:
+        linear-gradient(rgba(23,139,197,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,139,197,.04) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 75%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.hero-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 42px;
+}
+
+.hero-brand-symbol {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size: .85rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.hero-brand-text {
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .28em;
+    text-align: left;
+    line-height: 1.4;
+}
+.hero-brand-text strong {
+    display: block;
+    color: var(--navy);
+    font-weight: 700;
+    letter-spacing: .18em;
+}
+
+.hero-title {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2.4rem, 5.5vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -.055em;
+    color: var(--navy);
+    font-weight: 700;
+    max-width: 950px;
+    margin: 0 auto 28px;
+}
+.hero-title span {
+    color: var(--blue);
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--blue), var(--sky));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 46px;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 60px;
+    font-size: .78rem;
+    font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--navy);
+    color: white;
+    box-shadow: 0 12px 30px rgba(6,27,45,.15);
+}
+.btn-primary:hover {
+    background: var(--blue);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(23,139,197,.3);
+}
+
+.btn-outline {
+    border: 1px solid var(--line);
+    background: white;
+    color: var(--navy);
+}
+.btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   BIOLOGICAL INTELLIGENCE MAP
+========================================================= */
+.map-section {
+    padding: 120px 0;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 70px;
+}
+
+.map-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.map-title {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -.04em;
+    color: var(--navy);
+    margin-bottom: 18px;
+}
+
+.map-desc {
+    color: var(--muted);
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 32px;
+    padding: 50px 40px;
+    box-shadow: var(--shadow);
+}
+
+.bio-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+
+/* SVG Node Styles */
+.map-node {
+    cursor: pointer;
+    transition: transform .35s ease;
+}
+
+.map-node circle {
+    transition: all .35s ease;
+}
+
+.map-node text {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--navy);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    text-anchor: middle;
+    pointer-events: none;
+    transition: fill .3s;
+}
+
+.map-node .node-bg {
+    fill: white;
+    stroke: var(--line);
+    stroke-width: 1.5;
+    transition: all .35s ease;
+}
+
+.map-node .node-core {
+    fill: var(--navy);
+    transition: all .35s ease;
+}
+
+.map-node:hover .node-bg {
+    stroke: var(--blue);
+    stroke-width: 2;
+    filter: drop-shadow(0 8px 20px rgba(23,139,197,.25));
+}
+
+.map-node:hover .node-core {
+    fill: var(--blue);
+}
+
+.map-node.active .node-bg {
+    stroke: var(--blue);
+    stroke-width: 2.5;
+    fill: var(--ice);
+    filter: drop-shadow(0 12px 30px rgba(23,139,197,.3));
+}
+
+.map-node.active .node-core {
+    fill: var(--blue);
+    r: 8;
+}
+
+.map-node.active text {
+    fill: var(--blue);
+}
+
+.map-edge {
+    stroke: rgba(23,139,197,.15);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-dasharray: 4 6;
+    transition: stroke .35s;
+}
+
+.map-edge.active {
+    stroke: var(--blue);
+    stroke-width: 2;
+    stroke-dasharray: none;
+}
+
+/* Info Panel */
+.map-info {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 40px 44px;
+    box-shadow: var(--shadow);
+    min-height: 180px;
+    transition: all .4s ease;
+}
+
+.map-info-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: .64rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.map-info h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    letter-spacing: -.025em;
+    margin-bottom: 12px;
+}
+
+.map-info p {
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    max-width: 720px;
+}
+
+.map-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.map-tag {
+    padding: 6px 14px;
+    background: var(--ice);
+    color: var(--blue-dark);
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.map-hint {
+    text-align: center;
+    margin-top: 35px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    color: var(--muted);
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.map-hint-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.4); }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+    background: var(--navy);
+    color: rgba(255,255,255,.55);
+    padding: 50px 0 30px;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-symbol {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.08);
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size: .7rem;
+    font-weight: 800;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.footer-copy {
+    font-family: "JetBrains Mono", monospace;
+    font-size: .65rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .map-container { padding: 30px 20px; }
+    .map-info { padding: 30px 28px; }
+}
+
+@media (max-width: 600px) {
+    .container { width: calc(100% - 30px); }
+    .hero { padding: 120px 0 60px; min-height: auto; }
+    .hero-brand-text { font-size: .58rem; letter-spacing: .2em; }
+    .hero-title { font-size: clamp(2rem, 9vw, 2.8rem); }
+    .hero-subtitle { font-size: .95rem; }
+    .map-section { padding: 80px 0; }
+    .map-container { padding: 20px 12px; border-radius: 20px; }
+    .map-node text { font-size: 9px; letter-spacing: .1em; }
+    .map-info { padding: 24px 20px; }
+    .map-info h3 { font-size: 1.3rem; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
 </head>
 <body>
 
-    <!-- ========== HEADER WITH LOGO ========== -->
-    <header>
-        <div class="logo-container">
-            <div class="logo">
-                <span class="logo-dna">GFI</span>
-                <div class="logo-text">
-                    <h1>GENOMIC FORESIGHT</h1>
-                    <p>I N S T I T U T E</p>
-                </div>
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="site-header" id="siteHeader">
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <div class="brand-symbol">GFI</div>
+            <div class="brand-text">
+                <span class="brand-name">GENOMIC FORESIGHT</span>
+                <span class="brand-sub">Institute</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#people">People</a>
+            <a href="#open-science">Open Science</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-button">Connect</a>
+        </div>
+    </nav>
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content">
+        <div class="hero-brand reveal">
+            <div class="hero-brand-symbol">GFI</div>
+            <div class="hero-brand-text">
+                <strong>GENOMIC FORESIGHT</strong>
+                Institute
             </div>
         </div>
-        <p class="tagline">Predict. Decode. Heal.</p>
-    </header>
 
-    <!-- ========== NAVIGATION ========== -->
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+        <h1 class="hero-title reveal">
+            Biology is complex.<br>
+            <span>Intelligence</span> helps us see it differently.
+        </h1>
 
-    <!-- ========== HERO SECTION ========== -->
-    <main>
-        <section class="hero">
-            <h2>Decoding the Predictive Architecture of Human Disease</h2>
-            <p>
-                The Genomic Foresight Institute (GFI) is an independent computational research 
-                initiative dedicated to transforming genetic variation into mechanistic 
-                understanding — and mechanistic understanding into therapeutic foresight.
+        <p class="hero-subtitle reveal">
+            An independent research institute at the intersection of AI, genomics and systems biology.
+        </p>
+
+        <div class="hero-actions reveal">
+            <a href="#research" class="btn btn-primary">Explore Research</a>
+            <a href="#about" class="btn btn-outline">Explore GFI</a>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     BIOLOGICAL INTELLIGENCE MAP
+========================================================= -->
+<section class="map-section" id="research">
+    <div class="container">
+        <div class="map-header reveal">
+            <div class="map-label">Biological Intelligence Map</div>
+            <h2 class="map-title">A computational view of biology.</h2>
+            <p class="map-desc">
+                Six interconnected research domains. Hover over each node to explore how GFI approaches modern biological questions.
             </p>
-            <a href="research.html" class="btn">Explore Our Research</a>
-        </section>
+        </div>
 
-        <!-- ========== THREE PILLARS ========== -->
-        <section class="pillars">
-            <div class="pillar">
-                <h3>🔮 Predict</h3>
-                <p>Predicting the impact of genetic variants on gene expression and disease risk.</p>
-            </div>
-            <div class="pillar">
-                <h3>🧩 Decode</h3>
-                <p>Decoding cellular mechanisms using single-cell biology and AI models.</p>
-            </div>
-            <div class="pillar">
-                <h3>💊 Heal</h3>
-                <p>Proposing actionable therapeutic targets for precision medicine.</p>
-            </div>
-        </section>
+        <div class="map-container reveal">
+            <svg class="bio-map" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+                <!-- Edges (lines connecting nodes) -->
+                <g id="edges">
+                    <!-- Center to nodes -->
+                    <line class="map-edge" data-edge="center-genome" x1="450" y1="260" x2="450" y2="90"/>
+                    <line class="map-edge" data-edge="center-cell" x1="450" y1="260" x2="160" y2="260"/>
+                    <line class="map-edge" data-edge="center-protein" x1="450" y1="260" x2="740" y2="260"/>
+                    <line class="map-edge" data-edge="center-brain" x1="450" y1="260" x2="300" y2="430"/>
+                    <line class="map-edge" data-edge="center-disease" x1="450" y1="260" x2="600" y2="430"/>
+                    <!-- Cross connections -->
+                    <line class="map-edge" data-edge="genome-cell" x1="450" y1="90" x2="160" y2="260"/>
+                    <line class="map-edge" data-edge="genome-protein" x1="450" y1="90" x2="740" y2="260"/>
+                    <line class="map-edge" data-edge="cell-brain" x1="160" y1="260" x2="300" y2="430"/>
+                    <line class="map-edge" data-edge="protein-disease" x1="740" y1="260" x2="600" y2="430"/>
+                    <line class="map-edge" data-edge="brain-disease" x1="300" y1="430" x2="600" y2="430"/>
+                </g>
 
-        <!-- ========== ABOUT PREVIEW ========== -->
-        <section class="preview">
-            <h2>About GFI</h2>
-            <p>
-                We integrate population genomics, single-cell biology, and artificial intelligence 
-                to build predictive models of human disease across the lifespan.
+                <!-- Nodes -->
+                <g id="nodes">
+                    <!-- GENOME -->
+                    <g class="map-node" data-node="genome" transform="translate(450, 90)">
+                        <circle class="node-bg" r="42"/>
+                        <circle class="node-core" r="5"/>
+                        <text y="4">GENOME</text>
+                    </g>
+
+                    <!-- CELL -->
+                    <g class="map-node" data-node="cell" transform="translate(160, 260)">
+                        <circle class="node-bg" r="42"/>
+                        <circle class="node-core" r="5"/>
+                        <text y="4">CELL</text>
+                    </g>
+
+                    <!-- CENTER (GFI) -->
+                    <g class="map-node active" data-node="center" transform="translate(450, 260)">
+                        <circle class="node-bg" r="52"/>
+                        <circle class="node-core" r="7"/>
+                        <text y="5" style="font-size:13px;">GFI</text>
+                    </g>
+
+                    <!-- PROTEIN -->
+                    <g class="map-node" data-node="protein" transform="translate(740, 260)">
+                        <circle class="node-bg" r="42"/>
+                        <circle class="node-core" r="5"/>
+                        <text y="4">PROTEIN</text>
+                    </g>
+
+                    <!-- BRAIN -->
+                    <g class="map-node" data-node="brain" transform="translate(300, 430)">
+                        <circle class="node-bg" r="42"/>
+                        <circle class="node-core" r="5"/>
+                        <text y="4">BRAIN</text>
+                    </g>
+
+                    <!-- DISEASE -->
+                    <g class="map-node" data-node="disease" transform="translate(600, 430)">
+                        <circle class="node-bg" r="42"/>
+                        <circle class="node-core" r="5"/>
+                        <text y="4">DISEASE</text>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="map-info reveal" id="mapInfo">
+            <div class="map-info-label" id="infoLabel">Research Hub</div>
+            <h3 id="infoTitle">Genomic Foresight Institute</h3>
+            <p id="infoDesc">
+                Hover over each node in the map to explore the six research programs at GFI. Each domain connects computational methods, biological data, and AI to address fundamental questions in modern biology.
             </p>
-            <a href="about.html">Learn more →</a>
-        </section>
-    </main>
+            <div class="map-tags" id="infoTags">
+                <span class="map-tag">AI</span>
+                <span class="map-tag">Genomics</span>
+                <span class="map-tag">Systems Biology</span>
+            </div>
+        </div>
 
-    <!-- ========== FOOTER ========== -->
-    <footer>
-        <p>© 2026 The Genomic Foresight Institute (GFI) — Independent Research Initiative</p>
-    </footer>
+        <div class="map-hint reveal">
+            <span class="map-hint-dot"></span>
+            Hover to explore each research domain
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-symbol">GFI</div>
+                <div class="brand-text">
+                    <span class="brand-name" style="color:white;">GENOMIC FORESIGHT</span>
+                    <span class="brand-sub" style="color:rgba(255,255,255,.5);">Institute</span>
+                </div>
+            </div>
+            <div class="footer-copy">
+                © 2026 · Independent Research Institute
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+<script>
+// =========================================================
+// HEADER SCROLL
+// =========================================================
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// =========================================================
+// REVEAL ON SCROLL
+// =========================================================
+const revealElements = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+);
+revealElements.forEach(el => observer.observe(el));
+
+// =========================================================
+// BIOLOGICAL INTELLIGENCE MAP — INTERACTIVE
+// =========================================================
+const nodeData = {
+    genome: {
+        label: 'Research Program 01',
+        title: 'Computational Genomics',
+        desc: 'Multi-scale genomic interpretation, variant analysis, population genetics, and single-cell genomics. GFI develops computational frameworks that transform raw genomic data into biological insight.',
+        tags: ['Cancer Genomics', 'Population Genetics', 'Single-Cell', 'Spatial Biology']
+    },
+    cell: {
+        label: 'Research Program 02',
+        title: 'Single-Cell Systems',
+        desc: 'Understanding cellular heterogeneity through graph-based representation learning, cell-state modeling, and multi-omics integration.',
+        tags: ['Single-Cell', 'Graph Learning', 'Multi-Omics', 'Cell States']
+    },
+    protein: {
+        label: 'Research Program 03',
+        title: 'Structural & Systems Biology',
+        desc: 'From protein structure to biological networks. Modeling molecular interactions, regulatory systems, and emergent biological behavior.',
+        tags: ['Protein Structure', 'Networks', 'Causal Mechanisms', 'Systems']
+    },
+    brain: {
+        label: 'Research Program 04',
+        title: 'NeuroAI',
+        desc: 'Computational approaches to brain data, neural representation learning, and AI-driven analysis of neuroscience datasets across scales.',
+        tags: ['Brain Data', 'Neural Representation', 'NeuroAI', 'EEG & fMRI']
+    },
+    disease: {
+        label: 'Research Program 05',
+        title: 'Computational Medicine',
+        desc: 'Disease modeling, precision medicine, and clinical AI. Translating computational biology into clinically meaningful frameworks.',
+        tags: ['Disease Modeling', 'Precision Medicine', 'Clinical AI', 'Translational']
+    },
+    center: {
+        label: 'Research Hub',
+        title: 'Genomic Foresight Institute',
+        desc: 'Hover over each node in the map to explore the six research programs at GFI. Each domain connects computational methods, biological data, and AI to address fundamental questions in modern biology.',
+        tags: ['AI', 'Genomics', 'Systems Biology']
+    }
+};
+
+const infoLabel = document.getElementById('infoLabel');
+const infoTitle = document.getElementById('infoTitle');
+const infoDesc = document.getElementById('infoDesc');
+const infoTags = document.getElementById('infoTags');
+
+const allNodes = document.querySelectorAll('.map-node');
+const allEdges = document.querySelectorAll('.map-edge');
+
+let currentActive = 'center';
+
+function updateMap(nodeKey) {
+    const data = nodeData[nodeKey];
+    if (!data) return;
+
+    infoLabel.textContent = data.label;
+    infoTitle.textContent = data.title;
+    infoDesc.textContent = data.desc;
+    infoTags.innerHTML = data.tags
+        .map(tag => `<span class="map-tag">${tag}</span>`)
+        .join('');
+
+    allNodes.forEach(n => {
+        n.classList.toggle('active', n.dataset.node === nodeKey);
+    });
+
+    allEdges.forEach(edge => {
+        const edgeKey = edge.dataset.edge;
+        const isActive =
+            edgeKey.includes(nodeKey) ||
+            edgeKey.includes(currentActive);
+        edge.classList.toggle('active', isActive);
+    });
+
+    currentActive = nodeKey;
+}
+
+allNodes.forEach(node => {
+    const key = node.dataset.node;
+    node.addEventListener('mouseenter', () => updateMap(key));
+    node.addEventListener('click', () => updateMap(key));
+    // Touch support
+    node.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        updateMap(key);
+    }, { passive: false });
+});
+
+// Initialize with center
+updateMap('center');
+</script>
 
 </body>
 </html>
