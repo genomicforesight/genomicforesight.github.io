@@ -1,0 +1,52 @@
+{
+  "programs": [
+    {
+      "id": "computational-genomics",
+      "number": "01",
+      "title": "Computational Genomics",
+      "description": "Multi-scale genomic interpretation, variant analysis, population genetics, functional genomics, and precision genomics.",
+      "pis": ["Dr. Niloofar Farhadi", "Dr. Mehrdad Kamali"],
+      "project": "GFI-VariantScope"
+    },
+    {
+      "id": "single-cell-systems",
+      "number": "02",
+      "title": "Single-Cell & Systems Biology",
+      "description": "Single-cell genomics, spatial biology, cellular states, causal inference, and computational modeling of biological networks.",
+      "pis": ["Dr. Sahar Etemadi", "Dr. Kian Vaziri"],
+      "project": "GFI-CellGraph"
+    },
+    {
+      "id": "biological-ai",
+      "number": "03",
+      "title": "Biological AI",
+      "description": "Foundation models, multimodal AI, generative AI, and representation learning for biological and biomedical discovery.",
+      "pis": ["Dr. Arman Mehrabi", "Dr. Yasmin Rahbar"],
+      "project": "GFI-BioFM"
+    },
+    {
+      "id": "neuroai",
+      "number": "04",
+      "title": "NeuroAI & Brain Science",
+      "description": "Brain data science, neural computation, brain–machine interfaces, and computational approaches to neuroscience.",
+      "pis": ["Dr. Parisa Rahimi", "Dr. Reza Danesh"],
+      "project": "GFI-BrainLens"
+    },
+    {
+      "id": "computational-medicine",
+      "number": "05",
+      "title": "Computational Medicine",
+      "description": "Biomedical AI, disease modeling, clinical genomics, precision medicine, and AI for health and disease.",
+      "pis": ["Dr. Roya Shafiei", "Dr. Farhad Sadeghi"],
+      "project": "GFI-ClinAI"
+    },
+    {
+      "id": "research-software",
+      "number": "06",
+      "title": "Research Software & Open Science",
+      "description": "Scientific computing, research software engineering, reproducibility, and open science infrastructure for computational biology.",
+      "pis": ["Dr. Amir Hosseini", "Dr. Leila Farzan"],
+      "project": "GFI-OpenStack"
+    }
+  ]
+}
