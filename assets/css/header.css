@@ -1,0 +1,461 @@
+/* =========================================================
+   GFI — Header & Navigation
+========================================================= */
+
+/* ===== TOP BAR ===== */
+.top-bar {
+    background: var(--navy);
+    color: rgba(255,255,255,.75);
+    font-size: .72rem;
+    padding: 8px 0;
+    position: relative;
+    z-index: 1001;
+}
+
+.top-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-bar-label {
+    color: rgba(255,255,255,.4);
+    font-family: "JetBrains Mono", monospace;
+    font-size: .62rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.top-bar-left a {
+    color: rgba(255,255,255,.75);
+    transition: .25s;
+}
+
+.top-bar-left a:hover {
+    color: var(--sky);
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===== ACCESSIBILITY CONTROLS ===== */
+.a11y-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.a11y-btn {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.08);
+    color: rgba(255,255,255,.7);
+    border-radius: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: .72rem;
+    font-weight: 700;
+    transition: .25s;
+    cursor: pointer;
+    border: none;
+}
+
+.a11y-btn:hover {
+    background: var(--blue);
+    color: white;
+}
+
+.a11y-btn.active {
+    background: var(--blue);
+    color: white;
+}
+
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(255,255,255,.05);
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.lang-btn {
+    padding: 4px 10px;
+    background: transparent;
+    color: rgba(255,255,255,.6);
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: .25s;
+}
+
+.lang-btn:hover {
+    color: white;
+}
+
+.lang-btn.active {
+    background: var(--blue);
+    color: white;
+}
+
+/* ===== MAIN HEADER ===== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(221,235,242,.5);
+    transition: padding .3s, box-shadow .3s;
+}
+
+.site-header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 8px 35px rgba(6,27,45,.07);
+    background: rgba(255,255,255,.95);
+}
+
+.navbar {
+    width: min(1320px, calc(100% - 36px));
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ===== BRAND ===== */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-name {
+    font-family: "Manrope", sans-serif;
+    font-size: .95rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -.02em;
+}
+
+.brand-sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: .6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    margin-top: 2px;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-item {
+    padding: 8px 16px;
+    font-size: .84rem;
+    font-weight: 600;
+    color: #405766;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: var(--blue);
+    background: rgba(23,139,197,.05);
+}
+
+.nav-item.active {
+    color: var(--blue);
+}
+
+/* ===== DROPDOWN ===== */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: .65rem;
+    opacity: .6;
+    transition: transform .3s;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    min-width: 280px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 20px 50px rgba(6,27,45,.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 100;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 14px;
+    font-size: .82rem;
+    font-weight: 500;
+    color: #405766;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.dropdown-menu a:hover {
+    background: var(--ice);
+    color: var(--blue);
+}
+
+/* ===== NAV BUTTON ===== */
+.nav-button {
+    background: var(--navy);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: .82rem;
+    font-weight: 700;
+    transition: .3s;
+    flex-shrink: 0;
+}
+
+.nav-button:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+/* ===== MOBILE TOGGLE ===== */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    background: white;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 18px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 4px;
+}
+
+/* ===== MOBILE DRAWER ===== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4,17,28,.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 1100;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(360px, 88%);
+    height: 100vh;
+    background: white;
+    z-index: 1200;
+    padding: 28px;
+    transition: right .4s cubic-bezier(.77,0,.18,1);
+    box-shadow: -20px 0 60px rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+html[dir="rtl"] .mobile-drawer {
+    right: auto;
+    left: -100%;
+}
+
+.mobile-drawer.active {
+    right: 0;
+}
+
+html[dir="rtl"] .mobile-drawer.active {
+    right: auto;
+    left: 0;
+}
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.drawer-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--paper);
+    font-size: 1.5rem;
+    color: var(--navy);
+    cursor: pointer;
+    border: none;
+}
+
+.drawer-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    flex: 1;
+}
+
+.drawer-links a {
+    padding: 16px 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--navy);
+    border-bottom: 1px solid var(--line);
+    transition: .25s;
+}
+
+.drawer-links a:hover {
+    color: var(--blue);
+    padding-left: 16px;
+}
+
+html[dir="rtl"] .drawer-links a:hover {
+    padding-left: 8px;
+    padding-right: 16px;
+}
+
+.drawer-lang {
+    display: flex;
+    gap: 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    margin-top: 24px;
+}
+
+.drawer-lang .lang-btn {
+    flex: 1;
+    padding: 10px;
+    background: var(--paper);
+    color: var(--muted);
+    font-size: .78rem;
+}
+
+.drawer-lang .lang-btn.active {
+    background: var(--blue);
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .top-bar-left a {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .top-bar {
+        font-size: .65rem;
+    }
+    .top-bar-label {
+        display: none;
+    }
+    .a11y-btn {
+        width: 24px;
+        height: 24px;
+        font-size: .65rem;
+    }
+    .lang-btn {
+        padding: 3px 8px;
+        font-size: .62rem;
+    }
+    .brand-logo {
+        width: 38px;
+        height: 38px;
+    }
+    .brand-name {
+        font-size: .8rem;
+    }
+}
